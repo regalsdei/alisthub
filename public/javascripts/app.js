@@ -10,7 +10,12 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
         // Login screen========================================
         .state('login', {
             url: '/login',
-            templateUrl: 'modules/login/views/login.html'
+            templateUrl: 'modules/authentication/views/login.html'
+        })
+        //Authentication screen=================================
+        .state('signup', {
+            url: '/signup',
+            templateUrl: 'modules/authentication/views/signup.html'
         })
         
         
