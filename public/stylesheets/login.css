@@ -1,0 +1,62 @@
+/* Google Font Import Code
+   ========================================================================== */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,800,700);
+@import url("animate.css");
+
+/* Reset CSS
+   ========================================================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
+
+body { background:url(../images/bg.jpg) no-repeat 100% center fixed; background-size:cover; color: #333333; font-family: 'Open Sans', sans-serif; font-size:16px; line-height: 1;}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block;}
+
+html,
+body {height: 100%;}
+/* Selection CSS */
+::-moz-selection { background: #0275d0; color:#ffffff;}
+::selection { background: #0275d0; color:#ffffff;}
+ 
+ol, ul {list-style: none;}
+a, a:active, a:hover, a:focus { outline: 0; color:#fff; }
+b, strong { font-weight: bold;}
+img { border: 0; max-width:100%;}
+
+.form-control{ background-color: #ffffff; border-radius: 0px; -webkit-border-radius: 0px; border-color: #c2c2c2; box-shadow: none; color: #333333; font-size: 16px;  height: 38px; padding: 6px 15px;}
+select.form-control{padding:6px 12px; font-style:normal;}
+
+#wrapper{min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -62px;}
+
+header{padding:72px 0 38px; text-align:center;}
+
+.login-frame{background-color:rgba(123,123,123,0.8); color:#fff; padding:60px 70px 25px; text-align:center; width:90%; margin:0 auto 100px;}
+.login-frame h1{font-size:36px; text-transform:uppercase; margin:0 0 15px; font-weight:700;}
+.tagline{font-size:20px; margin-bottom:25px;}
+.login-form .form-control{height:56px; padding-left:50px;}
+.icon-div p{position:relative; margin-bottom:15px;}
+.input-icons{color:#c7c7c7; font-size:24px; position:absolute; top:0; left:14px; line-height:56px;}
+
+.btn{border-radius:0; background-color:rgba(193,41,185, 0.8); height:38px; font-size:14px;}
+.btn:hover{color:#fff; background-color:rgba(193,41,185, 1);}
+.login-btn{font-size:24px; height:54px; min-width:260px; text-transform:uppercase; margin-top:20px;}
+
+.otherlinks{padding-top:20px;}
+.otherlinks p{margin-top:30px;}
+.otherlinks p:first-child{margin-top:0;}
+.signup-link{font-size:18px; font-weight:bold; text-decoration:underline;}
+.signup-link:hover{text-decoration:none;}
+
+footer, #push{height:62px;}
+footer{background-color:rgba(123,123,123,0.8); color:#fff; padding:22px 15px; text-align:center; font-size:15px;}
+
+@media (max-width: 1000px) {
+	.login-frame{padding-left:25px; padding-right:25px; width:auto;}
+}
+
+@media (max-width: 767px) {
+	header{padding:30px 15px;}
+	.login-frame{padding:25px; margin-left:-15px; margin-right:-15px;}
+	.tagline{font-size:15px; line-height:18px;}
+	.m-fw{width:100%; min-width:inherit;}
+}
