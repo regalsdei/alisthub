@@ -1,39 +1,2203 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/root/.nvm/versions/node/v4.0.0/bin/node',
 1 verbose cli   '/root/.nvm/versions/node/v4.0.0/bin/npm',
-1 verbose cli   'start' ]
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'xml2json' ]
 2 info using npm@2.14.2
 3 info using node@v4.0.0
-4 verbose run-script [ 'prestart', 'start', 'poststart' ]
-5 info prestart alist@0.0.0
-6 info start alist@0.0.0
-7 verbose unsafe-perm in lifecycle true
-8 info alist@0.0.0 Failed to exec start script
-9 verbose stack Error: alist@0.0.0 start: `node ./bin/www`
-9 verbose stack Exit status 1
-9 verbose stack     at EventEmitter.<anonymous> (/root/.nvm/versions/node/v4.0.0/lib/node_modules/npm/lib/utils/lifecycle.js:214:16)
-9 verbose stack     at emitTwo (events.js:87:13)
-9 verbose stack     at EventEmitter.emit (events.js:172:7)
-9 verbose stack     at ChildProcess.<anonymous> (/root/.nvm/versions/node/v4.0.0/lib/node_modules/npm/lib/utils/spawn.js:24:14)
-9 verbose stack     at emitTwo (events.js:87:13)
-9 verbose stack     at ChildProcess.emit (events.js:172:7)
-9 verbose stack     at maybeClose (internal/child_process.js:817:16)
-9 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
-10 verbose pkgid alist@0.0.0
-11 verbose cwd /home/deepakkhokhar/Documents/Deepakkhokhar/Deepak/alist
-12 error Linux 3.13.0-32-generic
-13 error argv "/root/.nvm/versions/node/v4.0.0/bin/node" "/root/.nvm/versions/node/v4.0.0/bin/npm" "start"
-14 error node v4.0.0
-15 error npm  v2.14.2
-16 error code ELIFECYCLE
-17 error alist@0.0.0 start: `node ./bin/www`
-17 error Exit status 1
-18 error Failed at the alist@0.0.0 start script 'node ./bin/www'.
-18 error This is most likely a problem with the alist package,
-18 error not with npm itself.
-18 error Tell the author that this fails on your system:
-18 error     node ./bin/www
-18 error You can get their info via:
-18 error     npm owner ls alist
-18 error There is likely additional logging output above.
-19 verbose exit [ 1, true ]
+4 verbose install initial load of /root/.nvm/versions/node/v4.0.0/lib/package.json
+5 verbose readDependencies loading dependencies from /root/.nvm/versions/node/v4.0.0/lib/package.json
+6 silly cache add args [ 'xml2json', null ]
+7 verbose cache add spec xml2json
+8 silly cache add parsed spec Result {
+8 silly cache add   raw: 'xml2json',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'xml2json',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: '*',
+8 silly cache add   type: 'range' }
+9 silly addNamed xml2json@*
+10 verbose addNamed "*" is a valid semver range for xml2json
+11 silly addNameRange { name: 'xml2json', range: '*', hasData: false }
+12 silly mapToRegistry name xml2json
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry uri https://registry.npmjs.org/xml2json
+16 verbose addNameRange registry:https://registry.npmjs.org/xml2json not in flight; fetching
+17 verbose request uri https://registry.npmjs.org/xml2json
+18 verbose request no auth needed
+19 info attempt registry request try #1 at 11:53:32 AM
+20 verbose request id 4cb441df25c29ea9
+21 verbose etag "7SYFSAMNQEEMTVUDOQ5O5T4QE"
+22 http request GET https://registry.npmjs.org/xml2json
+23 http 304 https://registry.npmjs.org/xml2json
+24 silly get cb [ 304,
+24 silly get   { date: 'Thu, 07 Apr 2016 06:20:41 GMT',
+24 silly get     via: '1.1 varnish',
+24 silly get     'cache-control': 'max-age=300',
+24 silly get     etag: '"7SYFSAMNQEEMTVUDOQ5O5T4QE"',
+24 silly get     age: '46',
+24 silly get     connection: 'keep-alive',
+24 silly get     'x-served-by': 'cache-sin6927-SIN',
+24 silly get     'x-cache': 'HIT',
+24 silly get     'x-cache-hits': '2',
+24 silly get     'x-timer': 'S1460010041.791226,VS0,VE0',
+24 silly get     vary: 'Accept-Encoding' } ]
+25 verbose etag https://registry.npmjs.org/xml2json from cache
+26 verbose get saving xml2json to /root/.npm/registry.npmjs.org/xml2json/.cache.json
+27 silly addNameRange number 2 { name: 'xml2json', range: '*', hasData: true }
+28 silly addNameRange versions [ 'xml2json',
+28 silly addNameRange   [ '0.1.0',
+28 silly addNameRange     '0.1.1',
+28 silly addNameRange     '0.2.0',
+28 silly addNameRange     '0.2.1',
+28 silly addNameRange     '0.2.2',
+28 silly addNameRange     '0.2.3',
+28 silly addNameRange     '0.2.4',
+28 silly addNameRange     '0.3.0',
+28 silly addNameRange     '0.3.1',
+28 silly addNameRange     '0.3.2',
+28 silly addNameRange     '0.4.0',
+28 silly addNameRange     '0.5.0',
+28 silly addNameRange     '0.5.1',
+28 silly addNameRange     '0.6.0',
+28 silly addNameRange     '0.6.1',
+28 silly addNameRange     '0.6.2',
+28 silly addNameRange     '0.7.0',
+28 silly addNameRange     '0.7.1',
+28 silly addNameRange     '0.8.0',
+28 silly addNameRange     '0.8.1',
+28 silly addNameRange     '0.8.2',
+28 silly addNameRange     '0.9.0' ] ]
+29 silly addNamed xml2json@0.9.0
+30 verbose addNamed "0.9.0" is a plain semver version for xml2json
+31 silly cache afterAdd xml2json@0.9.0
+32 verbose afterAdd /root/.npm/xml2json/0.9.0/package/package.json not in flight; writing
+33 verbose afterAdd /root/.npm/xml2json/0.9.0/package/package.json written
+34 silly install resolved [ { name: 'xml2json',
+34 silly install resolved     version: '0.9.0',
+34 silly install resolved     description: 'Converts xml to json and vice-versa, using node-expat.',
+34 silly install resolved     repository:
+34 silly install resolved      { type: 'git',
+34 silly install resolved        url: 'git://github.com/buglabs/node-xml2json.git' },
+34 silly install resolved     license: 'MIT',
+34 silly install resolved     main: 'index',
+34 silly install resolved     scripts: { test: 'lab -a code -v -t 93 test/test.js' },
+34 silly install resolved     dependencies: { hoek: '^2.14.0', joi: '^6.4.3', 'node-expat': '^2.3.9' },
+34 silly install resolved     bin: { xml2json: 'bin/xml2json' },
+34 silly install resolved     devDependencies: { code: '^1.4.1', lab: '5.x.x' },
+34 silly install resolved     contributors:
+34 silly install resolved      [ [Object],
+34 silly install resolved        [Object],
+34 silly install resolved        [Object],
+34 silly install resolved        [Object],
+34 silly install resolved        [Object],
+34 silly install resolved        [Object],
+34 silly install resolved        [Object],
+34 silly install resolved        [Object],
+34 silly install resolved        [Object],
+34 silly install resolved        [Object],
+34 silly install resolved        [Object],
+34 silly install resolved        [Object],
+34 silly install resolved        [Object],
+34 silly install resolved        [Object],
+34 silly install resolved        [Object],
+34 silly install resolved        [Object],
+34 silly install resolved        [Object],
+34 silly install resolved        [Object],
+34 silly install resolved        [Object],
+34 silly install resolved        [Object],
+34 silly install resolved        [Object],
+34 silly install resolved        [Object] ],
+34 silly install resolved     gitHead: '3d49d5a38d597e5aaf0a682674f7a114098d3c59',
+34 silly install resolved     bugs: { url: 'https://github.com/buglabs/node-xml2json/issues' },
+34 silly install resolved     homepage: 'https://github.com/buglabs/node-xml2json#readme',
+34 silly install resolved     _id: 'xml2json@0.9.0',
+34 silly install resolved     _shasum: 'cf85a24b1ab0291a409d79bba5c5da720c01ec31',
+34 silly install resolved     _from: 'xml2json@*',
+34 silly install resolved     _npmVersion: '2.12.1',
+34 silly install resolved     _nodeVersion: '0.12.7',
+34 silly install resolved     _npmUser: { name: 'c4milo', email: 'camilo.aguilar@gmail.com' },
+34 silly install resolved     maintainers: [ [Object], [Object] ],
+34 silly install resolved     dist:
+34 silly install resolved      { shasum: 'cf85a24b1ab0291a409d79bba5c5da720c01ec31',
+34 silly install resolved        tarball: 'https://registry.npmjs.org/xml2json/-/xml2json-0.9.0.tgz' },
+34 silly install resolved     directories: {},
+34 silly install resolved     _resolved: 'https://registry.npmjs.org/xml2json/-/xml2json-0.9.0.tgz',
+34 silly install resolved     readme: 'ERROR: No README data found!' } ]
+35 info install xml2json@0.9.0 into /root/.nvm/versions/node/v4.0.0/lib
+36 info installOne xml2json@0.9.0
+37 verbose installOne of xml2json to /root/.nvm/versions/node/v4.0.0/lib not in flight; installing
+38 verbose lock using /root/.npm/_locks/xml2json-9c5f4b5c1cd658c3.lock for /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json
+39 silly install write writing xml2json 0.9.0 to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json
+40 verbose unbuild lib/node_modules/xml2json
+41 silly gentlyRm /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json is being purged from base /root/.nvm/versions/node/v4.0.0
+42 verbose gentlyRm don't care about contents; nuking /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json
+43 verbose tar unpack /root/.npm/xml2json/0.9.0/package.tgz
+44 verbose tar unpacking to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json
+45 silly gentlyRm /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json is being purged
+46 verbose gentlyRm don't care about contents; nuking /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json
+47 silly gunzTarPerm modes [ '755', '644' ]
+48 silly gunzTarPerm extractEntry package.json
+49 silly gunzTarPerm extractEntry .npmignore
+50 silly gunzTarPerm extractEntry README.md
+51 silly gunzTarPerm extractEntry index.js
+52 silly gunzTarPerm extractEntry t.js
+53 silly gunzTarPerm extractEntry bin/xml2json
+54 silly gunzTarPerm extractEntry AUTHORS
+55 silly gunzTarPerm extractEntry lib/index.js
+56 silly gunzTarPerm extractEntry lib/json2xml.js
+57 silly gunzTarPerm extractEntry lib/sanitize.js
+58 silly gunzTarPerm extractEntry lib/xml2json.js
+59 silly gunzTarPerm extractEntry .editorconfig
+60 silly gunzTarPerm modified mode [ '.editorconfig', 436, 420 ]
+61 silly gunzTarPerm extractEntry .travis.yml
+62 silly gunzTarPerm extractEntry test/.npmignore
+63 silly gunzTarPerm extractEntry test/coerce-overhead.js
+64 silly gunzTarPerm extractEntry test/test-reorder.js
+65 silly gunzTarPerm extractEntry test/test-space.js
+66 silly gunzTarPerm extractEntry test/test-xmlsanitize.js
+67 silly gunzTarPerm extractEntry test/test.js
+68 silly gunzTarPerm extractEntry test/fixtures/large.json
+69 silly gunzTarPerm extractEntry test/fixtures/array-notation.json
+70 silly gunzTarPerm extractEntry test/fixtures/coerce.json
+71 silly gunzTarPerm extractEntry test/fixtures/coerce.xml
+72 silly gunzTarPerm extractEntry test/fixtures/domain-reversible.json
+73 silly gunzTarPerm extractEntry test/fixtures/domain.json
+74 silly gunzTarPerm extractEntry test/fixtures/domain.xml
+75 silly gunzTarPerm extractEntry test/fixtures/array-notation.xml
+76 silly gunzTarPerm extractEntry test/fixtures/large.xml
+77 silly gunzTarPerm extractEntry test/fixtures/reorder.json
+78 silly gunzTarPerm extractEntry test/fixtures/reorder.xml
+79 silly gunzTarPerm extractEntry test/fixtures/spacetext.json
+80 silly gunzTarPerm extractEntry test/fixtures/spacetext.xml
+81 silly gunzTarPerm extractEntry test/fixtures/xmlsanitize.json
+82 silly gunzTarPerm extractEntry test/fixtures/xmlsanitize.xml
+83 verbose write writing to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/package.json
+84 info preinstall xml2json@0.9.0
+85 verbose readDependencies loading dependencies from /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/package.json
+86 silly prepareForInstallMany adding hoek@^2.14.0 from xml2json dependencies
+87 silly prepareForInstallMany adding joi@^6.4.3 from xml2json dependencies
+88 silly prepareForInstallMany adding node-expat@^2.3.9 from xml2json dependencies
+89 verbose readDependencies loading dependencies from /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/package.json
+90 silly cache add args [ 'joi@^6.4.3', null ]
+91 verbose cache add spec joi@^6.4.3
+92 silly cache add parsed spec Result {
+92 silly cache add   raw: 'joi@^6.4.3',
+92 silly cache add   scope: null,
+92 silly cache add   name: 'joi',
+92 silly cache add   rawSpec: '^6.4.3',
+92 silly cache add   spec: '>=6.4.3 <7.0.0',
+92 silly cache add   type: 'range' }
+93 silly addNamed joi@>=6.4.3 <7.0.0
+94 verbose addNamed ">=6.4.3 <7.0.0" is a valid semver range for joi
+95 silly addNameRange { name: 'joi', range: '>=6.4.3 <7.0.0', hasData: false }
+96 silly mapToRegistry name joi
+97 silly mapToRegistry using default registry
+98 silly mapToRegistry registry https://registry.npmjs.org/
+99 silly mapToRegistry uri https://registry.npmjs.org/joi
+100 verbose addNameRange registry:https://registry.npmjs.org/joi not in flight; fetching
+101 silly cache add args [ 'node-expat@^2.3.9', null ]
+102 verbose cache add spec node-expat@^2.3.9
+103 silly cache add parsed spec Result {
+103 silly cache add   raw: 'node-expat@^2.3.9',
+103 silly cache add   scope: null,
+103 silly cache add   name: 'node-expat',
+103 silly cache add   rawSpec: '^2.3.9',
+103 silly cache add   spec: '>=2.3.9 <3.0.0',
+103 silly cache add   type: 'range' }
+104 silly addNamed node-expat@>=2.3.9 <3.0.0
+105 verbose addNamed ">=2.3.9 <3.0.0" is a valid semver range for node-expat
+106 silly addNameRange { name: 'node-expat', range: '>=2.3.9 <3.0.0', hasData: false }
+107 silly mapToRegistry name node-expat
+108 silly mapToRegistry using default registry
+109 silly mapToRegistry registry https://registry.npmjs.org/
+110 silly mapToRegistry uri https://registry.npmjs.org/node-expat
+111 verbose addNameRange registry:https://registry.npmjs.org/node-expat not in flight; fetching
+112 silly cache add args [ 'hoek@^2.14.0', null ]
+113 verbose cache add spec hoek@^2.14.0
+114 silly cache add parsed spec Result {
+114 silly cache add   raw: 'hoek@^2.14.0',
+114 silly cache add   scope: null,
+114 silly cache add   name: 'hoek',
+114 silly cache add   rawSpec: '^2.14.0',
+114 silly cache add   spec: '>=2.14.0 <3.0.0',
+114 silly cache add   type: 'range' }
+115 silly addNamed hoek@>=2.14.0 <3.0.0
+116 verbose addNamed ">=2.14.0 <3.0.0" is a valid semver range for hoek
+117 silly addNameRange { name: 'hoek', range: '>=2.14.0 <3.0.0', hasData: false }
+118 silly mapToRegistry name hoek
+119 silly mapToRegistry using default registry
+120 silly mapToRegistry registry https://registry.npmjs.org/
+121 silly mapToRegistry uri https://registry.npmjs.org/hoek
+122 verbose addNameRange registry:https://registry.npmjs.org/hoek not in flight; fetching
+123 verbose request uri https://registry.npmjs.org/node-expat
+124 verbose request no auth needed
+125 info attempt registry request try #1 at 11:53:33 AM
+126 verbose etag "6Z1F10PJSF6S110S0SO78G3RA"
+127 http request GET https://registry.npmjs.org/node-expat
+128 verbose request uri https://registry.npmjs.org/hoek
+129 verbose request no auth needed
+130 info attempt registry request try #1 at 11:53:33 AM
+131 verbose etag "9JD2CYV29JSUKKTEN2JHASRIM"
+132 http request GET https://registry.npmjs.org/hoek
+133 verbose request uri https://registry.npmjs.org/joi
+134 verbose request no auth needed
+135 info attempt registry request try #1 at 11:53:33 AM
+136 verbose etag "46KK1SQZTVS4K2VOFPNMD1OF8"
+137 http request GET https://registry.npmjs.org/joi
+138 http 304 https://registry.npmjs.org/node-expat
+139 silly get cb [ 304,
+139 silly get   { date: 'Thu, 07 Apr 2016 06:20:42 GMT',
+139 silly get     via: '1.1 varnish',
+139 silly get     'cache-control': 'max-age=300',
+139 silly get     etag: '"6Z1F10PJSF6S110S0SO78G3RA"',
+139 silly get     age: '45',
+139 silly get     connection: 'keep-alive',
+139 silly get     'x-served-by': 'cache-sin6926-SIN',
+139 silly get     'x-cache': 'HIT',
+139 silly get     'x-cache-hits': '2',
+139 silly get     'x-timer': 'S1460010042.384885,VS0,VE0',
+139 silly get     vary: 'Accept-Encoding' } ]
+140 verbose etag https://registry.npmjs.org/node-expat from cache
+141 verbose get saving node-expat to /root/.npm/registry.npmjs.org/node-expat/.cache.json
+142 silly addNameRange number 2 { name: 'node-expat', range: '>=2.3.9 <3.0.0', hasData: true }
+143 silly addNameRange versions [ 'node-expat',
+143 silly addNameRange   [ '0.0.4',
+143 silly addNameRange     '0.0.5',
+143 silly addNameRange     '0.0.6',
+143 silly addNameRange     '1.0.0',
+143 silly addNameRange     '1.0.1',
+143 silly addNameRange     '1.1.0',
+143 silly addNameRange     '1.1.1',
+143 silly addNameRange     '1.2.0',
+143 silly addNameRange     '1.3.0',
+143 silly addNameRange     '1.3.1',
+143 silly addNameRange     '1.3.2',
+143 silly addNameRange     '1.4.0',
+143 silly addNameRange     '1.4.1',
+143 silly addNameRange     '1.4.2',
+143 silly addNameRange     '1.4.3',
+143 silly addNameRange     '1.4.4',
+143 silly addNameRange     '1.4.5',
+143 silly addNameRange     '1.5.0',
+143 silly addNameRange     '1.6.0',
+143 silly addNameRange     '1.6.1',
+143 silly addNameRange     '2.0.0',
+143 silly addNameRange     '2.1.0',
+143 silly addNameRange     '2.1.1',
+143 silly addNameRange     '2.1.2',
+143 silly addNameRange     '2.1.3',
+143 silly addNameRange     '2.1.4',
+143 silly addNameRange     '2.2.0',
+143 silly addNameRange     '2.3.0',
+143 silly addNameRange     '2.3.1',
+143 silly addNameRange     '2.3.2',
+143 silly addNameRange     '2.3.3',
+143 silly addNameRange     '2.3.4',
+143 silly addNameRange     '2.3.5',
+143 silly addNameRange     '2.3.6',
+143 silly addNameRange     '2.3.7',
+143 silly addNameRange     '2.3.8',
+143 silly addNameRange     '2.3.9',
+143 silly addNameRange     '2.3.10',
+143 silly addNameRange     '2.3.11',
+143 silly addNameRange     '2.3.12',
+143 silly addNameRange     '2.3.13' ] ]
+144 silly addNamed node-expat@2.3.13
+145 verbose addNamed "2.3.13" is a plain semver version for node-expat
+146 http 304 https://registry.npmjs.org/joi
+147 silly get cb [ 304,
+147 silly get   { date: 'Thu, 07 Apr 2016 06:20:42 GMT',
+147 silly get     via: '1.1 varnish',
+147 silly get     'cache-control': 'max-age=300',
+147 silly get     etag: '"46KK1SQZTVS4K2VOFPNMD1OF8"',
+147 silly get     age: '287',
+147 silly get     connection: 'keep-alive',
+147 silly get     'x-served-by': 'cache-sin6923-SIN',
+147 silly get     'x-cache': 'HIT',
+147 silly get     'x-cache-hits': '31',
+147 silly get     'x-timer': 'S1460010042.399479,VS0,VE0',
+147 silly get     vary: 'Accept-Encoding' } ]
+148 verbose etag https://registry.npmjs.org/joi from cache
+149 verbose get saving joi to /root/.npm/registry.npmjs.org/joi/.cache.json
+150 silly cache afterAdd node-expat@2.3.13
+151 verbose afterAdd /root/.npm/node-expat/2.3.13/package/package.json not in flight; writing
+152 silly addNameRange number 2 { name: 'joi', range: '>=6.4.3 <7.0.0', hasData: true }
+153 silly addNameRange versions [ 'joi',
+153 silly addNameRange   [ '0.0.1',
+153 silly addNameRange     '0.0.2',
+153 silly addNameRange     '0.0.3',
+153 silly addNameRange     '0.0.4',
+153 silly addNameRange     '0.0.5',
+153 silly addNameRange     '0.0.6',
+153 silly addNameRange     '0.0.6-1',
+153 silly addNameRange     '0.0.7',
+153 silly addNameRange     '0.0.8',
+153 silly addNameRange     '0.0.9',
+153 silly addNameRange     '0.0.10',
+153 silly addNameRange     '0.1.0',
+153 silly addNameRange     '0.1.1',
+153 silly addNameRange     '0.1.2',
+153 silly addNameRange     '0.1.3',
+153 silly addNameRange     '0.2.0',
+153 silly addNameRange     '0.2.1',
+153 silly addNameRange     '0.2.2',
+153 silly addNameRange     '0.2.3',
+153 silly addNameRange     '0.2.4',
+153 silly addNameRange     '0.2.5',
+153 silly addNameRange     '0.2.6',
+153 silly addNameRange     '0.3.0',
+153 silly addNameRange     '0.3.1',
+153 silly addNameRange     '0.3.2',
+153 silly addNameRange     '0.3.3',
+153 silly addNameRange     '0.3.4',
+153 silly addNameRange     '0.3.5',
+153 silly addNameRange     '0.3.6',
+153 silly addNameRange     '0.4.0',
+153 silly addNameRange     '1.0.0',
+153 silly addNameRange     '1.1.0',
+153 silly addNameRange     '1.2.0',
+153 silly addNameRange     '1.2.1',
+153 silly addNameRange     '1.2.2',
+153 silly addNameRange     '1.2.3',
+153 silly addNameRange     '2.0.0',
+153 silly addNameRange     '2.0.1',
+153 silly addNameRange     '2.0.2',
+153 silly addNameRange     '2.0.3',
+153 silly addNameRange     '2.1.0',
+153 silly addNameRange     '2.2.0',
+153 silly addNameRange     '2.3.0',
+153 silly addNameRange     '2.3.1',
+153 silly addNameRange     '2.4.1',
+153 silly addNameRange     '2.4.2',
+153 silly addNameRange     '2.4.3',
+153 silly addNameRange     '2.5.0',
+153 silly addNameRange     '2.6.0',
+153 silly addNameRange     '2.7.0',
+153 silly addNameRange     '2.8.0',
+153 silly addNameRange     '2.9.0',
+153 silly addNameRange     '3.0.0',
+153 silly addNameRange     '3.1.0',
+153 silly addNameRange     '4.0.0',
+153 silly addNameRange     '4.2.1',
+153 silly addNameRange     '4.3.0',
+153 silly addNameRange     '4.3.1',
+153 silly addNameRange     '4.4.0',
+153 silly addNameRange     '4.5.0',
+153 silly addNameRange     '4.6.0',
+153 silly addNameRange     '4.6.1',
+153 silly addNameRange     '4.6.2',
+153 silly addNameRange     '4.7.0',
+153 silly addNameRange     '4.8.0',
+153 silly addNameRange     '4.8.1',
+153 silly addNameRange     '4.9.0',
+153 silly addNameRange     '5.0.0',
+153 silly addNameRange     '5.0.1',
+153 silly addNameRange     '5.0.2',
+153 silly addNameRange     '5.1.0',
+153 silly addNameRange     '6.0.0',
+153 silly addNameRange     '6.0.1',
+153 silly addNameRange     '6.0.2',
+153 silly addNameRange     '6.0.3',
+153 silly addNameRange     '6.0.4',
+153 silly addNameRange     '6.0.5',
+153 silly addNameRange     '6.0.6',
+153 silly addNameRange     '6.0.7',
+153 silly addNameRange     '6.0.8',
+153 silly addNameRange     '6.1.0',
+153 silly addNameRange     '6.1.1',
+153 silly addNameRange     '6.1.2',
+153 silly addNameRange     '6.2.0',
+153 silly addNameRange     '6.3.0',
+153 silly addNameRange     '6.4.0',
+153 silly addNameRange     '6.4.1',
+153 silly addNameRange     '6.4.2',
+153 silly addNameRange     '6.4.3',
+153 silly addNameRange     '6.5.0',
+153 silly addNameRange     '6.6.0',
+153 silly addNameRange     '6.6.1',
+153 silly addNameRange     '6.7.0',
+153 silly addNameRange     '6.7.1',
+153 silly addNameRange     '6.8.1',
+153 silly addNameRange     '6.9.0',
+153 silly addNameRange     '6.9.1',
+153 silly addNameRange     '6.10.0',
+153 silly addNameRange     '7.0.0',
+153 silly addNameRange     '6.10.1',
+153 silly addNameRange     '7.0.1',
+153 silly addNameRange     '7.1.0',
+153 silly addNameRange     '7.2.0',
+153 silly addNameRange     '7.2.1',
+153 silly addNameRange     '7.2.2',
+153 silly addNameRange     '7.2.3',
+153 silly addNameRange     '7.3.0',
+153 silly addNameRange     '8.0.0',
+153 silly addNameRange     '8.0.1',
+153 silly addNameRange     '8.0.2',
+153 silly addNameRange     '8.0.3',
+153 silly addNameRange     '8.0.4',
+153 silly addNameRange     '8.0.5' ] ]
+154 silly addNamed joi@6.10.1
+155 verbose addNamed "6.10.1" is a plain semver version for joi
+156 verbose afterAdd /root/.npm/node-expat/2.3.13/package/package.json written
+157 silly cache afterAdd joi@6.10.1
+158 verbose afterAdd /root/.npm/joi/6.10.1/package/package.json not in flight; writing
+159 verbose afterAdd /root/.npm/joi/6.10.1/package/package.json written
+160 http 304 https://registry.npmjs.org/hoek
+161 silly get cb [ 304,
+161 silly get   { date: 'Thu, 07 Apr 2016 06:20:42 GMT',
+161 silly get     via: '1.1 varnish',
+161 silly get     'cache-control': 'max-age=300',
+161 silly get     etag: '"9JD2CYV29JSUKKTEN2JHASRIM"',
+161 silly get     age: '164',
+161 silly get     connection: 'keep-alive',
+161 silly get     'x-served-by': 'cache-sin6921-SIN',
+161 silly get     'x-cache': 'HIT',
+161 silly get     'x-cache-hits': '27',
+161 silly get     'x-timer': 'S1460010042.369523,VS0,VE0',
+161 silly get     vary: 'Accept-Encoding' } ]
+162 verbose etag https://registry.npmjs.org/hoek from cache
+163 verbose get saving hoek to /root/.npm/registry.npmjs.org/hoek/.cache.json
+164 silly addNameRange number 2 { name: 'hoek', range: '>=2.14.0 <3.0.0', hasData: true }
+165 silly addNameRange versions [ 'hoek',
+165 silly addNameRange   [ '0.0.1',
+165 silly addNameRange     '0.0.2',
+165 silly addNameRange     '0.0.3',
+165 silly addNameRange     '0.0.4',
+165 silly addNameRange     '0.0.5',
+165 silly addNameRange     '0.0.6',
+165 silly addNameRange     '0.0.7',
+165 silly addNameRange     '0.0.8',
+165 silly addNameRange     '0.0.9',
+165 silly addNameRange     '0.0.10',
+165 silly addNameRange     '0.0.11',
+165 silly addNameRange     '0.0.12',
+165 silly addNameRange     '0.0.13',
+165 silly addNameRange     '0.0.14',
+165 silly addNameRange     '0.0.15',
+165 silly addNameRange     '0.0.16',
+165 silly addNameRange     '0.0.17',
+165 silly addNameRange     '0.0.18',
+165 silly addNameRange     '0.0.19',
+165 silly addNameRange     '0.0.21',
+165 silly addNameRange     '0.1.0',
+165 silly addNameRange     '0.2.0',
+165 silly addNameRange     '0.3.0',
+165 silly addNameRange     '0.4.0',
+165 silly addNameRange     '0.4.1',
+165 silly addNameRange     '0.4.2',
+165 silly addNameRange     '0.4.3',
+165 silly addNameRange     '0.4.4',
+165 silly addNameRange     '0.4.5',
+165 silly addNameRange     '0.5.0',
+165 silly addNameRange     '0.6.0',
+165 silly addNameRange     '0.6.1',
+165 silly addNameRange     '0.6.2',
+165 silly addNameRange     '0.7.0',
+165 silly addNameRange     '0.7.1',
+165 silly addNameRange     '0.7.2',
+165 silly addNameRange     '0.7.3',
+165 silly addNameRange     '0.7.4',
+165 silly addNameRange     '0.7.5',
+165 silly addNameRange     '0.7.6',
+165 silly addNameRange     '0.8.0',
+165 silly addNameRange     '0.8.1',
+165 silly addNameRange     '0.8.2',
+165 silly addNameRange     '0.8.3',
+165 silly addNameRange     '0.8.4',
+165 silly addNameRange     '0.8.5',
+165 silly addNameRange     '0.9.0',
+165 silly addNameRange     '0.9.1',
+165 silly addNameRange     '0.10.0',
+165 silly addNameRange     '1.0.0',
+165 silly addNameRange     '1.0.1',
+165 silly addNameRange     '1.0.2',
+165 silly addNameRange     '1.0.3',
+165 silly addNameRange     '1.1.0',
+165 silly addNameRange     '1.1.1',
+165 silly addNameRange     '1.1.2',
+165 silly addNameRange     '1.2.0',
+165 silly addNameRange     '1.3.0',
+165 silly addNameRange     '1.4.0',
+165 silly addNameRange     '1.4.1',
+165 silly addNameRange     '1.5.0',
+165 silly addNameRange     '1.5.1',
+165 silly addNameRange     '1.5.2',
+165 silly addNameRange     '2.0.0',
+165 silly addNameRange     '2.1.0',
+165 silly addNameRange     '2.1.1',
+165 silly addNameRange     '2.2.0',
+165 silly addNameRange     '2.3.0',
+165 silly addNameRange     '2.4.0',
+165 silly addNameRange     '2.4.1',
+165 silly addNameRange     '2.5.0',
+165 silly addNameRange     '2.5.1',
+165 silly addNameRange     '2.6.0',
+165 silly addNameRange     '2.7.0',
+165 silly addNameRange     '2.8.0',
+165 silly addNameRange     '2.8.1',
+165 silly addNameRange     '2.9.0',
+165 silly addNameRange     '2.9.1',
+165 silly addNameRange     '2.10.0',
+165 silly addNameRange     '2.11.0',
+165 silly addNameRange     '2.11.1',
+165 silly addNameRange     '2.12.0',
+165 silly addNameRange     '2.13.0',
+165 silly addNameRange     '2.13.1',
+165 silly addNameRange     '2.14.0',
+165 silly addNameRange     '2.15.0',
+165 silly addNameRange     '2.16.0',
+165 silly addNameRange     '2.16.1',
+165 silly addNameRange     '2.16.2',
+165 silly addNameRange     '2.16.3',
+165 silly addNameRange     '3.0.0',
+165 silly addNameRange     '3.0.1',
+165 silly addNameRange     '3.0.2',
+165 silly addNameRange     '3.0.3',
+165 silly addNameRange     '3.0.4' ] ]
+166 silly addNamed hoek@2.16.3
+167 verbose addNamed "2.16.3" is a plain semver version for hoek
+168 silly cache afterAdd hoek@2.16.3
+169 verbose afterAdd /root/.npm/hoek/2.16.3/package/package.json not in flight; writing
+170 verbose afterAdd /root/.npm/hoek/2.16.3/package/package.json written
+171 silly install resolved [ { name: 'node-expat',
+171 silly install resolved     version: '2.3.13',
+171 silly install resolved     main: './lib/node-expat',
+171 silly install resolved     description: 'NodeJS binding for fast XML parsing.',
+171 silly install resolved     keywords: [ 'xml', 'sax', 'expat', 'libexpat', 'parse', 'parsing' ],
+171 silly install resolved     scripts:
+171 silly install resolved      { preversion: 'npm test',
+171 silly install resolved        lint: 'standard',
+171 silly install resolved        unit: 'vows --spec ./test/**/*.js',
+171 silly install resolved        test: 'npm run unit && npm run lint',
+171 silly install resolved        install: 'node-gyp rebuild' },
+171 silly install resolved     dependencies: { bindings: '^1.2.1', nan: '^2.2.0' },
+171 silly install resolved     devDependencies:
+171 silly install resolved      { benchmark: '^2.1.0',
+171 silly install resolved        debug: '^2.2.0',
+171 silly install resolved        iconv: '^2.1.11',
+171 silly install resolved        libxmljs: '^0.17.0',
+171 silly install resolved        ltx: '^2.2.0',
+171 silly install resolved        'node-xml': '^1.0.2',
+171 silly install resolved        sax: '^1.1.5',
+171 silly install resolved        vows: '^0.8.1' },
+171 silly install resolved     repository:
+171 silly install resolved      { type: 'git',
+171 silly install resolved        url: 'git+https://github.com/node-xmpp/node-expat.git' },
+171 silly install resolved     homepage: 'http://github.com/node-xmpp/node-expat',
+171 silly install resolved     bugs: { url: 'https://github.com/node-xmpp/node-expat/issues' },
+171 silly install resolved     author:
+171 silly install resolved      { name: 'Astro',
+171 silly install resolved        email: 'astro@spaceboyz.net',
+171 silly install resolved        url: 'http://spaceboyz.net/~astro/' },
+171 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object] ],
+171 silly install resolved     contributors:
+171 silly install resolved      [ [Object],
+171 silly install resolved        [Object],
+171 silly install resolved        [Object],
+171 silly install resolved        [Object],
+171 silly install resolved        [Object],
+171 silly install resolved        [Object],
+171 silly install resolved        [Object],
+171 silly install resolved        [Object],
+171 silly install resolved        [Object],
+171 silly install resolved        [Object],
+171 silly install resolved        [Object],
+171 silly install resolved        [Object],
+171 silly install resolved        [Object],
+171 silly install resolved        [Object] ],
+171 silly install resolved     license: 'MIT',
+171 silly install resolved     gypfile: true,
+171 silly install resolved     gitHead: '75c00f5732bdbb357777003601d7c2ee5c6f7296',
+171 silly install resolved     _id: 'node-expat@2.3.13',
+171 silly install resolved     _shasum: 'e32494308d14f451e2b8efa4464f52e1e8a59532',
+171 silly install resolved     _from: 'node-expat@>=2.3.9 <3.0.0',
+171 silly install resolved     _npmVersion: '3.6.0',
+171 silly install resolved     _nodeVersion: '5.5.0',
+171 silly install resolved     _npmUser: { name: 'sonny', email: 'sonny@fastmail.net' },
+171 silly install resolved     dist:
+171 silly install resolved      { shasum: 'e32494308d14f451e2b8efa4464f52e1e8a59532',
+171 silly install resolved        tarball: 'https://registry.npmjs.org/node-expat/-/node-expat-2.3.13.tgz' },
+171 silly install resolved     directories: {},
+171 silly install resolved     _resolved: 'https://registry.npmjs.org/node-expat/-/node-expat-2.3.13.tgz',
+171 silly install resolved     readme: 'ERROR: No README data found!' },
+171 silly install resolved   { name: 'joi',
+171 silly install resolved     description: 'Object schema validation',
+171 silly install resolved     version: '6.10.1',
+171 silly install resolved     repository: { type: 'git', url: 'git://github.com/hapijs/joi.git' },
+171 silly install resolved     main: 'lib/index.js',
+171 silly install resolved     keywords: [ 'hapi', 'schema', 'validation' ],
+171 silly install resolved     engines: { node: '>=0.10.40', npm: '>=2.0.0' },
+171 silly install resolved     dependencies:
+171 silly install resolved      { hoek: '2.x.x',
+171 silly install resolved        topo: '1.x.x',
+171 silly install resolved        isemail: '1.x.x',
+171 silly install resolved        moment: '2.x.x' },
+171 silly install resolved     devDependencies: { code: '1.x.x', lab: '6.x.x', 'markdown-toc': '0.11.x' },
+171 silly install resolved     scripts:
+171 silly install resolved      { test: 'lab -t 100 -a code -L',
+171 silly install resolved        'test-cov-html': 'lab -r html -o coverage.html -a code',
+171 silly install resolved        toc: 'node generate-readme-toc.js',
+171 silly install resolved        version: 'npm run toc && git add API.md' },
+171 silly install resolved     license: 'BSD-3-Clause',
+171 silly install resolved     gitHead: '19c2e1cdefd557b8297f7cd55cc0fb4f261c2c8e',
+171 silly install resolved     bugs: { url: 'https://github.com/hapijs/joi/issues' },
+171 silly install resolved     homepage: 'https://github.com/hapijs/joi#readme',
+171 silly install resolved     _id: 'joi@6.10.1',
+171 silly install resolved     _shasum: '4d50c318079122000fe5f16af1ff8e1917b77e06',
+171 silly install resolved     _from: 'joi@>=6.4.3 <7.0.0',
+171 silly install resolved     _npmVersion: '3.5.0',
+171 silly install resolved     _nodeVersion: '5.1.0',
+171 silly install resolved     _npmUser: { name: 'marsup', email: 'marsup@gmail.com' },
+171 silly install resolved     dist:
+171 silly install resolved      { shasum: '4d50c318079122000fe5f16af1ff8e1917b77e06',
+171 silly install resolved        tarball: 'https://registry.npmjs.org/joi/-/joi-6.10.1.tgz' },
+171 silly install resolved     maintainers: [ [Object], [Object] ],
+171 silly install resolved     directories: {},
+171 silly install resolved     _resolved: 'https://registry.npmjs.org/joi/-/joi-6.10.1.tgz',
+171 silly install resolved     readme: 'ERROR: No README data found!' },
+171 silly install resolved   { name: 'hoek',
+171 silly install resolved     description: 'General purpose node utilities',
+171 silly install resolved     version: '2.16.3',
+171 silly install resolved     repository: { type: 'git', url: 'git://github.com/hapijs/hoek.git' },
+171 silly install resolved     main: 'lib/index.js',
+171 silly install resolved     keywords: [ 'utilities' ],
+171 silly install resolved     engines: { node: '>=0.10.40' },
+171 silly install resolved     dependencies: {},
+171 silly install resolved     devDependencies: { code: '1.x.x', lab: '5.x.x' },
+171 silly install resolved     scripts:
+171 silly install resolved      { test: 'lab -a code -t 100 -L',
+171 silly install resolved        'test-cov-html': 'lab -a code -t 100 -L -r html -o coverage.html' },
+171 silly install resolved     license: 'BSD-3-Clause',
+171 silly install resolved     gitHead: '20f36e85616264d4b73a64a374803175213a9121',
+171 silly install resolved     bugs: { url: 'https://github.com/hapijs/hoek/issues' },
+171 silly install resolved     homepage: 'https://github.com/hapijs/hoek#readme',
+171 silly install resolved     _id: 'hoek@2.16.3',
+171 silly install resolved     _shasum: '20bb7403d3cea398e91dc4710a8ff1b8274a25ed',
+171 silly install resolved     _from: 'hoek@>=2.14.0 <3.0.0',
+171 silly install resolved     _npmVersion: '3.3.3',
+171 silly install resolved     _nodeVersion: '4.1.0',
+171 silly install resolved     _npmUser: { name: 'nlf', email: 'quitlahok@gmail.com' },
+171 silly install resolved     dist:
+171 silly install resolved      { shasum: '20bb7403d3cea398e91dc4710a8ff1b8274a25ed',
+171 silly install resolved        tarball: 'http://registry.npmjs.org/hoek/-/hoek-2.16.3.tgz' },
+171 silly install resolved     maintainers: [ [Object], [Object], [Object] ],
+171 silly install resolved     directories: {},
+171 silly install resolved     _resolved: 'https://registry.npmjs.org/hoek/-/hoek-2.16.3.tgz',
+171 silly install resolved     readme: 'ERROR: No README data found!' } ]
+172 info install node-expat@2.3.13 into /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json
+173 info install joi@6.10.1 into /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json
+174 info install hoek@2.16.3 into /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json
+175 info installOne node-expat@2.3.13
+176 verbose installOne of node-expat to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json not in flight; installing
+177 info installOne joi@6.10.1
+178 verbose installOne of joi to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json not in flight; installing
+179 info installOne hoek@2.16.3
+180 verbose installOne of hoek to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json not in flight; installing
+181 verbose lock using /root/.npm/_locks/node-expat-82c34204e0fd2300.lock for /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat
+182 verbose lock using /root/.npm/_locks/joi-0c71e2b2fc0c7cc8.lock for /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi
+183 verbose lock using /root/.npm/_locks/hoek-ce408fa5d73bc2cc.lock for /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/hoek
+184 silly install write writing node-expat 2.3.13 to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat
+185 silly install write writing joi 6.10.1 to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi
+186 silly install write writing hoek 2.16.3 to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/hoek
+187 verbose unbuild lib/node_modules/xml2json/node_modules/node-expat
+188 verbose unbuild lib/node_modules/xml2json/node_modules/joi
+189 verbose unbuild lib/node_modules/xml2json/node_modules/hoek
+190 silly gentlyRm /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat is being purged from base /root/.nvm/versions/node/v4.0.0
+191 verbose gentlyRm don't care about contents; nuking /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat
+192 silly gentlyRm /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi is being purged from base /root/.nvm/versions/node/v4.0.0
+193 verbose gentlyRm don't care about contents; nuking /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi
+194 silly gentlyRm /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/hoek is being purged from base /root/.nvm/versions/node/v4.0.0
+195 verbose gentlyRm don't care about contents; nuking /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/hoek
+196 verbose tar unpack /root/.npm/node-expat/2.3.13/package.tgz
+197 verbose tar unpacking to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat
+198 silly gentlyRm /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat is being purged
+199 verbose gentlyRm don't care about contents; nuking /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat
+200 verbose tar unpack /root/.npm/joi/6.10.1/package.tgz
+201 verbose tar unpacking to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi
+202 silly gentlyRm /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi is being purged
+203 verbose gentlyRm don't care about contents; nuking /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi
+204 verbose tar unpack /root/.npm/hoek/2.16.3/package.tgz
+205 verbose tar unpacking to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/hoek
+206 silly gentlyRm /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/hoek is being purged
+207 verbose gentlyRm don't care about contents; nuking /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/hoek
+208 silly gunzTarPerm modes [ '755', '644' ]
+209 silly gunzTarPerm modes [ '755', '644' ]
+210 silly gunzTarPerm modes [ '755', '644' ]
+211 silly gunzTarPerm extractEntry package.json
+212 silly gunzTarPerm extractEntry package.json
+213 silly gunzTarPerm extractEntry package.json
+214 silly gunzTarPerm extractEntry README.md
+215 silly gunzTarPerm extractEntry LICENSE
+216 silly gunzTarPerm extractEntry .npmignore
+217 silly gunzTarPerm extractEntry README.md
+218 silly gunzTarPerm extractEntry .npmignore
+219 silly gunzTarPerm extractEntry README.md
+220 silly gunzTarPerm extractEntry binding.gyp
+221 silly gunzTarPerm extractEntry build/Makefile
+222 silly gunzTarPerm extractEntry LICENSE
+223 silly gunzTarPerm extractEntry generate-readme-toc.js
+224 silly gunzTarPerm extractEntry LICENSE
+225 silly gunzTarPerm extractEntry .eslintignore
+226 silly gunzTarPerm extractEntry examples/conditionalRequire.js
+227 silly gunzTarPerm extractEntry .travis.yml
+228 silly gunzTarPerm extractEntry images/hoek.png
+229 silly gunzTarPerm extractEntry lib/escape.js
+230 silly gunzTarPerm extractEntry build/Release/.deps/Release/libexpat.a.d
+231 silly gunzTarPerm extractEntry examples/customMessage.js
+232 silly gunzTarPerm extractEntry examples/multipleWhen.js
+233 silly gunzTarPerm extractEntry build/Release/.deps/Release/node_expat.node.d
+234 silly gunzTarPerm extractEntry build/Release/.deps/Release/obj.target/deps/libexpat/libexpat.a.d
+235 silly gunzTarPerm extractEntry build/Release/.deps/Release/obj.target/expat/deps/libexpat/lib/xmlparse.o.d
+236 silly gunzTarPerm extractEntry build/Release/.deps/Release/obj.target/expat/deps/libexpat/lib/xmlrole.o.d
+237 silly gunzTarPerm extractEntry .travis.yml
+238 silly gunzTarPerm extractEntry images/joi.png
+239 silly gunzTarPerm modified mode [ 'images/joi.png', 509, 493 ]
+240 silly gunzTarPerm extractEntry images/validation.png
+241 silly gunzTarPerm modified mode [ 'images/validation.png', 509, 493 ]
+242 silly gunzTarPerm extractEntry lib/index.js
+243 silly gunzTarPerm extractEntry CONTRIBUTING.md
+244 silly gunzTarPerm extractEntry lib/alternatives.js
+245 silly gunzTarPerm extractEntry test/escaper.js
+246 silly gunzTarPerm extractEntry test/index.js
+247 silly gunzTarPerm extractEntry lib/binary.js
+248 silly gunzTarPerm extractEntry lib/boolean.js
+249 silly gunzTarPerm extractEntry build/Release/.deps/Release/obj.target/expat/deps/libexpat/lib/xmltok.o.d
+250 silly gunzTarPerm extractEntry build/Release/.deps/Release/obj.target/node_expat/node-expat.o.d
+251 silly gunzTarPerm extractEntry test/modules/test1.js
+252 silly gunzTarPerm extractEntry test/modules/test2.js
+253 silly gunzTarPerm extractEntry test/modules/test3.js
+254 silly gunzTarPerm extractEntry lib/cast.js
+255 silly gunzTarPerm extractEntry lib/date.js
+256 silly gunzTarPerm extractEntry lib/array.js
+257 silly gunzTarPerm extractEntry lib/index.js
+258 silly gunzTarPerm extractEntry build/Release/.deps/Release/obj.target/node_expat.node.d
+259 silly gunzTarPerm extractEntry build/Release/libexpat.a
+260 silly gunzTarPerm extractEntry lib/language.js
+261 silly gunzTarPerm extractEntry lib/number.js
+262 silly gunzTarPerm extractEntry lib/object.js
+263 silly gunzTarPerm extractEntry build/Release/node_expat.node
+264 silly gunzTarPerm extractEntry test/modules/ignore.txt
+265 silly gunzTarPerm extractEntry build/Release/obj.target/deps/libexpat/libexpat.a
+266 silly gunzTarPerm extractEntry lib/ref.js
+267 silly gunzTarPerm extractEntry build/Release/obj.target/expat/deps/libexpat/lib/xmlparse.o
+268 silly gunzTarPerm extractEntry lib/any.js
+269 silly gunzTarPerm extractEntry lib/string.js
+270 silly gunzTarPerm extractEntry lib/errors.js
+271 silly gunzTarPerm extractEntry build/Release/obj.target/expat/deps/libexpat/lib/xmlrole.o
+272 silly gunzTarPerm extractEntry build/Release/obj.target/expat/deps/libexpat/lib/xmltok.o
+273 silly gunzTarPerm extractEntry lib/string/ip.js
+274 silly gunzTarPerm extractEntry lib/string/rfc3986.js
+275 silly gunzTarPerm extractEntry build/Release/obj.target/node_expat/node-expat.o
+276 silly gunzTarPerm extractEntry lib/string/uri.js
+277 silly gunzTarPerm extractEntry build/Release/obj.target/node_expat.node
+278 silly gunzTarPerm extractEntry API.md
+279 silly gunzTarPerm extractEntry CONTRIBUTING.md
+280 silly gunzTarPerm extractEntry test/alternatives.js
+281 silly gunzTarPerm extractEntry build/binding.Makefile
+282 silly gunzTarPerm extractEntry test/binary.js
+283 silly gunzTarPerm extractEntry test/boolean.js
+284 silly gunzTarPerm extractEntry test/date.js
+285 silly gunzTarPerm extractEntry build/deps/libexpat/expat.target.mk
+286 silly gunzTarPerm extractEntry test/errors.js
+287 silly gunzTarPerm extractEntry test/array.js
+288 silly gunzTarPerm extractEntry test/helper.js
+289 silly gunzTarPerm extractEntry test/index.js
+290 verbose write writing to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/hoek/package.json
+291 info preinstall hoek@2.16.3
+292 silly gunzTarPerm extractEntry test/number.js
+293 verbose readDependencies loading dependencies from /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/hoek/package.json
+294 silly gunzTarPerm extractEntry build/deps/libexpat/libexpat.Makefile
+295 verbose readDependencies loading dependencies from /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/hoek/package.json
+296 silly gunzTarPerm extractEntry test/object.js
+297 silly gunzTarPerm extractEntry test/ref.js
+298 silly install resolved []
+299 verbose about to build /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/hoek
+300 info build /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/hoek
+301 info linkStuff hoek@2.16.3
+302 silly linkStuff hoek@2.16.3 has /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules as its parent node_modules
+303 silly linkStuff hoek@2.16.3 is part of a global install
+304 silly linkStuff hoek@2.16.3 is installed into a global node_modules
+305 silly gunzTarPerm extractEntry test/any.js
+306 silly gunzTarPerm extractEntry test/string.js
+307 verbose linkBins hoek@2.16.3
+308 verbose linkMans hoek@2.16.3
+309 verbose rebuildBundles hoek@2.16.3
+310 info install hoek@2.16.3
+311 info postinstall hoek@2.16.3
+312 verbose unlock done using /root/.npm/_locks/hoek-ce408fa5d73bc2cc.lock for /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/hoek
+313 silly gunzTarPerm extractEntry build/deps/libexpat/version.target.mk
+314 silly gunzTarPerm extractEntry test/function.js
+315 silly gunzTarPerm extractEntry build/node_expat.target.mk
+316 silly gunzTarPerm extractEntry deps/libexpat/README
+317 silly gunzTarPerm extractEntry deps/libexpat/doc/expat.png
+318 silly gunzTarPerm extractEntry deps/libexpat/doc/reference.html
+319 silly gunzTarPerm extractEntry deps/libexpat/doc/style.css
+320 silly gunzTarPerm extractEntry deps/libexpat/doc/valid-xhtml10.png
+321 silly gunzTarPerm extractEntry deps/libexpat/doc/xmlwf.1
+322 silly gunzTarPerm extractEntry deps/libexpat/doc/xmlwf.sgml
+323 silly gunzTarPerm extractEntry deps/libexpat/COPYING
+324 silly gunzTarPerm extractEntry deps/libexpat/Changes
+325 silly gunzTarPerm extractEntry deps/libexpat/ConfigureChecks.cmake
+326 silly gunzTarPerm extractEntry deps/libexpat/MANIFEST
+327 silly gunzTarPerm extractEntry deps/libexpat/Makefile.in
+328 silly gunzTarPerm extractEntry deps/libexpat/CMake.README
+329 silly gunzTarPerm extractEntry deps/libexpat/aclocal.m4
+330 silly gunzTarPerm extractEntry deps/libexpat/amiga/expat_68k_handler_stubs.c
+331 silly gunzTarPerm extractEntry deps/libexpat/amiga/Makefile
+332 silly gunzTarPerm extractEntry deps/libexpat/amiga/expat.xml
+333 silly gunzTarPerm extractEntry deps/libexpat/amiga/expat_68k.c
+334 silly gunzTarPerm extractEntry deps/libexpat/amiga/expat_68k.h
+335 silly gunzTarPerm extractEntry deps/libexpat/amiga/README.txt
+336 silly gunzTarPerm extractEntry deps/libexpat/amiga/expat_base.h
+337 silly gunzTarPerm extractEntry deps/libexpat/amiga/expat_lib.c
+338 silly gunzTarPerm extractEntry deps/libexpat/amiga/expat_vectors.c
+339 silly gunzTarPerm extractEntry deps/libexpat/amiga/include/inline4/expat.h
+340 silly gunzTarPerm extractEntry deps/libexpat/amiga/include/interfaces/expat.h
+341 silly gunzTarPerm extractEntry deps/libexpat/amiga/include/libraries/expat.h
+342 silly gunzTarPerm extractEntry deps/libexpat/amiga/include/proto/expat.h
+343 silly gunzTarPerm extractEntry deps/libexpat/amiga/launch.c
+344 silly gunzTarPerm extractEntry deps/libexpat/bcb5/expatw.mak
+345 silly gunzTarPerm extractEntry deps/libexpat/bcb5/README.txt
+346 silly gunzTarPerm extractEntry deps/libexpat/bcb5/elements.bpf
+347 silly gunzTarPerm extractEntry deps/libexpat/bcb5/elements.bpr
+348 silly gunzTarPerm extractEntry deps/libexpat/bcb5/elements.mak
+349 silly gunzTarPerm extractEntry deps/libexpat/bcb5/expat.bpf
+350 silly gunzTarPerm extractEntry deps/libexpat/bcb5/expat.bpr
+351 silly gunzTarPerm extractEntry deps/libexpat/bcb5/expat.mak
+352 silly gunzTarPerm extractEntry deps/libexpat/bcb5/expat_static.bpf
+353 silly gunzTarPerm extractEntry deps/libexpat/bcb5/expat_static.bpr
+354 silly gunzTarPerm extractEntry deps/libexpat/bcb5/expat_static.mak
+355 silly gunzTarPerm extractEntry deps/libexpat/bcb5/expatw.bpf
+356 verbose write writing to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/package.json
+357 info preinstall joi@6.10.1
+358 verbose readDependencies loading dependencies from /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/package.json
+359 silly prepareForInstallMany adding topo@1.x.x from joi dependencies
+360 silly prepareForInstallMany adding isemail@1.x.x from joi dependencies
+361 silly prepareForInstallMany adding moment@2.x.x from joi dependencies
+362 verbose readDependencies loading dependencies from /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/package.json
+363 silly gunzTarPerm extractEntry deps/libexpat/bcb5/expatw.bpr
+364 silly cache add args [ 'topo@1.x.x', null ]
+365 verbose cache add spec topo@1.x.x
+366 silly cache add args [ 'isemail@1.x.x', null ]
+367 verbose cache add spec isemail@1.x.x
+368 silly cache add parsed spec Result {
+368 silly cache add   raw: 'topo@1.x.x',
+368 silly cache add   scope: null,
+368 silly cache add   name: 'topo',
+368 silly cache add   rawSpec: '1.x.x',
+368 silly cache add   spec: '>=1.0.0 <2.0.0',
+368 silly cache add   type: 'range' }
+369 silly addNamed topo@>=1.0.0 <2.0.0
+370 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for topo
+371 silly addNameRange { name: 'topo', range: '>=1.0.0 <2.0.0', hasData: false }
+372 silly mapToRegistry name topo
+373 silly mapToRegistry using default registry
+374 silly mapToRegistry registry https://registry.npmjs.org/
+375 silly mapToRegistry uri https://registry.npmjs.org/topo
+376 verbose addNameRange registry:https://registry.npmjs.org/topo not in flight; fetching
+377 silly cache add parsed spec Result {
+377 silly cache add   raw: 'isemail@1.x.x',
+377 silly cache add   scope: null,
+377 silly cache add   name: 'isemail',
+377 silly cache add   rawSpec: '1.x.x',
+377 silly cache add   spec: '>=1.0.0 <2.0.0',
+377 silly cache add   type: 'range' }
+378 silly addNamed isemail@>=1.0.0 <2.0.0
+379 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for isemail
+380 silly addNameRange { name: 'isemail', range: '>=1.0.0 <2.0.0', hasData: false }
+381 silly mapToRegistry name isemail
+382 silly mapToRegistry using default registry
+383 silly mapToRegistry registry https://registry.npmjs.org/
+384 silly mapToRegistry uri https://registry.npmjs.org/isemail
+385 verbose addNameRange registry:https://registry.npmjs.org/isemail not in flight; fetching
+386 silly cache add args [ 'moment@2.x.x', null ]
+387 verbose cache add spec moment@2.x.x
+388 silly cache add parsed spec Result {
+388 silly cache add   raw: 'moment@2.x.x',
+388 silly cache add   scope: null,
+388 silly cache add   name: 'moment',
+388 silly cache add   rawSpec: '2.x.x',
+388 silly cache add   spec: '>=2.0.0 <3.0.0',
+388 silly cache add   type: 'range' }
+389 silly addNamed moment@>=2.0.0 <3.0.0
+390 verbose addNamed ">=2.0.0 <3.0.0" is a valid semver range for moment
+391 silly addNameRange { name: 'moment', range: '>=2.0.0 <3.0.0', hasData: false }
+392 silly mapToRegistry name moment
+393 silly mapToRegistry using default registry
+394 silly mapToRegistry registry https://registry.npmjs.org/
+395 silly mapToRegistry uri https://registry.npmjs.org/moment
+396 verbose addNameRange registry:https://registry.npmjs.org/moment not in flight; fetching
+397 verbose request uri https://registry.npmjs.org/topo
+398 verbose request no auth needed
+399 info attempt registry request try #1 at 11:53:34 AM
+400 verbose etag "7V8MN1FY9ATW7TKHEJBG1B54S"
+401 http request GET https://registry.npmjs.org/topo
+402 verbose request uri https://registry.npmjs.org/isemail
+403 verbose request no auth needed
+404 info attempt registry request try #1 at 11:53:34 AM
+405 verbose etag "BEA64JP93KF9VFWAXH6UGHHHY"
+406 http request GET https://registry.npmjs.org/isemail
+407 verbose request uri https://registry.npmjs.org/moment
+408 verbose request no auth needed
+409 info attempt registry request try #1 at 11:53:34 AM
+410 verbose etag "DWQOX3334952S3MUVTOMS6IVV"
+411 http request GET https://registry.npmjs.org/moment
+412 silly gunzTarPerm extractEntry deps/libexpat/bcb5/all_projects.bpg
+413 silly gunzTarPerm extractEntry deps/libexpat/bcb5/expatw_static.bpf
+414 silly gunzTarPerm extractEntry deps/libexpat/bcb5/expatw_static.bpr
+415 silly gunzTarPerm extractEntry deps/libexpat/bcb5/expatw_static.mak
+416 silly gunzTarPerm extractEntry deps/libexpat/bcb5/libexpat_mtd.def
+417 silly gunzTarPerm extractEntry deps/libexpat/bcb5/libexpatw_mtd.def
+418 silly gunzTarPerm extractEntry deps/libexpat/bcb5/makefile.mak
+419 silly gunzTarPerm extractEntry deps/libexpat/bcb5/outline.bpf
+420 silly gunzTarPerm extractEntry deps/libexpat/bcb5/outline.bpr
+421 silly gunzTarPerm extractEntry deps/libexpat/bcb5/outline.mak
+422 silly gunzTarPerm extractEntry deps/libexpat/bcb5/setup.bat
+423 silly gunzTarPerm extractEntry deps/libexpat/bcb5/xmlwf.bpf
+424 silly gunzTarPerm extractEntry deps/libexpat/bcb5/xmlwf.bpr
+425 silly gunzTarPerm extractEntry deps/libexpat/bcb5/xmlwf.mak
+426 silly gunzTarPerm extractEntry deps/libexpat/configure
+427 silly gunzTarPerm extractEntry deps/libexpat/configure.in
+428 silly gunzTarPerm extractEntry deps/libexpat/conftools/PrintPath
+429 silly gunzTarPerm extractEntry deps/libexpat/conftools/ac_c_bigendian_cross.m4
+430 silly gunzTarPerm extractEntry deps/libexpat/conftools/config.guess
+431 silly gunzTarPerm extractEntry deps/libexpat/conftools/config.sub
+432 silly gunzTarPerm extractEntry deps/libexpat/conftools/expat.m4
+433 silly gunzTarPerm extractEntry deps/libexpat/conftools/get-version.sh
+434 silly gunzTarPerm extractEntry deps/libexpat/conftools/install-sh
+435 silly gunzTarPerm extractEntry deps/libexpat/conftools/ltmain.sh
+436 silly gunzTarPerm extractEntry deps/libexpat/conftools/mkinstalldirs
+437 silly gunzTarPerm extractEntry deps/libexpat/CMakeLists.txt
+438 silly gunzTarPerm extractEntry deps/libexpat/examples/elements.c
+439 silly gunzTarPerm extractEntry deps/libexpat/examples/elements.dsp
+440 silly gunzTarPerm extractEntry deps/libexpat/examples/outline.c
+441 silly gunzTarPerm extractEntry deps/libexpat/examples/outline.dsp
+442 silly gunzTarPerm extractEntry deps/libexpat/expat.dsw
+443 silly gunzTarPerm extractEntry deps/libexpat/expat.pc.in
+444 silly gunzTarPerm extractEntry deps/libexpat/expat_config.h
+445 silly gunzTarPerm extractEntry deps/libexpat/expat_config.h.cmake
+446 silly gunzTarPerm extractEntry deps/libexpat/expat_config.h.in
+447 silly gunzTarPerm extractEntry deps/libexpat/lib/libexpat.def
+448 silly gunzTarPerm extractEntry deps/libexpat/lib/Makefile.MPW
+449 silly gunzTarPerm extractEntry deps/libexpat/lib/ascii.h
+450 silly gunzTarPerm extractEntry deps/libexpat/lib/asciitab.h
+451 silly gunzTarPerm extractEntry deps/libexpat/lib/expat.dsp
+452 silly gunzTarPerm extractEntry deps/libexpat/lib/expat.h
+453 silly gunzTarPerm extractEntry deps/libexpat/lib/expat_external.h
+454 silly gunzTarPerm extractEntry deps/libexpat/lib/expat_static.dsp
+455 silly gunzTarPerm extractEntry deps/libexpat/lib/expatw.dsp
+456 silly gunzTarPerm extractEntry deps/libexpat/lib/expatw_static.dsp
+457 silly gunzTarPerm extractEntry deps/libexpat/lib/iasciitab.h
+458 silly gunzTarPerm extractEntry deps/libexpat/lib/internal.h
+459 silly gunzTarPerm extractEntry deps/libexpat/lib/latin1tab.h
+460 silly gunzTarPerm extractEntry deps/libexpat/lib/amigaconfig.h
+461 silly gunzTarPerm extractEntry deps/libexpat/lib/libexpatw.def
+462 silly gunzTarPerm extractEntry deps/libexpat/lib/macconfig.h
+463 silly gunzTarPerm extractEntry deps/libexpat/lib/nametab.h
+464 silly gunzTarPerm extractEntry deps/libexpat/lib/utf8tab.h
+465 silly gunzTarPerm extractEntry deps/libexpat/lib/winconfig.h
+466 silly gunzTarPerm extractEntry deps/libexpat/lib/xmlparse.c
+467 silly gunzTarPerm extractEntry deps/libexpat/lib/xmlrole.c
+468 silly gunzTarPerm extractEntry deps/libexpat/lib/xmlrole.h
+469 silly gunzTarPerm extractEntry deps/libexpat/lib/xmltok.c
+470 silly gunzTarPerm extractEntry deps/libexpat/lib/xmltok.h
+471 silly gunzTarPerm extractEntry deps/libexpat/lib/xmltok_impl.c
+472 silly gunzTarPerm extractEntry deps/libexpat/lib/xmltok_impl.h
+473 silly gunzTarPerm extractEntry deps/libexpat/lib/xmltok_ns.c
+474 silly gunzTarPerm extractEntry deps/libexpat/libexpat.gyp
+475 silly gunzTarPerm extractEntry deps/libexpat/m4/libtool.m4
+476 silly gunzTarPerm extractEntry deps/libexpat/m4/ltoptions.m4
+477 silly gunzTarPerm extractEntry deps/libexpat/m4/ltsugar.m4
+478 silly gunzTarPerm extractEntry deps/libexpat/m4/ltversion.m4
+479 silly gunzTarPerm extractEntry deps/libexpat/m4/lt~obsolete.m4
+480 silly gunzTarPerm extractEntry deps/libexpat/tests/README.txt
+481 silly gunzTarPerm extractEntry deps/libexpat/tests/benchmark/README.txt
+482 silly gunzTarPerm extractEntry deps/libexpat/tests/benchmark/benchmark.c
+483 silly gunzTarPerm extractEntry deps/libexpat/tests/benchmark/benchmark.dsp
+484 silly gunzTarPerm extractEntry deps/libexpat/tests/benchmark/benchmark.dsw
+485 silly gunzTarPerm extractEntry deps/libexpat/tests/chardata.c
+486 silly gunzTarPerm extractEntry deps/libexpat/tests/chardata.h
+487 silly gunzTarPerm extractEntry deps/libexpat/tests/minicheck.c
+488 silly gunzTarPerm extractEntry deps/libexpat/tests/minicheck.h
+489 silly gunzTarPerm extractEntry deps/libexpat/tests/runtests.c
+490 silly gunzTarPerm extractEntry deps/libexpat/tests/runtestspp.cpp
+491 silly gunzTarPerm extractEntry deps/libexpat/tests/xmltest.sh
+492 silly gunzTarPerm extractEntry deps/libexpat/version.c
+493 silly gunzTarPerm extractEntry deps/libexpat/vms/README.vms
+494 silly gunzTarPerm extractEntry deps/libexpat/vms/descrip.mms
+495 silly gunzTarPerm extractEntry deps/libexpat/vms/expat_config.h
+496 silly gunzTarPerm extractEntry deps/libexpat/win32/MANIFEST.txt
+497 silly gunzTarPerm extractEntry deps/libexpat/win32/README.txt
+498 silly gunzTarPerm extractEntry deps/libexpat/win32/expat.iss
+499 silly gunzTarPerm extractEntry deps/libexpat/xmlwf/xmlfile.h
+500 silly gunzTarPerm extractEntry deps/libexpat/xmlwf/codepage.c
+501 silly gunzTarPerm extractEntry deps/libexpat/xmlwf/ct.c
+502 silly gunzTarPerm extractEntry deps/libexpat/xmlwf/filemap.h
+503 silly gunzTarPerm extractEntry deps/libexpat/xmlwf/readfilemap.c
+504 silly gunzTarPerm extractEntry deps/libexpat/xmlwf/unixfilemap.c
+505 silly gunzTarPerm extractEntry deps/libexpat/xmlwf/win32filemap.c
+506 silly gunzTarPerm extractEntry deps/libexpat/xmlwf/xmlfile.c
+507 silly gunzTarPerm extractEntry deps/libexpat/xmlwf/codepage.h
+508 silly gunzTarPerm extractEntry deps/libexpat/xmlwf/xmlmime.c
+509 silly gunzTarPerm extractEntry deps/libexpat/xmlwf/xmlmime.h
+510 silly gunzTarPerm extractEntry deps/libexpat/xmlwf/xmltchar.h
+511 silly gunzTarPerm extractEntry deps/libexpat/xmlwf/xmlurl.h
+512 silly gunzTarPerm extractEntry deps/libexpat/xmlwf/xmlwf.c
+513 silly gunzTarPerm extractEntry deps/libexpat/xmlwf/xmlwf.dsp
+514 silly gunzTarPerm extractEntry deps/libexpat/xmlwf/xmlwin32url.cxx
+515 silly gunzTarPerm extractEntry lib/node-expat.js
+516 silly gunzTarPerm extractEntry node-expat.cc
+517 http 304 https://registry.npmjs.org/topo
+518 silly get cb [ 304,
+518 silly get   { date: 'Thu, 07 Apr 2016 06:20:43 GMT',
+518 silly get     via: '1.1 varnish',
+518 silly get     'cache-control': 'max-age=300',
+518 silly get     etag: '"7V8MN1FY9ATW7TKHEJBG1B54S"',
+518 silly get     age: '40',
+518 silly get     connection: 'keep-alive',
+518 silly get     'x-served-by': 'cache-sin6922-SIN',
+518 silly get     'x-cache': 'HIT',
+518 silly get     'x-cache-hits': '1',
+518 silly get     'x-timer': 'S1460010043.420286,VS0,VE0',
+518 silly get     vary: 'Accept-Encoding' } ]
+519 verbose etag https://registry.npmjs.org/topo from cache
+520 verbose get saving topo to /root/.npm/registry.npmjs.org/topo/.cache.json
+521 http 304 https://registry.npmjs.org/isemail
+522 silly get cb [ 304,
+522 silly get   { date: 'Thu, 07 Apr 2016 06:20:43 GMT',
+522 silly get     via: '1.1 varnish',
+522 silly get     'cache-control': 'max-age=300',
+522 silly get     etag: '"BEA64JP93KF9VFWAXH6UGHHHY"',
+522 silly get     age: '40',
+522 silly get     connection: 'keep-alive',
+522 silly get     'x-served-by': 'cache-sin6926-SIN',
+522 silly get     'x-cache': 'HIT',
+522 silly get     'x-cache-hits': '1',
+522 silly get     'x-timer': 'S1460010043.422386,VS0,VE0',
+522 silly get     vary: 'Accept-Encoding' } ]
+523 verbose etag https://registry.npmjs.org/isemail from cache
+524 verbose get saving isemail to /root/.npm/registry.npmjs.org/isemail/.cache.json
+525 http 304 https://registry.npmjs.org/moment
+526 silly get cb [ 304,
+526 silly get   { date: 'Thu, 07 Apr 2016 06:20:43 GMT',
+526 silly get     via: '1.1 varnish',
+526 silly get     'cache-control': 'max-age=300',
+526 silly get     etag: '"DWQOX3334952S3MUVTOMS6IVV"',
+526 silly get     age: '264',
+526 silly get     connection: 'keep-alive',
+526 silly get     'x-served-by': 'cache-sin6922-SIN',
+526 silly get     'x-cache': 'HIT',
+526 silly get     'x-cache-hits': '11',
+526 silly get     'x-timer': 'S1460010043.424762,VS0,VE0',
+526 silly get     vary: 'Accept-Encoding' } ]
+527 verbose etag https://registry.npmjs.org/moment from cache
+528 verbose get saving moment to /root/.npm/registry.npmjs.org/moment/.cache.json
+529 silly addNameRange number 2 { name: 'topo', range: '>=1.0.0 <2.0.0', hasData: true }
+530 silly addNameRange versions [ 'topo',
+530 silly addNameRange   [ '1.0.0', '1.0.1', '1.0.2', '1.0.3', '1.1.0', '2.0.0' ] ]
+531 silly addNamed topo@1.1.0
+532 verbose addNamed "1.1.0" is a plain semver version for topo
+533 silly addNameRange number 2 { name: 'isemail', range: '>=1.0.0 <2.0.0', hasData: true }
+534 silly addNameRange versions [ 'isemail',
+534 silly addNameRange   [ '0.1.0',
+534 silly addNameRange     '0.1.1',
+534 silly addNameRange     '0.1.2',
+534 silly addNameRange     '1.0.0',
+534 silly addNameRange     '1.0.1',
+534 silly addNameRange     '1.1.0',
+534 silly addNameRange     '1.1.1',
+534 silly addNameRange     '1.1.2',
+534 silly addNameRange     '1.2.0',
+534 silly addNameRange     '2.0.0',
+534 silly addNameRange     '2.1.0' ] ]
+535 silly addNamed isemail@1.2.0
+536 verbose addNamed "1.2.0" is a plain semver version for isemail
+537 silly addNameRange number 2 { name: 'moment', range: '>=2.0.0 <3.0.0', hasData: true }
+538 silly addNameRange versions [ 'moment',
+538 silly addNameRange   [ '1.0.0',
+538 silly addNameRange     '1.0.1',
+538 silly addNameRange     '1.1.0',
+538 silly addNameRange     '1.1.1',
+538 silly addNameRange     '1.2.0',
+538 silly addNameRange     '1.3.0',
+538 silly addNameRange     '1.4.0',
+538 silly addNameRange     '1.5.0',
+538 silly addNameRange     '1.5.1',
+538 silly addNameRange     '1.6.0',
+538 silly addNameRange     '1.6.1',
+538 silly addNameRange     '1.6.2',
+538 silly addNameRange     '1.7.0',
+538 silly addNameRange     '1.7.1',
+538 silly addNameRange     '1.7.2',
+538 silly addNameRange     '2.0.0',
+538 silly addNameRange     '2.1.0',
+538 silly addNameRange     '2.2.1',
+538 silly addNameRange     '2.3.0',
+538 silly addNameRange     '2.3.1',
+538 silly addNameRange     '2.4.0',
+538 silly addNameRange     '2.5.0',
+538 silly addNameRange     '2.5.1',
+538 silly addNameRange     '2.6.0',
+538 silly addNameRange     '2.7.0',
+538 silly addNameRange     '2.8.1',
+538 silly addNameRange     '2.8.2',
+538 silly addNameRange     '2.8.3',
+538 silly addNameRange     '2.8.4',
+538 silly addNameRange     '2.9.0',
+538 silly addNameRange     '2.10.2',
+538 silly addNameRange     '2.10.3',
+538 silly addNameRange     '2.10.5',
+538 silly addNameRange     '2.10.6',
+538 silly addNameRange     '2.11.0',
+538 silly addNameRange     '2.11.1',
+538 silly addNameRange     '2.11.2',
+538 silly addNameRange     '2.12.0' ] ]
+539 silly addNamed moment@2.12.0
+540 verbose addNamed "2.12.0" is a plain semver version for moment
+541 silly cache afterAdd topo@1.1.0
+542 verbose afterAdd /root/.npm/topo/1.1.0/package/package.json not in flight; writing
+543 silly cache afterAdd isemail@1.2.0
+544 verbose afterAdd /root/.npm/isemail/1.2.0/package/package.json not in flight; writing
+545 silly cache afterAdd moment@2.12.0
+546 verbose afterAdd /root/.npm/moment/2.12.0/package/package.json not in flight; writing
+547 verbose afterAdd /root/.npm/topo/1.1.0/package/package.json written
+548 verbose afterAdd /root/.npm/isemail/1.2.0/package/package.json written
+549 verbose afterAdd /root/.npm/moment/2.12.0/package/package.json written
+550 silly install resolved [ { name: 'topo',
+550 silly install resolved     description: 'Topological sorting with grouping support',
+550 silly install resolved     version: '1.1.0',
+550 silly install resolved     repository: { type: 'git', url: 'git://github.com/hapijs/topo.git' },
+550 silly install resolved     main: 'lib/index.js',
+550 silly install resolved     keywords: [ 'topological', 'sort', 'toposort', 'topsort' ],
+550 silly install resolved     engines: { node: '>=0.10.40' },
+550 silly install resolved     dependencies: { hoek: '2.x.x' },
+550 silly install resolved     devDependencies: { lab: '6.x.x', code: '1.x.x' },
+550 silly install resolved     scripts:
+550 silly install resolved      { test: 'lab -a code -t 100 -L',
+550 silly install resolved        'test-cov-html': 'lab -a code -t 100 -L -r html -o coverage.html' },
+550 silly install resolved     license: 'BSD-3-Clause',
+550 silly install resolved     gitHead: '4cbd80aba9674c9c338a19ebafc2bfa29f664a29',
+550 silly install resolved     bugs: { url: 'https://github.com/hapijs/topo/issues' },
+550 silly install resolved     homepage: 'https://github.com/hapijs/topo',
+550 silly install resolved     _id: 'topo@1.1.0',
+550 silly install resolved     _shasum: 'e9d751615d1bb87dc865db182fa1ca0a5ef536d5',
+550 silly install resolved     _from: 'topo@>=1.0.0 <2.0.0',
+550 silly install resolved     _npmVersion: '1.4.28',
+550 silly install resolved     _npmUser: { name: 'devinivy', email: 'devin@bigroomstudios.com' },
+550 silly install resolved     maintainers: [ [Object], [Object] ],
+550 silly install resolved     dist:
+550 silly install resolved      { shasum: 'e9d751615d1bb87dc865db182fa1ca0a5ef536d5',
+550 silly install resolved        tarball: 'https://registry.npmjs.org/topo/-/topo-1.1.0.tgz' },
+550 silly install resolved     directories: {},
+550 silly install resolved     _resolved: 'https://registry.npmjs.org/topo/-/topo-1.1.0.tgz',
+550 silly install resolved     readme: 'ERROR: No README data found!' },
+550 silly install resolved   { name: 'isemail',
+550 silly install resolved     version: '1.2.0',
+550 silly install resolved     author: { name: 'Eli Skeggs', email: 'skeggse@gmail.com' },
+550 silly install resolved     description: 'validate an email address according to RFCs 5321, 5322, and others',
+550 silly install resolved     main: './index',
+550 silly install resolved     scripts:
+550 silly install resolved      { test: 'lab -r console -o stdout -r lcov -o coverage.lcov -a code -L',
+550 silly install resolved        'test-cov-html': 'lab -r html -o coverage.html -a code' },
+550 silly install resolved     repository:
+550 silly install resolved      { type: 'git',
+550 silly install resolved        url: 'git+https://github.com/hapijs/isemail.git' },
+550 silly install resolved     homepage: 'https://github.com/hapijs/isemail',
+550 silly install resolved     bugs: { url: 'https://github.com/hapijs/isemail/issues' },
+550 silly install resolved     keywords:
+550 silly install resolved      [ 'isemail',
+550 silly install resolved        'validation',
+550 silly install resolved        'check',
+550 silly install resolved        'checking',
+550 silly install resolved        'verification',
+550 silly install resolved        'email',
+550 silly install resolved        'address',
+550 silly install resolved        'email address' ],
+550 silly install resolved     devDependencies: { code: '^1.5.0', lab: '^5.16.1' },
+550 silly install resolved     license: 'BSD-2-Clause',
+550 silly install resolved     engines: { node: '>=0.10' },
+550 silly install resolved     gitHead: '9441961a6c9979dc0e339971b111e25dc1a5b2fd',
+550 silly install resolved     _id: 'isemail@1.2.0',
+550 silly install resolved     _shasum: 'be03df8cc3e29de4d2c5df6501263f1fa4595e9a',
+550 silly install resolved     _from: 'isemail@>=1.0.0 <2.0.0',
+550 silly install resolved     _npmVersion: '2.14.2',
+550 silly install resolved     _nodeVersion: '4.0.0',
+550 silly install resolved     _npmUser: { name: 'skeggse', email: 'skeggse@gmail.com' },
+550 silly install resolved     dist:
+550 silly install resolved      { shasum: 'be03df8cc3e29de4d2c5df6501263f1fa4595e9a',
+550 silly install resolved        tarball: 'https://registry.npmjs.org/isemail/-/isemail-1.2.0.tgz' },
+550 silly install resolved     maintainers: [ [Object] ],
+550 silly install resolved     directories: {},
+550 silly install resolved     _resolved: 'https://registry.npmjs.org/isemail/-/isemail-1.2.0.tgz',
+550 silly install resolved     readme: 'ERROR: No README data found!' },
+550 silly install resolved   { name: 'moment',
+550 silly install resolved     version: '2.12.0',
+550 silly install resolved     description: 'Parse, validate, manipulate, and display dates',
+550 silly install resolved     homepage: 'http://momentjs.com',
+550 silly install resolved     author:
+550 silly install resolved      { name: 'Iskren Ivov Chernev',
+550 silly install resolved        email: 'iskren.chernev@gmail.com',
+550 silly install resolved        url: 'https://github.com/ichernev' },
+550 silly install resolved     contributors: [ [Object], [Object], [Object], [Object], [Object] ],
+550 silly install resolved     keywords:
+550 silly install resolved      [ 'moment',
+550 silly install resolved        'date',
+550 silly install resolved        'time',
+550 silly install resolved        'parse',
+550 silly install resolved        'format',
+550 silly install resolved        'validate',
+550 silly install resolved        'i18n',
+550 silly install resolved        'l10n',
+550 silly install resolved        'ender' ],
+550 silly install resolved     main: './moment.js',
+550 silly install resolved     engines: { node: '*' },
+550 silly install resolved     repository: { type: 'git', url: 'git+https://github.com/moment/moment.git' },
+550 silly install resolved     bugs: { url: 'https://github.com/moment/moment/issues' },
+550 silly install resolved     license: 'MIT',
+550 silly install resolved     devDependencies:
+550 silly install resolved      { 'uglify-js': 'latest',
+550 silly install resolved        'es6-promise': 'latest',
+550 silly install resolved        grunt: 'latest',
+550 silly install resolved        'grunt-cli': 'latest',
+550 silly install resolved        benchmark: 'latest',
+550 silly install resolved        esperanto: 'latest',
+550 silly install resolved        'grunt-contrib-clean': 'latest',
+550 silly install resolved        'grunt-contrib-concat': 'latest',
+550 silly install resolved        'grunt-contrib-copy': 'latest',
+550 silly install resolved        'grunt-contrib-jshint': 'latest',
+550 silly install resolved        'grunt-contrib-uglify': 'latest',
+550 silly install resolved        'grunt-contrib-watch': 'latest',
+550 silly install resolved        'grunt-env': 'latest',
+550 silly install resolved        'grunt-jscs': 'latest',
+550 silly install resolved        'grunt-karma': 'latest',
+550 silly install resolved        'grunt-nuget': 'latest',
+550 silly install resolved        'grunt-benchmark': 'latest',
+550 silly install resolved        'grunt-string-replace': 'latest',
+550 silly install resolved        'grunt-exec': 'latest',
+550 silly install resolved        'load-grunt-tasks': 'latest',
+550 silly install resolved        karma: 'latest',
+550 silly install resolved        'karma-chrome-launcher': 'latest',
+550 silly install resolved        'karma-firefox-launcher': 'latest',
+550 silly install resolved        'karma-qunit': 'latest',
+550 silly install resolved        'karma-sauce-launcher': 'latest',
+550 silly install resolved        qunit: '^0.7.5',
+550 silly install resolved        'qunit-cli': '^0.1.4',
+550 silly install resolved        spacejam: 'latest',
+550 silly install resolved        coveralls: '^2.11.2',
+550 silly install resolved        nyc: '^2.1.4' },
+550 silly install resolved     ender: './ender.js',
+550 silly install resolved     dojoBuild: 'package.js',
+550 silly install resolved     jspm: { files: [Object], map: [Object], buildConfig: [Object] },
+550 silly install resolved     scripts:
+550 silly install resolved      { test: 'grunt test',
+550 silly install resolved        coverage: 'nyc npm test && nyc report',
+550 silly install resolved        coveralls: 'nyc npm test && nyc report --reporter=text-lcov | coveralls' },
+550 silly install resolved     spm: { main: 'moment.js', output: [Object] },
+550 silly install resolved     _id: 'moment@2.12.0',
+550 silly install resolved     dist:
+550 silly install resolved      { shasum: 'dc2560d19838d6c0731b1a6afa04675264d360d6',
+550 silly install resolved        tarball: 'https://registry.npmjs.org/moment/-/moment-2.12.0.tgz' },
+550 silly install resolved     _from: 'moment@>=2.0.0 <3.0.0',
+550 silly install resolved     _npmVersion: '1.4.6',
+550 silly install resolved     _npmUser: { name: 'ichernev', email: 'iskren.chernev@gmail.com' },
+550 silly install resolved     maintainers: [ [Object], [Object] ],
+550 silly install resolved     _npmOperationalInternal:
+550 silly install resolved      { host: 'packages-13-west.internal.npmjs.com',
+550 silly install resolved        tmp: 'tmp/moment-2.12.0.tgz_1457342616857_0.9301705942489207' },
+550 silly install resolved     directories: {},
+550 silly install resolved     _shasum: 'dc2560d19838d6c0731b1a6afa04675264d360d6',
+550 silly install resolved     _resolved: 'https://registry.npmjs.org/moment/-/moment-2.12.0.tgz',
+550 silly install resolved     readme: 'ERROR: No README data found!' } ]
+551 info install topo@1.1.0 into /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi
+552 info install isemail@1.2.0 into /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi
+553 info install moment@2.12.0 into /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi
+554 info installOne topo@1.1.0
+555 verbose installOne of topo to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi not in flight; installing
+556 info installOne isemail@1.2.0
+557 verbose installOne of isemail to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi not in flight; installing
+558 info installOne moment@2.12.0
+559 verbose installOne of moment to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi not in flight; installing
+560 verbose lock using /root/.npm/_locks/topo-57403c1df5176485.lock for /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/topo
+561 verbose lock using /root/.npm/_locks/isemail-c9e6f82b4b04416c.lock for /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/isemail
+562 verbose lock using /root/.npm/_locks/moment-f82cb0d0097af6ef.lock for /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/moment
+563 silly install write writing topo 1.1.0 to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/topo
+564 silly install write writing isemail 1.2.0 to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/isemail
+565 silly install write writing moment 2.12.0 to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/moment
+566 verbose unbuild lib/node_modules/xml2json/node_modules/joi/node_modules/topo
+567 verbose unbuild lib/node_modules/xml2json/node_modules/joi/node_modules/isemail
+568 verbose unbuild lib/node_modules/xml2json/node_modules/joi/node_modules/moment
+569 silly gentlyRm /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/topo is being purged from base /root/.nvm/versions/node/v4.0.0
+570 verbose gentlyRm don't care about contents; nuking /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/topo
+571 silly gentlyRm /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/isemail is being purged from base /root/.nvm/versions/node/v4.0.0
+572 verbose gentlyRm don't care about contents; nuking /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/isemail
+573 silly gentlyRm /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/moment is being purged from base /root/.nvm/versions/node/v4.0.0
+574 verbose gentlyRm don't care about contents; nuking /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/moment
+575 verbose tar unpack /root/.npm/topo/1.1.0/package.tgz
+576 verbose tar unpacking to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/topo
+577 silly gentlyRm /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/topo is being purged
+578 verbose gentlyRm don't care about contents; nuking /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/topo
+579 verbose tar unpack /root/.npm/isemail/1.2.0/package.tgz
+580 verbose tar unpacking to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/isemail
+581 silly gentlyRm /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/isemail is being purged
+582 verbose gentlyRm don't care about contents; nuking /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/isemail
+583 verbose tar unpack /root/.npm/moment/2.12.0/package.tgz
+584 verbose tar unpacking to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/moment
+585 silly gentlyRm /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/moment is being purged
+586 verbose gentlyRm don't care about contents; nuking /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/moment
+587 silly gunzTarPerm modes [ '755', '644' ]
+588 silly gunzTarPerm modes [ '755', '644' ]
+589 silly gunzTarPerm modes [ '755', '644' ]
+590 silly gunzTarPerm extractEntry package.json
+591 silly gunzTarPerm extractEntry package.json
+592 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+593 silly gunzTarPerm extractEntry package.json
+594 silly gunzTarPerm extractEntry .npmignore
+595 silly gunzTarPerm extractEntry README.md
+596 silly gunzTarPerm extractEntry .npmignore
+597 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+598 silly gunzTarPerm extractEntry README.md
+599 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+600 silly gunzTarPerm extractEntry .npmignore
+601 silly gunzTarPerm extractEntry README.md
+602 silly gunzTarPerm extractEntry LICENSE
+603 silly gunzTarPerm extractEntry CONTRIBUTING.md
+604 silly gunzTarPerm extractEntry LICENSE
+605 silly gunzTarPerm modified mode [ 'LICENSE', 438, 420 ]
+606 silly gunzTarPerm extractEntry index.js
+607 silly gunzTarPerm modified mode [ 'index.js', 438, 420 ]
+608 silly gunzTarPerm extractEntry LICENSE
+609 silly gunzTarPerm extractEntry ender.js
+610 silly gunzTarPerm extractEntry .travis.yml
+611 silly gunzTarPerm extractEntry lib/index.js
+612 silly gunzTarPerm extractEntry .travis.yml
+613 silly gunzTarPerm modified mode [ '.travis.yml', 438, 420 ]
+614 silly gunzTarPerm extractEntry Makefile
+615 silly gunzTarPerm modified mode [ 'Makefile', 438, 420 ]
+616 silly gunzTarPerm extractEntry moment.js
+617 silly gunzTarPerm extractEntry package.js
+618 silly gunzTarPerm extractEntry API.md
+619 silly gunzTarPerm extractEntry test/index.js
+620 silly gunzTarPerm extractEntry lib/isemail.js
+621 silly gunzTarPerm modified mode [ 'lib/isemail.js', 438, 420 ]
+622 silly gunzTarPerm extractEntry test/isemail.js
+623 silly gunzTarPerm modified mode [ 'test/isemail.js', 438, 420 ]
+624 silly gunzTarPerm extractEntry test/mocha.opts
+625 silly gunzTarPerm modified mode [ 'test/mocha.opts', 438, 420 ]
+626 silly gunzTarPerm extractEntry test/tests.json
+627 silly gunzTarPerm modified mode [ 'test/tests.json', 438, 420 ]
+628 silly gunzTarPerm extractEntry src/moment.js
+629 silly gunzTarPerm extractEntry src/lib/create/check-overflow.js
+630 silly gunzTarPerm extractEntry src/lib/create/from-anything.js
+631 silly gunzTarPerm extractEntry src/lib/create/from-array.js
+632 silly gunzTarPerm extractEntry src/lib/create/from-object.js
+633 silly gunzTarPerm extractEntry src/lib/create/from-string-and-array.js
+634 silly gunzTarPerm extractEntry src/lib/create/date-from-array.js
+635 silly gunzTarPerm extractEntry src/lib/create/from-string.js
+636 silly gunzTarPerm extractEntry src/lib/create/local.js
+637 verbose write writing to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/topo/package.json
+638 info preinstall topo@1.1.0
+639 verbose readDependencies loading dependencies from /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/topo/package.json
+640 verbose readDependencies loading dependencies from /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/topo/package.json
+641 verbose write writing to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/package.json
+642 silly install resolved []
+643 verbose about to build /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/topo
+644 info build /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/topo
+645 info preinstall node-expat@2.3.13
+646 info linkStuff topo@1.1.0
+647 silly linkStuff topo@1.1.0 has /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules as its parent node_modules
+648 silly linkStuff topo@1.1.0 is part of a global install
+649 silly linkStuff topo@1.1.0 is installed into a global node_modules
+650 verbose readDependencies loading dependencies from /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/package.json
+651 silly prepareForInstallMany adding bindings@^1.2.1 from node-expat dependencies
+652 silly prepareForInstallMany adding nan@^2.2.0 from node-expat dependencies
+653 verbose readDependencies loading dependencies from /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/package.json
+654 silly gunzTarPerm extractEntry src/lib/create/parsing-flags.js
+655 verbose linkBins topo@1.1.0
+656 verbose linkMans topo@1.1.0
+657 verbose rebuildBundles topo@1.1.0
+658 info install topo@1.1.0
+659 silly cache add args [ 'bindings@^1.2.1', null ]
+660 verbose cache add spec bindings@^1.2.1
+661 silly cache add args [ 'nan@^2.2.0', null ]
+662 verbose cache add spec nan@^2.2.0
+663 silly cache add parsed spec Result {
+663 silly cache add   raw: 'bindings@^1.2.1',
+663 silly cache add   scope: null,
+663 silly cache add   name: 'bindings',
+663 silly cache add   rawSpec: '^1.2.1',
+663 silly cache add   spec: '>=1.2.1 <2.0.0',
+663 silly cache add   type: 'range' }
+664 silly addNamed bindings@>=1.2.1 <2.0.0
+665 verbose addNamed ">=1.2.1 <2.0.0" is a valid semver range for bindings
+666 silly addNameRange { name: 'bindings', range: '>=1.2.1 <2.0.0', hasData: false }
+667 silly mapToRegistry name bindings
+668 silly mapToRegistry using default registry
+669 silly mapToRegistry registry https://registry.npmjs.org/
+670 silly mapToRegistry uri https://registry.npmjs.org/bindings
+671 verbose addNameRange registry:https://registry.npmjs.org/bindings not in flight; fetching
+672 silly cache add parsed spec Result {
+672 silly cache add   raw: 'nan@^2.2.0',
+672 silly cache add   scope: null,
+672 silly cache add   name: 'nan',
+672 silly cache add   rawSpec: '^2.2.0',
+672 silly cache add   spec: '>=2.2.0 <3.0.0',
+672 silly cache add   type: 'range' }
+673 silly addNamed nan@>=2.2.0 <3.0.0
+674 verbose addNamed ">=2.2.0 <3.0.0" is a valid semver range for nan
+675 silly addNameRange { name: 'nan', range: '>=2.2.0 <3.0.0', hasData: false }
+676 silly mapToRegistry name nan
+677 silly mapToRegistry using default registry
+678 silly mapToRegistry registry https://registry.npmjs.org/
+679 silly mapToRegistry uri https://registry.npmjs.org/nan
+680 verbose addNameRange registry:https://registry.npmjs.org/nan not in flight; fetching
+681 info postinstall topo@1.1.0
+682 verbose unlock done using /root/.npm/_locks/topo-57403c1df5176485.lock for /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/topo
+683 verbose request uri https://registry.npmjs.org/nan
+684 verbose request no auth needed
+685 info attempt registry request try #1 at 11:53:34 AM
+686 verbose etag "2UZKQOUIL0TMX4WY7FZ5Q5HJQ"
+687 http request GET https://registry.npmjs.org/nan
+688 verbose request uri https://registry.npmjs.org/bindings
+689 verbose request no auth needed
+690 info attempt registry request try #1 at 11:53:34 AM
+691 verbose etag "1LLBF9OH58DLBEL4629U6032D"
+692 http request GET https://registry.npmjs.org/bindings
+693 silly gunzTarPerm extractEntry src/lib/create/utc.js
+694 silly gunzTarPerm extractEntry src/lib/create/valid.js
+695 silly gunzTarPerm extractEntry src/lib/create/from-string-and-format.js
+696 verbose write writing to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/isemail/package.json
+697 info preinstall isemail@1.2.0
+698 verbose readDependencies loading dependencies from /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/isemail/package.json
+699 verbose readDependencies loading dependencies from /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/isemail/package.json
+700 silly gunzTarPerm extractEntry src/lib/duration/abs.js
+701 silly install resolved []
+702 verbose about to build /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/isemail
+703 info build /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/isemail
+704 info linkStuff isemail@1.2.0
+705 silly linkStuff isemail@1.2.0 has /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules as its parent node_modules
+706 silly linkStuff isemail@1.2.0 is part of a global install
+707 silly linkStuff isemail@1.2.0 is installed into a global node_modules
+708 verbose linkBins isemail@1.2.0
+709 verbose linkMans isemail@1.2.0
+710 verbose rebuildBundles isemail@1.2.0
+711 silly gunzTarPerm extractEntry src/lib/duration/as.js
+712 silly gunzTarPerm extractEntry src/lib/duration/bubble.js
+713 info install isemail@1.2.0
+714 info postinstall isemail@1.2.0
+715 verbose unlock done using /root/.npm/_locks/isemail-c9e6f82b4b04416c.lock for /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/isemail
+716 silly gunzTarPerm extractEntry src/lib/duration/constructor.js
+717 silly gunzTarPerm extractEntry src/lib/duration/add-subtract.js
+718 silly gunzTarPerm extractEntry src/lib/duration/duration.js
+719 silly gunzTarPerm extractEntry src/lib/duration/get.js
+720 silly gunzTarPerm extractEntry src/lib/duration/humanize.js
+721 silly gunzTarPerm extractEntry src/lib/duration/iso-string.js
+722 silly gunzTarPerm extractEntry src/lib/duration/prototype.js
+723 silly gunzTarPerm extractEntry src/lib/duration/create.js
+724 silly gunzTarPerm extractEntry src/lib/format/format.js
+725 silly gunzTarPerm extractEntry src/lib/locale/calendar.js
+726 silly gunzTarPerm extractEntry src/lib/locale/formats.js
+727 silly gunzTarPerm extractEntry src/lib/locale/invalid.js
+728 silly gunzTarPerm extractEntry src/lib/locale/lists.js
+729 silly gunzTarPerm extractEntry src/lib/locale/en.js
+730 silly gunzTarPerm extractEntry src/lib/locale/locales.js
+731 silly gunzTarPerm extractEntry src/lib/locale/ordinal.js
+732 silly gunzTarPerm extractEntry src/lib/locale/pre-post-format.js
+733 silly gunzTarPerm extractEntry src/lib/locale/prototype.js
+734 silly gunzTarPerm extractEntry src/lib/locale/relative.js
+735 silly gunzTarPerm extractEntry src/lib/locale/constructor.js
+736 silly gunzTarPerm extractEntry src/lib/locale/set.js
+737 silly gunzTarPerm extractEntry src/lib/locale/locale.js
+738 silly gunzTarPerm extractEntry src/lib/moment/add-subtract.js
+739 silly gunzTarPerm extractEntry src/lib/moment/diff.js
+740 silly gunzTarPerm extractEntry src/lib/moment/format.js
+741 silly gunzTarPerm extractEntry src/lib/moment/from.js
+742 silly gunzTarPerm extractEntry src/lib/moment/creation-data.js
+743 silly gunzTarPerm extractEntry src/lib/moment/locale.js
+744 silly gunzTarPerm extractEntry src/lib/moment/min-max.js
+745 silly gunzTarPerm extractEntry src/lib/moment/moment.js
+746 silly gunzTarPerm extractEntry src/lib/moment/now.js
+747 silly gunzTarPerm extractEntry src/lib/moment/prototype.js
+748 silly gunzTarPerm extractEntry src/lib/moment/constructor.js
+749 silly gunzTarPerm extractEntry src/lib/moment/start-end-of.js
+750 silly gunzTarPerm extractEntry src/lib/moment/compare.js
+751 silly gunzTarPerm extractEntry src/lib/moment/to-type.js
+752 silly gunzTarPerm extractEntry src/lib/moment/clone.js
+753 silly gunzTarPerm extractEntry src/lib/moment/to.js
+754 silly gunzTarPerm extractEntry src/lib/moment/calendar.js
+755 silly gunzTarPerm extractEntry src/lib/moment/valid.js
+756 silly gunzTarPerm extractEntry src/lib/moment/get-set.js
+757 silly gunzTarPerm extractEntry src/lib/parse/regex.js
+758 silly gunzTarPerm extractEntry src/lib/parse/token.js
+759 silly gunzTarPerm extractEntry src/lib/units/aliases.js
+760 silly gunzTarPerm extractEntry src/lib/units/millisecond.js
+761 silly gunzTarPerm extractEntry src/lib/units/minute.js
+762 silly gunzTarPerm extractEntry src/lib/units/month.js
+763 silly gunzTarPerm extractEntry src/lib/units/hour.js
+764 silly gunzTarPerm extractEntry src/lib/units/quarter.js
+765 silly gunzTarPerm extractEntry src/lib/units/second.js
+766 silly gunzTarPerm extractEntry src/lib/units/timestamp.js
+767 silly gunzTarPerm extractEntry src/lib/units/timezone.js
+768 silly gunzTarPerm extractEntry src/lib/units/units.js
+769 silly gunzTarPerm extractEntry src/lib/units/day-of-year.js
+770 silly gunzTarPerm extractEntry src/lib/units/week-calendar-utils.js
+771 silly gunzTarPerm extractEntry src/lib/units/day-of-week.js
+772 silly gunzTarPerm extractEntry src/lib/units/week-year.js
+773 silly gunzTarPerm extractEntry src/lib/units/day-of-month.js
+774 silly gunzTarPerm extractEntry src/lib/units/week.js
+775 silly gunzTarPerm extractEntry src/lib/units/constants.js
+776 silly gunzTarPerm extractEntry src/lib/units/year.js
+777 silly gunzTarPerm extractEntry src/lib/units/offset.js
+778 silly gunzTarPerm extractEntry src/lib/utils/abs-ceil.js
+779 silly gunzTarPerm extractEntry src/lib/utils/deprecate.js
+780 silly gunzTarPerm extractEntry src/lib/utils/extend.js
+781 silly gunzTarPerm extractEntry src/lib/utils/has-own-prop.js
+782 silly gunzTarPerm extractEntry src/lib/utils/defaults.js
+783 silly gunzTarPerm extractEntry src/lib/utils/is-array.js
+784 silly gunzTarPerm extractEntry src/lib/utils/is-date.js
+785 silly gunzTarPerm extractEntry src/lib/utils/is-function.js
+786 silly gunzTarPerm extractEntry src/lib/utils/is-object.js
+787 silly gunzTarPerm extractEntry src/lib/utils/is-undefined.js
+788 silly gunzTarPerm extractEntry src/lib/utils/compare-arrays.js
+789 silly gunzTarPerm extractEntry src/lib/utils/map.js
+790 silly gunzTarPerm extractEntry src/lib/utils/abs-round.js
+791 silly gunzTarPerm extractEntry src/lib/utils/to-int.js
+792 silly gunzTarPerm extractEntry src/lib/utils/abs-floor.js
+793 silly gunzTarPerm extractEntry src/lib/utils/zero-fill.js
+794 silly gunzTarPerm extractEntry src/lib/utils/hooks.js
+795 silly gunzTarPerm extractEntry src/locale/af.js
+796 silly gunzTarPerm extractEntry src/locale/is.js
+797 silly gunzTarPerm extractEntry src/locale/it.js
+798 silly gunzTarPerm extractEntry src/locale/ja.js
+799 silly gunzTarPerm extractEntry src/locale/id.js
+800 silly gunzTarPerm extractEntry src/locale/ka.js
+801 silly gunzTarPerm extractEntry src/locale/kk.js
+802 silly gunzTarPerm extractEntry src/locale/km.js
+803 silly gunzTarPerm extractEntry src/locale/ko.js
+804 silly gunzTarPerm extractEntry src/locale/lb.js
+805 silly gunzTarPerm extractEntry src/locale/hy-am.js
+806 silly gunzTarPerm extractEntry src/locale/lo.js
+807 silly gunzTarPerm extractEntry src/locale/hu.js
+808 silly gunzTarPerm extractEntry src/locale/lt.js
+809 silly gunzTarPerm extractEntry src/locale/hr.js
+810 silly gunzTarPerm extractEntry src/locale/lv.js
+811 silly gunzTarPerm extractEntry src/locale/hi.js
+812 silly gunzTarPerm extractEntry src/locale/me.js
+813 silly gunzTarPerm extractEntry src/locale/he.js
+814 silly gunzTarPerm extractEntry src/locale/mk.js
+815 silly gunzTarPerm extractEntry src/locale/gl.js
+816 silly gunzTarPerm extractEntry src/locale/ml.js
+817 silly gunzTarPerm extractEntry src/locale/gd.js
+818 silly gunzTarPerm extractEntry src/locale/mr.js
+819 silly gunzTarPerm extractEntry src/locale/fy.js
+820 silly gunzTarPerm extractEntry src/locale/ms-my.js
+821 silly gunzTarPerm extractEntry src/locale/fr.js
+822 silly gunzTarPerm extractEntry src/locale/ms.js
+823 silly gunzTarPerm extractEntry src/locale/fr-ch.js
+824 silly gunzTarPerm extractEntry src/locale/my.js
+825 silly gunzTarPerm extractEntry src/locale/fr-ca.js
+826 silly gunzTarPerm extractEntry src/locale/nb.js
+827 silly gunzTarPerm extractEntry src/locale/fo.js
+828 silly gunzTarPerm extractEntry src/locale/ne.js
+829 silly gunzTarPerm extractEntry src/locale/fi.js
+830 silly gunzTarPerm extractEntry src/locale/nl.js
+831 silly gunzTarPerm extractEntry src/locale/fa.js
+832 silly gunzTarPerm extractEntry src/locale/nn.js
+833 silly gunzTarPerm extractEntry src/locale/eu.js
+834 silly gunzTarPerm extractEntry src/locale/pa-in.js
+835 silly gunzTarPerm extractEntry src/locale/et.js
+836 silly gunzTarPerm extractEntry src/locale/pl.js
+837 silly gunzTarPerm extractEntry src/locale/es.js
+838 silly gunzTarPerm extractEntry src/locale/pt-br.js
+839 silly gunzTarPerm extractEntry src/locale/eo.js
+840 silly gunzTarPerm extractEntry src/locale/pt.js
+841 silly gunzTarPerm extractEntry src/locale/en-nz.js
+842 silly gunzTarPerm extractEntry src/locale/ro.js
+843 silly gunzTarPerm extractEntry src/locale/en-ie.js
+844 silly gunzTarPerm extractEntry src/locale/ru.js
+845 silly gunzTarPerm extractEntry src/locale/en-gb.js
+846 silly gunzTarPerm extractEntry src/locale/se.js
+847 silly gunzTarPerm extractEntry src/locale/en-ca.js
+848 silly gunzTarPerm extractEntry src/locale/si.js
+849 silly gunzTarPerm extractEntry src/locale/en-au.js
+850 silly gunzTarPerm extractEntry src/locale/sk.js
+851 silly gunzTarPerm extractEntry src/locale/el.js
+852 silly gunzTarPerm extractEntry src/locale/sl.js
+853 silly gunzTarPerm extractEntry src/locale/dv.js
+854 silly gunzTarPerm extractEntry src/locale/sq.js
+855 silly gunzTarPerm extractEntry src/locale/de.js
+856 silly gunzTarPerm extractEntry src/locale/sr-cyrl.js
+857 silly gunzTarPerm extractEntry src/locale/de-at.js
+858 silly gunzTarPerm extractEntry src/locale/sr.js
+859 silly gunzTarPerm extractEntry src/locale/da.js
+860 silly gunzTarPerm extractEntry src/locale/sv.js
+861 silly gunzTarPerm extractEntry src/locale/cy.js
+862 silly gunzTarPerm extractEntry src/locale/sw.js
+863 silly gunzTarPerm extractEntry src/locale/cv.js
+864 silly gunzTarPerm extractEntry src/locale/ta.js
+865 silly gunzTarPerm extractEntry src/locale/cs.js
+866 silly gunzTarPerm extractEntry src/locale/te.js
+867 silly gunzTarPerm extractEntry src/locale/ca.js
+868 silly gunzTarPerm extractEntry src/locale/th.js
+869 silly gunzTarPerm extractEntry src/locale/bs.js
+870 silly gunzTarPerm extractEntry src/locale/tl-ph.js
+871 silly gunzTarPerm extractEntry src/locale/br.js
+872 silly gunzTarPerm extractEntry src/locale/tlh.js
+873 silly gunzTarPerm extractEntry src/locale/bo.js
+874 silly gunzTarPerm extractEntry src/locale/tr.js
+875 silly gunzTarPerm extractEntry src/locale/bn.js
+876 silly gunzTarPerm extractEntry src/locale/tzl.js
+877 silly gunzTarPerm extractEntry src/locale/bg.js
+878 silly gunzTarPerm extractEntry src/locale/tzm-latn.js
+879 silly gunzTarPerm extractEntry src/locale/be.js
+880 silly gunzTarPerm extractEntry src/locale/tzm.js
+881 silly gunzTarPerm extractEntry src/locale/az.js
+882 silly gunzTarPerm extractEntry src/locale/uk.js
+883 silly gunzTarPerm extractEntry src/locale/ar.js
+884 silly gunzTarPerm extractEntry src/locale/uz.js
+885 silly gunzTarPerm extractEntry src/locale/ar-tn.js
+886 silly gunzTarPerm extractEntry src/locale/vi.js
+887 silly gunzTarPerm extractEntry src/locale/ar-sa.js
+888 silly gunzTarPerm extractEntry src/locale/zh-cn.js
+889 silly gunzTarPerm extractEntry src/locale/ar-ma.js
+890 silly gunzTarPerm extractEntry src/locale/zh-tw.js
+891 silly gunzTarPerm extractEntry src/locale/jv.js
+892 silly gunzTarPerm extractEntry CHANGELOG.md
+893 silly gunzTarPerm extractEntry min/locales.js
+894 silly gunzTarPerm extractEntry min/locales.min.js
+895 silly gunzTarPerm extractEntry min/moment-with-locales.js
+896 silly gunzTarPerm extractEntry min/moment-with-locales.min.js
+897 silly gunzTarPerm extractEntry min/moment.min.js
+898 silly gunzTarPerm extractEntry locale/af.js
+899 silly gunzTarPerm extractEntry locale/is.js
+900 silly gunzTarPerm extractEntry locale/it.js
+901 silly gunzTarPerm extractEntry locale/ja.js
+902 silly gunzTarPerm extractEntry locale/id.js
+903 silly gunzTarPerm extractEntry locale/ka.js
+904 silly gunzTarPerm extractEntry locale/kk.js
+905 silly gunzTarPerm extractEntry locale/km.js
+906 silly gunzTarPerm extractEntry locale/ko.js
+907 silly gunzTarPerm extractEntry locale/lb.js
+908 silly gunzTarPerm extractEntry locale/hy-am.js
+909 silly gunzTarPerm extractEntry locale/lo.js
+910 silly gunzTarPerm extractEntry locale/hu.js
+911 silly gunzTarPerm extractEntry locale/lt.js
+912 silly gunzTarPerm extractEntry locale/hr.js
+913 silly gunzTarPerm extractEntry locale/lv.js
+914 silly gunzTarPerm extractEntry locale/hi.js
+915 silly gunzTarPerm extractEntry locale/me.js
+916 silly gunzTarPerm extractEntry locale/he.js
+917 silly gunzTarPerm extractEntry locale/mk.js
+918 silly gunzTarPerm extractEntry locale/gl.js
+919 silly gunzTarPerm extractEntry locale/ml.js
+920 silly gunzTarPerm extractEntry locale/gd.js
+921 silly gunzTarPerm extractEntry locale/mr.js
+922 silly gunzTarPerm extractEntry locale/fy.js
+923 silly gunzTarPerm extractEntry locale/ms-my.js
+924 silly gunzTarPerm extractEntry locale/fr.js
+925 silly gunzTarPerm extractEntry locale/ms.js
+926 silly gunzTarPerm extractEntry locale/fr-ch.js
+927 silly gunzTarPerm extractEntry locale/my.js
+928 silly gunzTarPerm extractEntry locale/fr-ca.js
+929 silly gunzTarPerm extractEntry locale/nb.js
+930 silly gunzTarPerm extractEntry locale/fo.js
+931 silly gunzTarPerm extractEntry locale/ne.js
+932 silly gunzTarPerm extractEntry locale/fi.js
+933 silly gunzTarPerm extractEntry locale/nl.js
+934 silly gunzTarPerm extractEntry locale/fa.js
+935 silly gunzTarPerm extractEntry locale/nn.js
+936 silly gunzTarPerm extractEntry locale/eu.js
+937 silly gunzTarPerm extractEntry locale/pa-in.js
+938 silly gunzTarPerm extractEntry locale/et.js
+939 silly gunzTarPerm extractEntry locale/pl.js
+940 silly gunzTarPerm extractEntry locale/es.js
+941 silly gunzTarPerm extractEntry locale/pt-br.js
+942 silly gunzTarPerm extractEntry locale/eo.js
+943 silly gunzTarPerm extractEntry locale/pt.js
+944 silly gunzTarPerm extractEntry locale/en-nz.js
+945 silly gunzTarPerm extractEntry locale/ro.js
+946 silly gunzTarPerm extractEntry locale/en-ie.js
+947 silly gunzTarPerm extractEntry locale/ru.js
+948 silly gunzTarPerm extractEntry locale/en-gb.js
+949 silly gunzTarPerm extractEntry locale/se.js
+950 silly gunzTarPerm extractEntry locale/en-ca.js
+951 silly gunzTarPerm extractEntry locale/si.js
+952 silly gunzTarPerm extractEntry locale/en-au.js
+953 silly gunzTarPerm extractEntry locale/sk.js
+954 silly gunzTarPerm extractEntry locale/el.js
+955 silly gunzTarPerm extractEntry locale/sl.js
+956 silly gunzTarPerm extractEntry locale/dv.js
+957 silly gunzTarPerm extractEntry locale/sq.js
+958 silly gunzTarPerm extractEntry locale/de.js
+959 silly gunzTarPerm extractEntry locale/sr-cyrl.js
+960 silly gunzTarPerm extractEntry locale/de-at.js
+961 silly gunzTarPerm extractEntry locale/sr.js
+962 silly gunzTarPerm extractEntry locale/da.js
+963 silly gunzTarPerm extractEntry locale/sv.js
+964 silly gunzTarPerm extractEntry locale/cy.js
+965 silly gunzTarPerm extractEntry locale/sw.js
+966 silly gunzTarPerm extractEntry locale/cv.js
+967 silly gunzTarPerm extractEntry locale/ta.js
+968 silly gunzTarPerm extractEntry locale/cs.js
+969 silly gunzTarPerm extractEntry locale/te.js
+970 silly gunzTarPerm extractEntry locale/ca.js
+971 silly gunzTarPerm extractEntry locale/th.js
+972 silly gunzTarPerm extractEntry locale/bs.js
+973 silly gunzTarPerm extractEntry locale/tl-ph.js
+974 silly gunzTarPerm extractEntry locale/br.js
+975 silly gunzTarPerm extractEntry locale/tlh.js
+976 silly gunzTarPerm extractEntry locale/bo.js
+977 silly gunzTarPerm extractEntry locale/tr.js
+978 silly gunzTarPerm extractEntry locale/bn.js
+979 silly gunzTarPerm extractEntry locale/tzl.js
+980 silly gunzTarPerm extractEntry locale/bg.js
+981 silly gunzTarPerm extractEntry locale/tzm-latn.js
+982 silly gunzTarPerm extractEntry locale/be.js
+983 silly gunzTarPerm extractEntry locale/tzm.js
+984 silly gunzTarPerm extractEntry locale/az.js
+985 silly gunzTarPerm extractEntry locale/uk.js
+986 silly gunzTarPerm extractEntry locale/ar.js
+987 silly gunzTarPerm extractEntry locale/uz.js
+988 silly gunzTarPerm extractEntry locale/ar-tn.js
+989 silly gunzTarPerm extractEntry locale/vi.js
+990 silly gunzTarPerm extractEntry locale/ar-sa.js
+991 silly gunzTarPerm extractEntry locale/zh-cn.js
+992 silly gunzTarPerm extractEntry locale/ar-ma.js
+993 silly gunzTarPerm extractEntry locale/zh-tw.js
+994 silly gunzTarPerm extractEntry locale/jv.js
+995 verbose write writing to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/moment/package.json
+996 info preinstall moment@2.12.0
+997 verbose readDependencies loading dependencies from /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/moment/package.json
+998 http 304 https://registry.npmjs.org/bindings
+999 silly get cb [ 304,
+999 silly get   { date: 'Thu, 07 Apr 2016 06:20:43 GMT',
+999 silly get     via: '1.1 varnish',
+999 silly get     'cache-control': 'max-age=300',
+999 silly get     etag: '"1LLBF9OH58DLBEL4629U6032D"',
+999 silly get     age: '291',
+999 silly get     connection: 'keep-alive',
+999 silly get     'x-served-by': 'cache-sin6923-SIN',
+999 silly get     'x-cache': 'HIT',
+999 silly get     'x-cache-hits': '10',
+999 silly get     'x-timer': 'S1460010043.890648,VS0,VE0',
+999 silly get     vary: 'Accept-Encoding' } ]
+1000 verbose etag https://registry.npmjs.org/bindings from cache
+1001 verbose get saving bindings to /root/.npm/registry.npmjs.org/bindings/.cache.json
+1002 verbose readDependencies loading dependencies from /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/moment/package.json
+1003 silly install resolved []
+1004 verbose about to build /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/moment
+1005 info build /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/moment
+1006 silly addNameRange number 2 { name: 'bindings', range: '>=1.2.1 <2.0.0', hasData: true }
+1007 silly addNameRange versions [ 'bindings',
+1007 silly addNameRange   [ '0.0.1',
+1007 silly addNameRange     '0.1.0',
+1007 silly addNameRange     '0.1.1',
+1007 silly addNameRange     '0.2.0',
+1007 silly addNameRange     '0.2.1',
+1007 silly addNameRange     '0.2.2',
+1007 silly addNameRange     '0.2.3',
+1007 silly addNameRange     '0.2.4',
+1007 silly addNameRange     '0.3.0',
+1007 silly addNameRange     '0.4.0',
+1007 silly addNameRange     '1.0.0',
+1007 silly addNameRange     '1.1.0',
+1007 silly addNameRange     '1.1.1',
+1007 silly addNameRange     '1.2.0',
+1007 silly addNameRange     '1.2.1' ] ]
+1008 silly addNamed bindings@1.2.1
+1009 verbose addNamed "1.2.1" is a plain semver version for bindings
+1010 info linkStuff moment@2.12.0
+1011 silly linkStuff moment@2.12.0 has /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules as its parent node_modules
+1012 silly linkStuff moment@2.12.0 is part of a global install
+1013 silly linkStuff moment@2.12.0 is installed into a global node_modules
+1014 silly cache afterAdd bindings@1.2.1
+1015 verbose afterAdd /root/.npm/bindings/1.2.1/package/package.json not in flight; writing
+1016 verbose afterAdd /root/.npm/bindings/1.2.1/package/package.json written
+1017 verbose linkBins moment@2.12.0
+1018 verbose linkMans moment@2.12.0
+1019 verbose rebuildBundles moment@2.12.0
+1020 info install moment@2.12.0
+1021 info postinstall moment@2.12.0
+1022 verbose unlock done using /root/.npm/_locks/moment-f82cb0d0097af6ef.lock for /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi/node_modules/moment
+1023 verbose about to build /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi
+1024 info build /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi
+1025 info linkStuff joi@6.10.1
+1026 silly linkStuff joi@6.10.1 has /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules as its parent node_modules
+1027 silly linkStuff joi@6.10.1 is part of a global install
+1028 silly linkStuff joi@6.10.1 is installed into a global node_modules
+1029 http 304 https://registry.npmjs.org/nan
+1030 silly get cb [ 304,
+1030 silly get   { date: 'Thu, 07 Apr 2016 06:20:43 GMT',
+1030 silly get     via: '1.1 varnish',
+1030 silly get     'cache-control': 'max-age=300',
+1030 silly get     etag: '"2UZKQOUIL0TMX4WY7FZ5Q5HJQ"',
+1030 silly get     age: '138',
+1030 silly get     connection: 'keep-alive',
+1030 silly get     'x-served-by': 'cache-sin6922-SIN',
+1030 silly get     'x-cache': 'HIT',
+1030 silly get     'x-cache-hits': '5',
+1030 silly get     'x-timer': 'S1460010043.902738,VS0,VE0',
+1030 silly get     vary: 'Accept-Encoding' } ]
+1031 verbose etag https://registry.npmjs.org/nan from cache
+1032 verbose get saving nan to /root/.npm/registry.npmjs.org/nan/.cache.json
+1033 verbose linkBins joi@6.10.1
+1034 verbose linkMans joi@6.10.1
+1035 verbose rebuildBundles joi@6.10.1
+1036 verbose rebuildBundles [ 'isemail', 'moment', 'topo' ]
+1037 info install joi@6.10.1
+1038 info postinstall joi@6.10.1
+1039 silly addNameRange number 2 { name: 'nan', range: '>=2.2.0 <3.0.0', hasData: true }
+1040 silly addNameRange versions [ 'nan',
+1040 silly addNameRange   [ '0.3.0-wip',
+1040 silly addNameRange     '0.3.0-wip2',
+1040 silly addNameRange     '0.3.0',
+1040 silly addNameRange     '0.3.1',
+1040 silly addNameRange     '0.3.2',
+1040 silly addNameRange     '0.4.0',
+1040 silly addNameRange     '0.4.1',
+1040 silly addNameRange     '0.4.2',
+1040 silly addNameRange     '0.4.3',
+1040 silly addNameRange     '0.4.4',
+1040 silly addNameRange     '0.5.0',
+1040 silly addNameRange     '0.5.1',
+1040 silly addNameRange     '0.5.2',
+1040 silly addNameRange     '0.6.0',
+1040 silly addNameRange     '0.7.0',
+1040 silly addNameRange     '0.7.1',
+1040 silly addNameRange     '0.8.0',
+1040 silly addNameRange     '1.0.0',
+1040 silly addNameRange     '1.1.0',
+1040 silly addNameRange     '1.1.1',
+1040 silly addNameRange     '1.1.2',
+1040 silly addNameRange     '1.2.0',
+1040 silly addNameRange     '1.3.0',
+1040 silly addNameRange     '1.4.0',
+1040 silly addNameRange     '1.4.1',
+1040 silly addNameRange     '1.5.0',
+1040 silly addNameRange     '1.4.2',
+1040 silly addNameRange     '1.4.3',
+1040 silly addNameRange     '1.5.1',
+1040 silly addNameRange     '1.5.2',
+1040 silly addNameRange     '1.6.0',
+1040 silly addNameRange     '1.5.3',
+1040 silly addNameRange     '1.6.1',
+1040 silly addNameRange     '1.6.2',
+1040 silly addNameRange     '1.7.0',
+1040 silly addNameRange     '1.8.0',
+1040 silly addNameRange     '1.8.1',
+1040 silly addNameRange     '1.8.2',
+1040 silly addNameRange     '1.8.3',
+1040 silly addNameRange     '1.8.4',
+1040 silly addNameRange     '1.9.0',
+1040 silly addNameRange     '2.0.0',
+1040 silly addNameRange     '2.0.1',
+1040 silly addNameRange     '2.0.2',
+1040 silly addNameRange     '2.0.3',
+1040 silly addNameRange     '2.0.4',
+1040 silly addNameRange     '2.0.5',
+1040 silly addNameRange     '2.0.6',
+1040 silly addNameRange     '2.0.7',
+1040 silly addNameRange     '2.0.8',
+1040 silly addNameRange     '2.0.9',
+1040 silly addNameRange     '2.1.0',
+1040 silly addNameRange     '2.2.0',
+1040 silly addNameRange     '2.2.1' ] ]
+1041 silly addNamed nan@2.2.1
+1042 verbose addNamed "2.2.1" is a plain semver version for nan
+1043 verbose unlock done using /root/.npm/_locks/joi-0c71e2b2fc0c7cc8.lock for /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/joi
+1044 silly cache afterAdd nan@2.2.1
+1045 verbose afterAdd /root/.npm/nan/2.2.1/package/package.json not in flight; writing
+1046 verbose afterAdd /root/.npm/nan/2.2.1/package/package.json written
+1047 silly install resolved [ { name: 'bindings',
+1047 silly install resolved     description: 'Helper module for loading your native module\'s .node file',
+1047 silly install resolved     keywords: [ 'native', 'addon', 'bindings', 'gyp', 'waf', 'c', 'c++' ],
+1047 silly install resolved     version: '1.2.1',
+1047 silly install resolved     author:
+1047 silly install resolved      { name: 'Nathan Rajlich',
+1047 silly install resolved        email: 'nathan@tootallnate.net',
+1047 silly install resolved        url: 'http://tootallnate.net' },
+1047 silly install resolved     repository:
+1047 silly install resolved      { type: 'git',
+1047 silly install resolved        url: 'git://github.com/TooTallNate/node-bindings.git' },
+1047 silly install resolved     main: './bindings.js',
+1047 silly install resolved     bugs: { url: 'https://github.com/TooTallNate/node-bindings/issues' },
+1047 silly install resolved     homepage: 'https://github.com/TooTallNate/node-bindings',
+1047 silly install resolved     license: 'MIT',
+1047 silly install resolved     gitHead: 'e404152ee27f8478ccbc7122ee051246e8e5ec02',
+1047 silly install resolved     _id: 'bindings@1.2.1',
+1047 silly install resolved     scripts: {},
+1047 silly install resolved     _shasum: '14ad6113812d2d37d72e67b4cacb4bb726505f11',
+1047 silly install resolved     _from: 'bindings@>=1.2.1 <2.0.0',
+1047 silly install resolved     _npmVersion: '1.4.14',
+1047 silly install resolved     _npmUser: { name: 'tootallnate', email: 'nathan@tootallnate.net' },
+1047 silly install resolved     maintainers: [ [Object], [Object] ],
+1047 silly install resolved     dist:
+1047 silly install resolved      { shasum: '14ad6113812d2d37d72e67b4cacb4bb726505f11',
+1047 silly install resolved        tarball: 'http://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz' },
+1047 silly install resolved     directories: {},
+1047 silly install resolved     _resolved: 'https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz',
+1047 silly install resolved     readme: 'ERROR: No README data found!' },
+1047 silly install resolved   { name: 'nan',
+1047 silly install resolved     version: '2.2.1',
+1047 silly install resolved     description: 'Native Abstractions for Node.js: C++ header for Node 0.8 -> 4 compatibility',
+1047 silly install resolved     main: 'include_dirs.js',
+1047 silly install resolved     repository: { type: 'git', url: 'git://github.com/nodejs/nan.git' },
+1047 silly install resolved     scripts:
+1047 silly install resolved      { test: 'tap --gc test/js/*-test.js',
+1047 silly install resolved        'rebuild-tests': 'node-gyp rebuild --msvs_version=2013 --directory test',
+1047 silly install resolved        docs: 'doc/.build.sh' },
+1047 silly install resolved     contributors:
+1047 silly install resolved      [ [Object],
+1047 silly install resolved        [Object],
+1047 silly install resolved        [Object],
+1047 silly install resolved        [Object],
+1047 silly install resolved        [Object],
+1047 silly install resolved        [Object],
+1047 silly install resolved        [Object] ],
+1047 silly install resolved     devDependencies:
+1047 silly install resolved      { bindings: '~1.2.1',
+1047 silly install resolved        commander: '^2.8.1',
+1047 silly install resolved        glob: '^5.0.14',
+1047 silly install resolved        'node-gyp': '~3.0.1',
+1047 silly install resolved        tap: '~0.7.1',
+1047 silly install resolved        xtend: '~4.0.0' },
+1047 silly install resolved     license: 'MIT',
+1047 silly install resolved     bugs: { url: 'https://github.com/nodejs/nan/issues' },
+1047 silly install resolved     homepage: 'https://github.com/nodejs/nan#readme',
+1047 silly install resolved     _id: 'nan@2.2.1',
+1047 silly install resolved     _shasum: 'd68693f6b34bb41d66bc68b3a4f9defc79d7149b',
+1047 silly install resolved     _resolved: 'https://registry.npmjs.org/nan/-/nan-2.2.1.tgz',
+1047 silly install resolved     _from: 'nan@>=2.2.0 <3.0.0',
+1047 silly install resolved     _npmVersion: '3.3.6',
+1047 silly install resolved     _nodeVersion: '5.0.0',
+1047 silly install resolved     _npmUser: { name: 'kkoopa', email: 'bbyholm@abo.fi' },
+1047 silly install resolved     dist:
+1047 silly install resolved      { shasum: 'd68693f6b34bb41d66bc68b3a4f9defc79d7149b',
+1047 silly install resolved        tarball: 'https://registry.npmjs.org/nan/-/nan-2.2.1.tgz' },
+1047 silly install resolved     maintainers: [ [Object], [Object] ],
+1047 silly install resolved     _npmOperationalInternal:
+1047 silly install resolved      { host: 'packages-12-west.internal.npmjs.com',
+1047 silly install resolved        tmp: 'tmp/nan-2.2.1.tgz_1459265439909_0.12396649201400578' },
+1047 silly install resolved     directories: {},
+1047 silly install resolved     readme: 'ERROR: No README data found!' } ]
+1048 info install bindings@1.2.1 into /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat
+1049 info install nan@2.2.1 into /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat
+1050 info installOne bindings@1.2.1
+1051 verbose installOne of bindings to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat not in flight; installing
+1052 info installOne nan@2.2.1
+1053 verbose installOne of nan to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat not in flight; installing
+1054 verbose lock using /root/.npm/_locks/bindings-852e7c071a32a04b.lock for /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/bindings
+1055 verbose lock using /root/.npm/_locks/nan-8025bd6152d52714.lock for /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/nan
+1056 silly install write writing bindings 1.2.1 to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/bindings
+1057 silly install write writing nan 2.2.1 to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/nan
+1058 verbose unbuild lib/node_modules/xml2json/node_modules/node-expat/node_modules/nan
+1059 verbose unbuild lib/node_modules/xml2json/node_modules/node-expat/node_modules/bindings
+1060 silly gentlyRm /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/nan is being purged from base /root/.nvm/versions/node/v4.0.0
+1061 verbose gentlyRm don't care about contents; nuking /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/nan
+1062 silly gentlyRm /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/bindings is being purged from base /root/.nvm/versions/node/v4.0.0
+1063 verbose gentlyRm don't care about contents; nuking /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/bindings
+1064 verbose tar unpack /root/.npm/nan/2.2.1/package.tgz
+1065 verbose tar unpacking to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/nan
+1066 silly gentlyRm /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/nan is being purged
+1067 verbose gentlyRm don't care about contents; nuking /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/nan
+1068 verbose tar unpack /root/.npm/bindings/1.2.1/package.tgz
+1069 verbose tar unpacking to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/bindings
+1070 silly gentlyRm /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/bindings is being purged
+1071 verbose gentlyRm don't care about contents; nuking /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/bindings
+1072 silly gunzTarPerm modes [ '755', '644' ]
+1073 silly gunzTarPerm modes [ '755', '644' ]
+1074 silly gunzTarPerm extractEntry package.json
+1075 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+1076 silly gunzTarPerm extractEntry package.json
+1077 silly gunzTarPerm extractEntry include_dirs.js
+1078 silly gunzTarPerm modified mode [ 'include_dirs.js', 436, 420 ]
+1079 silly gunzTarPerm extractEntry nan_converters.h
+1080 silly gunzTarPerm modified mode [ 'nan_converters.h', 436, 420 ]
+1081 silly gunzTarPerm extractEntry README.md
+1082 silly gunzTarPerm extractEntry bindings.js
+1083 silly gunzTarPerm extractEntry LICENSE.md
+1084 silly gunzTarPerm modified mode [ 'LICENSE.md', 436, 420 ]
+1085 silly gunzTarPerm extractEntry .dntrc
+1086 silly gunzTarPerm modified mode [ '.dntrc', 436, 420 ]
+1087 silly gunzTarPerm extractEntry appveyor.yml
+1088 silly gunzTarPerm modified mode [ 'appveyor.yml', 436, 420 ]
+1089 silly gunzTarPerm extractEntry doc/new.md
+1090 silly gunzTarPerm modified mode [ 'doc/new.md', 436, 420 ]
+1091 silly gunzTarPerm extractEntry doc/.build.sh
+1092 silly gunzTarPerm modified mode [ 'doc/.build.sh', 509, 493 ]
+1093 silly gunzTarPerm extractEntry doc/buffers.md
+1094 silly gunzTarPerm modified mode [ 'doc/buffers.md', 436, 420 ]
+1095 silly gunzTarPerm extractEntry doc/callback.md
+1096 silly gunzTarPerm modified mode [ 'doc/callback.md', 436, 420 ]
+1097 silly gunzTarPerm extractEntry doc/converters.md
+1098 silly gunzTarPerm modified mode [ 'doc/converters.md', 436, 420 ]
+1099 silly gunzTarPerm extractEntry doc/errors.md
+1100 silly gunzTarPerm modified mode [ 'doc/errors.md', 436, 420 ]
+1101 verbose write writing to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/bindings/package.json
+1102 info preinstall bindings@1.2.1
+1103 verbose readDependencies loading dependencies from /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/bindings/package.json
+1104 silly gunzTarPerm extractEntry doc/maybe_types.md
+1105 silly gunzTarPerm modified mode [ 'doc/maybe_types.md', 436, 420 ]
+1106 silly gunzTarPerm extractEntry doc/methods.md
+1107 silly gunzTarPerm modified mode [ 'doc/methods.md', 436, 420 ]
+1108 verbose readDependencies loading dependencies from /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/bindings/package.json
+1109 silly install resolved []
+1110 verbose about to build /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/bindings
+1111 info build /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/bindings
+1112 info linkStuff bindings@1.2.1
+1113 silly linkStuff bindings@1.2.1 has /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules as its parent node_modules
+1114 silly linkStuff bindings@1.2.1 is part of a global install
+1115 silly linkStuff bindings@1.2.1 is installed into a global node_modules
+1116 silly gunzTarPerm extractEntry doc/asyncworker.md
+1117 silly gunzTarPerm modified mode [ 'doc/asyncworker.md', 436, 420 ]
+1118 silly gunzTarPerm extractEntry doc/node_misc.md
+1119 silly gunzTarPerm modified mode [ 'doc/node_misc.md', 436, 420 ]
+1120 verbose linkBins bindings@1.2.1
+1121 verbose linkMans bindings@1.2.1
+1122 verbose rebuildBundles bindings@1.2.1
+1123 silly gunzTarPerm extractEntry doc/object_wrappers.md
+1124 silly gunzTarPerm modified mode [ 'doc/object_wrappers.md', 436, 420 ]
+1125 silly gunzTarPerm extractEntry doc/persistent.md
+1126 silly gunzTarPerm modified mode [ 'doc/persistent.md', 436, 420 ]
+1127 info install bindings@1.2.1
+1128 info postinstall bindings@1.2.1
+1129 verbose unlock done using /root/.npm/_locks/bindings-852e7c071a32a04b.lock for /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/bindings
+1130 silly gunzTarPerm extractEntry doc/scopes.md
+1131 silly gunzTarPerm modified mode [ 'doc/scopes.md', 436, 420 ]
+1132 silly gunzTarPerm extractEntry doc/script.md
+1133 silly gunzTarPerm modified mode [ 'doc/script.md', 436, 420 ]
+1134 silly gunzTarPerm extractEntry doc/string_bytes.md
+1135 silly gunzTarPerm modified mode [ 'doc/string_bytes.md', 436, 420 ]
+1136 silly gunzTarPerm extractEntry doc/v8_internals.md
+1137 silly gunzTarPerm modified mode [ 'doc/v8_internals.md', 436, 420 ]
+1138 silly gunzTarPerm extractEntry doc/v8_misc.md
+1139 silly gunzTarPerm modified mode [ 'doc/v8_misc.md', 436, 420 ]
+1140 silly gunzTarPerm extractEntry nan.h
+1141 silly gunzTarPerm modified mode [ 'nan.h', 436, 420 ]
+1142 silly gunzTarPerm extractEntry nan_callbacks.h
+1143 silly gunzTarPerm modified mode [ 'nan_callbacks.h', 436, 420 ]
+1144 silly gunzTarPerm extractEntry nan_callbacks_12_inl.h
+1145 silly gunzTarPerm modified mode [ 'nan_callbacks_12_inl.h', 436, 420 ]
+1146 silly gunzTarPerm extractEntry nan_callbacks_pre_12_inl.h
+1147 silly gunzTarPerm modified mode [ 'nan_callbacks_pre_12_inl.h', 436, 420 ]
+1148 silly gunzTarPerm extractEntry nan_converters_43_inl.h
+1149 silly gunzTarPerm modified mode [ 'nan_converters_43_inl.h', 436, 420 ]
+1150 silly gunzTarPerm extractEntry nan_converters_pre_43_inl.h
+1151 silly gunzTarPerm modified mode [ 'nan_converters_pre_43_inl.h', 436, 420 ]
+1152 silly gunzTarPerm extractEntry nan_implementation_12_inl.h
+1153 silly gunzTarPerm modified mode [ 'nan_implementation_12_inl.h', 436, 420 ]
+1154 silly gunzTarPerm extractEntry nan_implementation_pre_12_inl.h
+1155 silly gunzTarPerm modified mode [ 'nan_implementation_pre_12_inl.h', 436, 420 ]
+1156 silly gunzTarPerm extractEntry nan_maybe_43_inl.h
+1157 silly gunzTarPerm modified mode [ 'nan_maybe_43_inl.h', 436, 420 ]
+1158 silly gunzTarPerm extractEntry nan_maybe_pre_43_inl.h
+1159 silly gunzTarPerm modified mode [ 'nan_maybe_pre_43_inl.h', 436, 420 ]
+1160 silly gunzTarPerm extractEntry nan_new.h
+1161 silly gunzTarPerm modified mode [ 'nan_new.h', 436, 420 ]
+1162 silly gunzTarPerm extractEntry nan_object_wrap.h
+1163 silly gunzTarPerm modified mode [ 'nan_object_wrap.h', 436, 420 ]
+1164 silly gunzTarPerm extractEntry nan_persistent_12_inl.h
+1165 silly gunzTarPerm modified mode [ 'nan_persistent_12_inl.h', 436, 420 ]
+1166 silly gunzTarPerm extractEntry nan_persistent_pre_12_inl.h
+1167 silly gunzTarPerm modified mode [ 'nan_persistent_pre_12_inl.h', 436, 420 ]
+1168 silly gunzTarPerm extractEntry nan_string_bytes.h
+1169 silly gunzTarPerm modified mode [ 'nan_string_bytes.h', 436, 420 ]
+1170 silly gunzTarPerm extractEntry nan_typedarray_contents.h
+1171 silly gunzTarPerm modified mode [ 'nan_typedarray_contents.h', 436, 420 ]
+1172 silly gunzTarPerm extractEntry nan_weak.h
+1173 silly gunzTarPerm modified mode [ 'nan_weak.h', 436, 420 ]
+1174 silly gunzTarPerm extractEntry CHANGELOG.md
+1175 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 436, 420 ]
+1176 silly gunzTarPerm extractEntry tools/package.json
+1177 silly gunzTarPerm modified mode [ 'tools/package.json', 436, 420 ]
+1178 silly gunzTarPerm extractEntry tools/README.md
+1179 silly gunzTarPerm modified mode [ 'tools/README.md', 436, 420 ]
+1180 silly gunzTarPerm extractEntry tools/1to2.js
+1181 silly gunzTarPerm modified mode [ 'tools/1to2.js', 509, 493 ]
+1182 verbose write writing to /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/nan/package.json
+1183 info preinstall nan@2.2.1
+1184 verbose readDependencies loading dependencies from /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/nan/package.json
+1185 verbose readDependencies loading dependencies from /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/nan/package.json
+1186 silly install resolved []
+1187 verbose about to build /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/nan
+1188 info build /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/nan
+1189 info linkStuff nan@2.2.1
+1190 silly linkStuff nan@2.2.1 has /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules as its parent node_modules
+1191 silly linkStuff nan@2.2.1 is part of a global install
+1192 silly linkStuff nan@2.2.1 is installed into a global node_modules
+1193 verbose linkBins nan@2.2.1
+1194 verbose linkMans nan@2.2.1
+1195 verbose rebuildBundles nan@2.2.1
+1196 info install nan@2.2.1
+1197 info postinstall nan@2.2.1
+1198 verbose unlock done using /root/.npm/_locks/nan-8025bd6152d52714.lock for /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat/node_modules/nan
+1199 verbose about to build /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat
+1200 info build /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat
+1201 info linkStuff node-expat@2.3.13
+1202 silly linkStuff node-expat@2.3.13 has /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules as its parent node_modules
+1203 silly linkStuff node-expat@2.3.13 is part of a global install
+1204 silly linkStuff node-expat@2.3.13 is installed into a global node_modules
+1205 verbose linkBins node-expat@2.3.13
+1206 verbose linkMans node-expat@2.3.13
+1207 verbose rebuildBundles node-expat@2.3.13
+1208 verbose rebuildBundles [ 'bindings', 'nan' ]
+1209 info install node-expat@2.3.13
+1210 verbose unsafe-perm in lifecycle false
+1211 info node-expat@2.3.13 Failed to exec install script
+1212 verbose unlock done using /root/.npm/_locks/node-expat-82c34204e0fd2300.lock for /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat
+1213 verbose about to build /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json
+1214 verbose unlock done using /root/.npm/_locks/xml2json-9c5f4b5c1cd658c3.lock for /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json
+1215 verbose stack Error: node-expat@2.3.13 install: `node-gyp rebuild`
+1215 verbose stack spawn ENOENT
+1215 verbose stack     at ChildProcess.<anonymous> (/root/.nvm/versions/node/v4.0.0/lib/node_modules/npm/lib/utils/spawn.js:17:16)
+1215 verbose stack     at emitTwo (events.js:87:13)
+1215 verbose stack     at ChildProcess.emit (events.js:172:7)
+1215 verbose stack     at maybeClose (internal/child_process.js:817:16)
+1215 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+1216 verbose pkgid node-expat@2.3.13
+1217 verbose cwd /home/deepakkhokhar/Documents/Deepakkhokhar/Deepak/alist/alisthub
+1218 error Linux 3.13.0-32-generic
+1219 error argv "/root/.nvm/versions/node/v4.0.0/bin/node" "/root/.nvm/versions/node/v4.0.0/bin/npm" "install" "-g" "xml2json"
+1220 error node v4.0.0
+1221 error npm  v2.14.2
+1222 error file sh
+1223 error code ELIFECYCLE
+1224 error errno ENOENT
+1225 error syscall spawn
+1226 error node-expat@2.3.13 install: `node-gyp rebuild`
+1226 error spawn ENOENT
+1227 error Failed at the node-expat@2.3.13 install script 'node-gyp rebuild'.
+1227 error This is most likely a problem with the node-expat package,
+1227 error not with npm itself.
+1227 error Tell the author that this fails on your system:
+1227 error     node-gyp rebuild
+1227 error You can get their info via:
+1227 error     npm owner ls node-expat
+1227 error There is likely additional logging output above.
+1228 verbose exit [ 1, true ]
+1229 verbose unbuild lib/node_modules/xml2json/node_modules/node-expat
+1230 info preuninstall node-expat@2.3.13
+1231 info uninstall node-expat@2.3.13
+1232 verbose unbuild rmStuff node-expat@2.3.13 from /root/.nvm/versions/node/v4.0.0/lib/node_modules
+1233 verbose unbuild rmStuff in /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules
+1234 info postuninstall node-expat@2.3.13
+1235 silly gentlyRm /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat is being purged from base /root/.nvm/versions/node/v4.0.0
+1236 verbose gentlyRm don't care about contents; nuking /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat
+1237 silly vacuum-fs purging /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules/node-expat
+1238 silly vacuum-fs quitting because other entries in /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json/node_modules
+1239 verbose unbuild lib/node_modules/xml2json
+1240 info preuninstall xml2json@0.9.0
+1241 info uninstall xml2json@0.9.0
+1242 verbose unbuild rmStuff xml2json@0.9.0 from /root/.nvm/versions/node/v4.0.0/lib/node_modules
+1243 silly gentlyRm /root/.nvm/versions/node/v4.0.0/bin/xml2json is being gently removed
+1244 silly gentlyRm verifying /root/.nvm/versions/node/v4.0.0 is an npm working directory
+1245 silly gentlyRm containing path /root/.nvm/versions/node/v4.0.0 is under npm's control, in /root/.nvm/versions/node/v4.0.0
+1246 silly gentlyRm deletion target /root/.nvm/versions/node/v4.0.0/bin/xml2json is under /root/.nvm/versions/node/v4.0.0
+1247 verbose gentlyRm vacuuming from /root/.nvm/versions/node/v4.0.0/bin/xml2json up to /root/.nvm/versions/node/v4.0.0
+1248 info postuninstall xml2json@0.9.0
+1249 silly gentlyRm /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json is being purged from base /root/.nvm/versions/node/v4.0.0
+1250 verbose gentlyRm don't care about contents; nuking /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json
+1251 silly vacuum-fs purging /root/.nvm/versions/node/v4.0.0/lib/node_modules/xml2json
+1252 silly vacuum-fs quitting because other entries in /root/.nvm/versions/node/v4.0.0/lib/node_modules

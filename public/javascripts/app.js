@@ -17,10 +17,16 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/signup',
             templateUrl: 'modules/authentication/views/signup.html'
         })
-         //Events screen=================================
-        .state('events', {
-            url: '/events',
-            templateUrl: 'modules/events/views/home.html'
+         //Events dashoard screen=================================
+        .state('dashboard', {
+            url: '/dashboard',
+            templateUrl: 'modules/events/views/dashboard.html'
+        })
+        
+         //Create Event screen=================================
+        .state('create_an_event', {
+            url: '/create_an_event',
+            templateUrl: 'modules/events/views/create_an_event.html'
         })
         
         
@@ -40,7 +46,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
         $rootScope.isuserloggedIn=$rootScope.footer_login_div=true;
         $rootScope.menu=$rootScope.after_login_footer_div=false;
         $rootScope.class_status = 0;
-        $state.go('events');
+        $state.go('dashboard');
     }
     
     

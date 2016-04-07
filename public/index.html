@@ -24,13 +24,13 @@
 <!-- Header -->
   <header ng-hide="menu">
       <section class="container">        	
-                <div class="welcometxt mob-clear"><a href="#" class="noti-link"><i class="fa fa-bell-o"></i><span class="badge">5</span></a><a href="#"><span class="user-pic"><img src="images/user.jpg" width="36" height="36" alt=""/></span> Patrick <i class="fa fa-angle-down"></i></a> <a href="#">Help</a> <a ng-click="logout()">logout</a></div>
+                <div class="welcometxt mob-clear"><a href="javascript:void(0)" class="noti-link"><i class="fa fa-bell-o"></i><span class="badge">5</span></a><a href="javascript:void(0)"><span class="user-pic"><img src="images/user.jpg" width="36" height="36" alt=""/></span> Patrick <i class="fa fa-angle-down"></i></a> <a href="javascript:void(0)">Help</a> <a ng-click="logout()">logout</a></div>
                 <a  ng-click="toggleMenu()" class="navbar-toggle">
                    <span class="icon-bar"></span>
                    <span class="icon-bar"></span>
                    <span class="icon-bar"></span>
                 </a>
-               <a href="#" class="logo"><img src="images/logo.png" alt="ALISTixs" /></a>
+               <a    ui-sref="dashboard" class="logo"><img src="images/logo.png" alt="ALISTixs" /></a>
            </section>
       
       <!-- Navigation -->
@@ -40,19 +40,19 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div   ng-hide="navCollapsed" >
     
-            <nav id="primary_nav_wrap">
+            <nav id="primary_nav_wrap">  
                 <ul>
-                  <li class="current-menu-item"><a href="#">Event</a>
+                  <li class="current-menu-item"><a  ui-sref="dashboard">Event</a>
                     <ul>
-                        <li><a href="#">Events Dashboard</a></li>
-                        <li><a href="#">View all Events</a></li>
-                        <li><a href="#">Create an Event</a></li>
-                        <li><a href="#">Event Settings</a></li>
+                        <li><a  ui-sref="dashboard">Events Dashboard</a></li>
+                        <li><a  href="javascript:void(0)">View all Events</a></li>
+                        <li><a  ui-sref="create_an_event">Create an Event</a></li>
+                        <li><a  href="javascript:void(0)">Event Settings</a></li>
                     </ul>
                   </li>
-                  <li><a href="#">Manage</a></li>
-                  <li><a href="#">Promote</a></li>
-                  <li><a href="#">Reports</a></li>
+                  <li><a  href="javascript:void(0)">Manage</a></li>
+                  <li><a  href="javascript:void(0)">Promote</a></li>
+                  <li><a  href="javascript:void(0)">Reports</a></li>
                 </ul>
             </nav>
           </div>
@@ -71,15 +71,15 @@
       <div class="col-sm-4 col-md-3">
         <h2>Quick Menu</h2>
         <ul>
-          <li><a href="#">Online Ticket Sales</a></li>
-          <li><a href="#">Box Office System</a></li>
-          <li><a href="#">Event Marketing</a></li>
+          <li><a  href="javascript:void(0)">Online Ticket Sales</a></li>
+          <li><a  href="javascript:void(0)">Box Office System</a></li>
+          <li><a href="javascript:void(0)">Event Marketing</a></li>
         </ul>
       </div>
       <div class="col-sm-4 col-md-3">
         <ul class="price">
-          <li><a href="#">Analytics & Reporting</a></li>
-          <li><a href="#">Pricing</a></li>
+          <li><a href="javascript:void(0)">Analytics & Reporting</a></li>
+          <li><a href="javascript:void(0)">Pricing</a></li>
         </ul>
       </div>
       <div class="col-sm-4 col-md-3">
@@ -89,7 +89,7 @@
           <li>E: admin@alistixs.com</li>
           <li>P: 844-77-ALIST</li>
         </ul>
-        <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> </div>
+        <a href="javascript:void(0)"><i class="fa fa-twitter"></i></a> <a href="javascript:void(0)"><i class="fa fa-facebook"></i></a> <a href="javascript:void(0)"><i class="fa fa-linkedin"></i></a> </div>
       <div class="col-sm-12 col-md-3  nwsltr">
         <h2>Subscribe our Newsletter</h2>
         <input type="text" placeholder="Enter your email ID"/>
