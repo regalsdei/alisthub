@@ -56,6 +56,15 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
         };
     
     
+    }).controller('signupcontroller',function($scope,$rootScope,$location, $state){
+        // function to submit the form after all validation has occurred            
+        $scope.submitRegistrationform = function() {
+
+           console.log($scope.user); 
+
+        };
+    
+    
     }).controller('eventhomeController', function($scope) {
   
     if(window.innerWidth>767){ 
