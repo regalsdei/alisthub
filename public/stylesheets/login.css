@@ -33,8 +33,38 @@ img { border: 0; max-width:100%;}
 
 /*-------Sign up--------*/
 .signup{text-align:left;}
-.form-widget label{margin-bottom:10px; display:inline-block;}
+.form-widget label{margin-bottom:10px; display:inline-block; color:#fff;}
 .section-col{margin-bottom:15px;}
+
+.login-frame .has-error .checkbox, 
+.login-frame .has-error .checkbox-inline, 
+.login-frame .has-error .control-label, 
+.login-frame .has-error .help-block, 
+.login-frame .has-error .radio, 
+.login-frame .has-error .radio-inline, 
+.login-frame .has-error.checkbox label, 
+.login-frame .has-error.checkbox-inline label, 
+.login-frame .has-error.radio label, 
+.login-frame .has-error.radio-inline label{
+	color:#fff;	background-color:rgba(255,0,0,0.5);	padding:5px 10px; font-weight:bold; text-align:left; position: relative;
+	}
+	
+	
+
+.login-frame .help-block:after {
+	bottom: 100%;
+	left: 30px;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(136, 183, 213, 0);
+	border-bottom-color: rgba(255,0,0,0.5);
+	border-width: 10px;
+	margin-left: -10px;
+}
 
 
 @media (max-width: 1000px) {
