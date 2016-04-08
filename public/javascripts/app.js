@@ -29,6 +29,17 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'modules/events/views/create_an_event.html'
         })
         
+        //View Event screen=================================
+        .state('view_event', {
+            url: '/view_event',
+            templateUrl: 'modules/events/views/view_event.html'
+        })
+        
+        //Create Event step1=================================
+        .state('create_event_step1', {
+            url: '/create_event_step1',
+            templateUrl: 'modules/step_event/views/create_event_step1.html'
+        })
         
 }).run(['$rootScope', '$location','$state', function($rootScope,$location, $state) {
     //To add class
