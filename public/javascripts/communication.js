@@ -57,9 +57,9 @@ angular.module('communicationModule')
 			$http.defaults.headers.common['Authorization'] = 'Basic ' + authenticationKey;
 		}
 
-		/*if(headerString != undefined) {
+		if(headerString != undefined) {
 			headerString = '{"ContentType":' + headerString + '"}';
-		}*/
+		}
 
 
 		$http.post(serviceUrl, postData, headerString)

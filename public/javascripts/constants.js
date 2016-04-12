@@ -8,19 +8,13 @@ var webservices = {
 
 var appConstants = {
 
-	"authorizationKey": "dGF4aTphcHBsaWNhdGlvbg==",
-        
+	"authorizationKey": "dGF4aTphcHBsaWNhdGlvbg=="
 }
 
 var headerConstants = {
 
-	"json": "application/json",
-        "Access-Control-Allow-Origin":'*',
-        "Access-Control-Allow-Headers":"Content-Type,authorization,Origin, X-Requested-With, Access-Control-Allow-Origin",
-        "Access-Control-Allow-Methods":"PUT, GET, POST, DELETE, OPTIONS",
-        "crossDomain": true
+	"json": "application/json"
 
 }
-
 
 

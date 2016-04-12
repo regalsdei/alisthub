@@ -68,14 +68,26 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
         };
     
     
-    }).controller('signupcontroller',function($scope,$rootScope,$location, $state,communicationService){
+    }).controller('signupcontroller',function($http,$scope,$rootScope,$location, $state,communicationService){
         // function to submit the form after all validation has occurred            
         $scope.submitRegistrationform = function() {
         var serviceUrl = webservices.getUserregister;
-        var jsonData=$scope.user; 
-       communicationService.resultViaPost(serviceUrl,appConstants.authorizationKey,headerConstants,jsonData, function(response){
+        var jsonData=$scope.user;
+         $http({
+            url: 'http://192.155.246.146:7048/webservices/register',
+            method: 'POST',
+            data: jsonData,
+            headers: {
+            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+            "Accept": "application/json",
+            }
+            }).success(function(data, status, headers, config) {
+            
+            console.log(data);
+            });
+       /*communicationService.resultViaPost(serviceUrl,appConstants.authorizationKey,headerConstants,jsonData, function(response){
            console.log(response);  
-       });
+       });*/
 
         };
     
