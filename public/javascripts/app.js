@@ -1,5 +1,6 @@
 // app.js
-var routerApp = angular.module('alisthub', ['ui.router']);
+angular.module("communicationModule", []);
+var routerApp = angular.module('alisthub', ['ui.router','communicationModule']);
 
 routerApp.config(function($stateProvider, $urlRouterProvider) {
     
@@ -67,11 +68,14 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
         };
     
     
-    }).controller('signupcontroller',function($scope,$rootScope,$location, $state){
+    }).controller('signupcontroller',function($scope,$rootScope,$location, $state,communicationService){
         // function to submit the form after all validation has occurred            
         $scope.submitRegistrationform = function() {
-
-           console.log($scope.user); 
+        var serviceUrl = webservices.getUserregister;
+        var jsonData=$scope.user; 
+       communicationService.resultViaPost(serviceUrl,appConstants.authorizationKey,headerConstants,jsonData, function(response){
+           console.log(response);  
+       });
 
         };
     
