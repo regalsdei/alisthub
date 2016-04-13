@@ -1,3 +1,4 @@
+/*
 routerApp.controller('loginController',function($scope,$rootScope,$location, $state){
         $rootScope.class_status=1; 
        // function to submit the form after all validation has occurred
@@ -5,7 +6,7 @@ routerApp.controller('loginController',function($scope,$rootScope,$location, $st
         {
                 var serviceUrl = webservices.confirmToken;
                 $token = $state.params.id;
-                $http({
+                $http({ 
                 url: serviceUrl,
                 method: 'POST',
                 data: jsonData,
@@ -25,6 +26,12 @@ routerApp.controller('loginController',function($scope,$rootScope,$location, $st
                 });
         }
         
+=======*/
+
+angular.module('alisthub').controller('loginController', function($http,$location,$scope, $ocLazyLoad,$rootScope,$state) {
+ 
+        $rootScope.class_status=1;
+
         $scope.submitForm = function() {
 
             // check to make sure the form is completely valid
@@ -32,13 +39,28 @@ routerApp.controller('loginController',function($scope,$rootScope,$location, $st
                 $rootScope.isuserloggedIn=$rootScope.footer_login_div=true;
                 $rootScope.menu=$rootScope.after_login_footer_div=false;
                 $rootScope.class_status = 0;
-                $state.go('dashboard');
+                var serviceUrl = webservices.getUserlogin;
+                 var jsonData=$scope.user;
+                $http({
+                 url: serviceUrl,
+                 method: 'POST',
+                 data: jsonData,
+                 headers: {
+                  "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                  "Accept": "application/json",
+                 }
+                }).success(function(data, status, headers, config) {
+                
+                  if (data.message=='error') {
+                   console.log('error occured');
+                  }else{
+                   $state.go('dashboard');
+                  }
+                });
             }
 
         };
-    
-    
-    }).controller('signupcontroller',function($http,$scope,$rootScope,$location, $state,communicationService){
+}).controller('signupcontroller',function($http,$scope,$rootScope,$location, $state,communicationService){
         // function to submit the form after all validation has occurred            
         $scope.unique  = false;
         $scope.message = "";
@@ -91,4 +113,8 @@ routerApp.controller('loginController',function($scope,$rootScope,$location, $st
             });
         };
     
-    })
+    }).controller('forgotcontroller',function($http,$scope,$rootScope,$location, $state,communicationService){
+        $scope.forgotPassword=function(){
+                console.log($scope.user);
+        }
+});

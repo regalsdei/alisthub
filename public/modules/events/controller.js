@@ -1,4 +1,4 @@
-routerApp.controller('eventhomeController', function($scope) {
+angular.module('alisthub').controller('eventhomeController', function($scope) {
   
     if(window.innerWidth>767){ 
     $scope.navCollapsed = false;	  

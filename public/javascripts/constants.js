@@ -3,7 +3,9 @@ var baseUrl = "http://192.155.246.146:7048";
 var webservices = {	
 
 	"getUserregister" : baseUrl + "/webservices/register",
-        "checkUnique" : baseUrl + "/webservices/checkUnique",
+         "checkUnique" : baseUrl + "/webservices/checkUnique",
+        "getUserlogin" : baseUrl + "/webservices/login",
+
 	
 }
 

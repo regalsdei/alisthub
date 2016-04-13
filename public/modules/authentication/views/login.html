@@ -2,7 +2,7 @@
   <section class="header animated bounce"><a href="#"><img src="images/logo-l.png" alt=""/></a></section>
   <!-- //Header --> 
   
-  <section class="container" ng-controller="loginController">
+  <section class="container">
   	<section class="login-frame animated bounceInLeft">
     	<h1>Login Now!</h1>
 	<form name="userForm" ng-submit="submitForm()" novalidate>
@@ -25,7 +25,7 @@
         </ul>
         <p><button  type="submit" class="btn-l m-fw"  ng-disabled="userForm.$invalid">Login</button></p>
         <section class="otherlinks">
-        	<p><a href="javascript:void(0)">Forgot Password?</a></p>
+        	<p><a ui-sref="forgot-password">Forgot Password?</a></p>
             <p><a  ui-sref="signup" class="signup-link">Sign Up if not a Member</a></p>
         </section>
 	</form>
