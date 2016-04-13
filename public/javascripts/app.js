@@ -74,7 +74,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
         var serviceUrl = webservices.getUserregister;
         var jsonData=$scope.user;
          $http({
-            url: 'http://192.155.246.146:7048/webservices/register',
+            url: serviceUrl,
             method: 'POST',
             data: jsonData,
             headers: {
@@ -85,9 +85,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
             
             console.log(data);
             });
-       /*communicationService.resultViaPost(serviceUrl,appConstants.authorizationKey,headerConstants,jsonData, function(response){
-           console.log(response);  
-       });*/
+ 
 
         };
     
