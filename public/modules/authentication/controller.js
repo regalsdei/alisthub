@@ -1,5 +1,5 @@
 
-angular.module('alisthub').controller('loginController', function($scope, $ocLazyLoad,$rootScope,$state) {
+angular.module('alisthub').controller('loginController', function($http,$location,$scope, $ocLazyLoad,$rootScope,$state) {
  
         $rootScope.class_status=1;
     
@@ -11,7 +11,24 @@ angular.module('alisthub').controller('loginController', function($scope, $ocLaz
                 $rootScope.isuserloggedIn=$rootScope.footer_login_div=true;
                 $rootScope.menu=$rootScope.after_login_footer_div=false;
                 $rootScope.class_status = 0;
-                $state.go('dashboard');
+                var serviceUrl = webservices.getUserlogin;
+                 var jsonData=$scope.user;
+                $http({
+                 url: serviceUrl,
+                 method: 'POST',
+                 data: jsonData,
+                 headers: {
+                  "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                  "Accept": "application/json",
+                 }
+                }).success(function(data, status, headers, config) {
+                
+                  if (data.message=='error') {
+                   console.log('error occured');
+                  }else{
+                   $state.go('dashboard');
+                  }
+                });
             }
 
         };
@@ -37,4 +54,8 @@ angular.module('alisthub').controller('loginController', function($scope, $ocLaz
         };
     
     
-    })
+    }).controller('forgotcontroller',function($http,$scope,$rootScope,$location, $state,communicationService){
+        $scope.forgotPassword=function(){
+                console.log($scope.user);
+        }
+});

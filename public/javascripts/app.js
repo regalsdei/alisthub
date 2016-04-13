@@ -47,6 +47,23 @@ var routerApp = angular.module('alisthub', ['ui.router', 'oc.lazyLoad','communic
           }]
         }
         })
+        //Authentication screen=================================
+        .state('forgot-password', {
+            url: '/forgot-password',
+            
+            views: {
+          "lazyLoadView": {
+            controller: 'forgotcontroller', // This view will use AppCtrl loaded below in the resolve
+            templateUrl: 'modules/authentication/views/forgot.html'
+          }
+        },
+        resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+          resources: ['$ocLazyLoad', function($ocLazyLoad) {
+            // you can lazy load files for an existing module
+            return $ocLazyLoad.load('modules/authentication/controller.js');
+          }]
+        }
+        })
          //Events dashoard screen=================================
         .state('dashboard', {
             url: '/dashboard',
