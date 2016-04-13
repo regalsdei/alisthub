@@ -26,6 +26,11 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/signup',
             templateUrl: 'modules/authentication/views/signup.html'
         })
+        //Email Confirmation screen=================================
+        .state('confirmation', {
+            url: '/confirm_email/:id',
+            templateUrl: 'modules/authentication/views/login.html'
+        })
          //Events dashoard screen=================================
         .state('dashboard', {
             url: '/dashboard',
