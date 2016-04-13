@@ -1,5 +1,8 @@
-routerApp.controller('loginController',function($scope,$rootScope,$location, $state){
-        $rootScope.class_status=1; 
+
+angular.module('alisthub').controller('loginController', function($scope, $ocLazyLoad,$rootScope,$state) {
+ 
+        $rootScope.class_status=1;
+    
        // function to submit the form after all validation has occurred            
         $scope.submitForm = function() {
 
@@ -12,9 +15,7 @@ routerApp.controller('loginController',function($scope,$rootScope,$location, $st
             }
 
         };
-    
-    
-    }).controller('signupcontroller',function($http,$scope,$rootScope,$location, $state,communicationService){
+}).controller('signupcontroller',function($http,$scope,$rootScope,$location, $state,communicationService){
         // function to submit the form after all validation has occurred            
         $scope.submitRegistrationform = function() {
         var serviceUrl = webservices.getUserregister;
