@@ -1,16 +1,15 @@
 
-angular.module('alisthub').controller('loginController', function($http,$location,$scope, $ocLazyLoad,$rootScope,$state) {
+angular.module('alisthub').controller('loginController', function($http,$location,$scope, $ocLazyLoad,$rootScope,$state, $timeout,$localStorage) {
  
         $rootScope.class_status=1;
-    
+       $scope.error_message=true;
        // function to submit the form after all validation has occurred            
         $scope.submitForm = function() {
 
             // check to make sure the form is completely valid
             if ($scope.userForm.$valid) {
-                $rootScope.isuserloggedIn=$rootScope.footer_login_div=true;
-                $rootScope.menu=$rootScope.after_login_footer_div=false;
-                $rootScope.class_status = 0;
+                
+                
                 var serviceUrl = webservices.getUserlogin;
                  var jsonData=$scope.user;
                 $http({
@@ -22,10 +21,19 @@ angular.module('alisthub').controller('loginController', function($http,$locatio
                   "Accept": "application/json",
                  }
                 }).success(function(data, status, headers, config) {
-                
+                  
                   if (data.message=='error') {
-                   console.log('error occured');
+                   $scope.error="Error occurred during login.";
+                   $scope.error_message=false;
+                   $timeout(function() {
+                        
+                     $scope.error='';
+                     $scope.error_message=true;
+                   },3000);
                   }else{
+                  $rootScope.class_status = 0;
+                  $localStorage.isuserloggedIn=$rootScope.isuserloggedIn=$rootScope.footer_login_div=true;
+                  $localStorage.menu=$localStorage.after_login_footer_div=$rootScope.menu=$rootScope.after_login_footer_div=false;
                    $state.go('dashboard');
                   }
                 });
@@ -33,7 +41,8 @@ angular.module('alisthub').controller('loginController', function($http,$locatio
 
         };
 }).controller('signupcontroller',function($http,$scope,$rootScope,$location, $state,communicationService){
-        // function to submit the form after all validation has occurred            
+        // function to submit the form after all validation has occurred
+        $rootScope.class_status = 1;
         $scope.submitRegistrationform = function() {
         var serviceUrl = webservices.getUserregister;
         var jsonData=$scope.user;

@@ -7,7 +7,7 @@ Montive: It defined routes to call different files.It will provide you direction
 'use strict';
 angular.module("communicationModule", []);
 // Declare app level module which depends on filters, and services
-var routerApp = angular.module('alisthub', ['ui.router', 'oc.lazyLoad','communicationModule'])
+var routerApp = angular.module('alisthub', ['ui.router', ,'ngStorage','oc.lazyLoad','communicationModule'])
   .config(function($stateProvider, $locationProvider, $urlRouterProvider, $ocLazyLoadProvider) {
      $urlRouterProvider.otherwise('/login');
     
@@ -134,14 +134,19 @@ var routerApp = angular.module('alisthub', ['ui.router', 'oc.lazyLoad','communic
             }
         })
     
-  }).run(['$rootScope', '$location','$state', function($rootScope,$location, $state) {
+  }).run(['$rootScope', '$location','$state', '$localStorage',function($rootScope,$location, $state,$localStorage) {
     //To add class
+    if($localStorage.isuserloggedIn){
+        $rootScope.menu=$rootScope.after_login_footer_div=false;
+        $rootScope.footer_login_div=true;
+    }else{
+       $rootScope.menu=$rootScope.after_login_footer_div=true;
+       $rootScope.footer_login_div=false; 
+    }
     
-    $rootScope.menu=$rootScope.after_login_footer_div=true;
-    $rootScope.footer_login_div=false;
     $rootScope.logout=function(){
-        $rootScope.isuserloggedIn=$rootScope.footer_login_div=false;
-        $rootScope.menu=$rootScope.after_login_footer_div=true;
+        $localStorage.isuserloggedIn=$rootScope.isuserloggedIn=$rootScope.footer_login_div=false;
+        $localStorage.menu=$localStorage.after_login_footer_div=$rootScope.menu=$rootScope.after_login_footer_div=true;
         $state.go('login');
     }
     }]);;
