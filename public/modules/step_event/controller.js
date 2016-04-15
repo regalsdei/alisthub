@@ -1,5 +1,5 @@
 angular.module('alisthub').controller('stepeventController', function($scope,$localStorage) {
-    $scope.multiple_event_div=$scope.location_event_div=$scope.price_and_link_div=true;
+    $scope.multiple_event_div=$scope.location_event_div=$scope.price_and_link_div=$scope.look_and_feel_div=$scope.setting_div=true;
      $scope.events = [
     { "name": "Single Event",'id':1},
     {"name": "Multiple Event",'id':2}
