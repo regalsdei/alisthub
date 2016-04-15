@@ -1,6 +1,8 @@
 
 angular.module('alisthub').controller('loginController', function($http,$location,$scope, $ocLazyLoad,$rootScope,$state, $timeout,$localStorage) {
- 
+        if ($localStorage.isuserloggedIn) {
+                $state.go('dashboard');
+        }
         $rootScope.class_status=1;
        $scope.error_message=true;
        // function to submit the form after all validation has occurred            
@@ -21,8 +23,8 @@ angular.module('alisthub').controller('loginController', function($http,$locatio
                   "Accept": "application/json",
                  }
                 }).success(function(data, status, headers, config) {
-                  
-                  if (data.message=='error') {
+                
+                  if ((data.message=='error')||(data.user==undefined)) {
                    $scope.error="Error occurred during login.";
                    $scope.error_message=false;
                    $timeout(function() {
@@ -31,10 +33,17 @@ angular.module('alisthub').controller('loginController', function($http,$locatio
                      $scope.error_message=true;
                    },3000);
                   }else{
-                  $rootScope.class_status = 0;
-                  $localStorage.isuserloggedIn=$rootScope.isuserloggedIn=$rootScope.footer_login_div=true;
-                  $localStorage.menu=$localStorage.after_login_footer_div=$rootScope.menu=$rootScope.after_login_footer_div=false;
-                   $state.go('dashboard');
+                        $rootScope.class_status = 0;
+                        $localStorage.isuserloggedIn=$rootScope.isuserloggedIn=$rootScope.footer_login_div=true;
+                        $localStorage.menu=$localStorage.after_login_footer_div=$rootScope.menu=$rootScope.after_login_footer_div=false;
+                       
+                        $rootScope.email=$localStorage.email=data.user.User.email;
+                        $rootScope.name=$localStorage.name=data.user.User.first_name+" "+data.user.User.last_name;
+                        $rootScope.access_token=$localStorage.access_token=data.user.User.access_token;
+                        $rootScope.phone_no=$localStorage.phone_no=data.user.User.phone_no;
+                        $rootScope.userId=$localStorage.userId=data.user.User.id;
+                        $rootScope.address=$localStorage.address=data.user.User.address;
+                        $state.go('dashboard');
                   }
                 });
             }

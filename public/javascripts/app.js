@@ -122,14 +122,14 @@ var routerApp = angular.module('alisthub', ['ui.router', ,'ngStorage','oc.lazyLo
             
             views: {
                 "lazyLoadView": {
-                  controller: 'eventhomeController', // This view will use AppCtrl loaded below in the resolve
+                  controller: 'stepeventController', // This view will use AppCtrl loaded below in the resolve
                   templateUrl: 'modules/step_event/views/create_event_step1.html'
                 }
             },
             resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
               resources: ['$ocLazyLoad', function($ocLazyLoad) {
                 // you can lazy load files for an existing module
-                return $ocLazyLoad.load('modules/events/controller.js');
+                return $ocLazyLoad.load('modules/step_event/controller.js');
               }]
             }
         })
@@ -139,6 +139,13 @@ var routerApp = angular.module('alisthub', ['ui.router', ,'ngStorage','oc.lazyLo
     if($localStorage.isuserloggedIn){
         $rootScope.menu=$rootScope.after_login_footer_div=false;
         $rootScope.footer_login_div=true;
+        $rootScope.email=$localStorage.email;
+        $rootScope.name=$localStorage.name;
+        $rootScope.access_token=$localStorage.access_token;
+        $rootScope.phone_no=$localStorage.phone_no;
+        $rootScope.userId=$localStorage.userId;
+        $rootScope.address=$localStorage.address;
+        $state.go('dashboard');
     }else{
        $rootScope.menu=$rootScope.after_login_footer_div=true;
        $rootScope.footer_login_div=false; 
@@ -147,6 +154,7 @@ var routerApp = angular.module('alisthub', ['ui.router', ,'ngStorage','oc.lazyLo
     $rootScope.logout=function(){
         $localStorage.isuserloggedIn=$rootScope.isuserloggedIn=$rootScope.footer_login_div=false;
         $localStorage.menu=$localStorage.after_login_footer_div=$rootScope.menu=$rootScope.after_login_footer_div=true;
+       localStorage.clear();
         $state.go('login');
     }
     }]);;

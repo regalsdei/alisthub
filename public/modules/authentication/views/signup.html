@@ -9,19 +9,7 @@
 	<form name="userSignupForm" ng-submit="submitRegistrationform()" novalidate>
         <p class="tagline">We do the right things to prove our integrity and reliability to earn your trust. </p>
         <section class="signup form-widget">
-        	<div class="form-group row">
-                  <div class="col-sm-6 section-col" ng-class="{ 'has-error' : userSignupForm.organization.$invalid && !userSignupForm.organization.$pristine }">
-                    <label>Organization</label>
-                    <input type="text" name="organization" class="form-control" placeholder="Organization" ng-model="user.organization" required>
-			<p ng-show="userSignupForm.organization.$invalid && !userSignupForm.organization.$pristine" class="help-block">Enter an organization name.</p>
-                  </div>
-              
-                  <div class="col-sm-6 section-col" ng-class="{ 'has-error' : userSignupForm.username.$invalid && !userSignupForm.username.$pristine }">
-                    <label>User Name</label>
-                    <input type="text" name="username" class="form-control" placeholder="User Name" ng-model="user.username" required>
-			<p ng-show="userSignupForm.username.$invalid && !userSignupForm.username.$pristine" class="help-block">Enter your username.</p>
-                  </div>
-              </div>
+        	
 	    
 	    
               <div class="form-group row">
@@ -47,6 +35,19 @@
                     <input type="password" placeholder="password" class="form-control" name="password" ng-model="user.password"  ng-minlength="3" ng-maxlength="12" required>
 		     <p ng-show="userSignupForm.password.$error.minlength" class="help-block">Password is too short.</p>
 		     <p ng-show="userSignupForm.password.$error.maxlength" class="help-block">Password is too long.</p>
+                  </div>
+              </div>
+	      <div class="form-group row">
+                 <!-- <div class="col-sm-6 section-col" ng-class="{ 'has-error' : userSignupForm.organization.$invalid && !userSignupForm.organization.$pristine }">
+                    <label>Organization</label>
+                    <input type="text" name="organization" class="form-control" placeholder="Organization" ng-model="user.organization" required>
+			<p ng-show="userSignupForm.organization.$invalid && !userSignupForm.organization.$pristine" class="help-block">Enter an organization name.</p>
+                  </div>-->
+              
+                  <div class="col-sm-6 section-col" ng-class="{ 'has-error' : userSignupForm.username.$invalid && !userSignupForm.username.$pristine }">
+                    <label>User Name</label>
+                    <input type="text" name="username" class="form-control" placeholder="User Name" ng-model="user.username" required>
+			<p ng-show="userSignupForm.username.$invalid && !userSignupForm.username.$pristine" class="help-block">Enter your username.</p>
                   </div>
               </div>
         </section>

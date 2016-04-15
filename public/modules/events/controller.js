@@ -1,5 +1,5 @@
-angular.module('alisthub').controller('eventhomeController', function($scope) {
-  
+angular.module('alisthub').controller('eventhomeController', function($scope,$localStorage) {
+   
     if(window.innerWidth>767){ 
     $scope.navCollapsed = false;	  
     }else{
