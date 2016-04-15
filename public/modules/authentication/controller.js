@@ -31,6 +31,30 @@ routerApp.controller('loginController',function($scope,$rootScope,$location, $st
 angular.module('alisthub').controller('loginController', function($http,$location,$scope, $ocLazyLoad,$rootScope,$state) {
  
         $rootScope.class_status=1;
+        $scope.activation_message = false;
+        $scope.user = {};
+        if ($state.params.id) {
+              //  confirmationEmail
+                var serviceUrl = webservices.confirmationEmail;
+                $scope.user.token = $state.params.id;
+                var jsonData=$scope.user;
+                $http({
+                 url: serviceUrl,
+                 method: 'POST',
+                 data: jsonData,
+                 headers: {
+                  "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                  "Accept": "application/json",
+                 }
+                }).success(function(data, status, headers, config) {
+                
+                  if (data == 200) {
+                   $scope.activation_message = global_message.ActivatedMessage;
+                  }else{
+                   $scope.activation_message = global_message.ErrorInActivation;
+                  }
+                });
+        }
 
         $scope.submitForm = function() {
 
@@ -40,7 +64,7 @@ angular.module('alisthub').controller('loginController', function($http,$locatio
                 $rootScope.menu=$rootScope.after_login_footer_div=false;
                 $rootScope.class_status = 0;
                 var serviceUrl = webservices.getUserlogin;
-                 var jsonData=$scope.user;
+                var jsonData=$scope.user;
                 $http({
                  url: serviceUrl,
                  method: 'POST',
@@ -66,7 +90,7 @@ angular.module('alisthub').controller('loginController', function($http,$locatio
         $scope.message = "";
         $scope.submitRegistrationform = function() {
         var serviceUrl = webservices.getUserregister;
-        $scope.user.hosturl  = "localhost:3500";
+        $scope.user.hosturl  = servicebaseUrl;
         var jsonData=$scope.user;
         
         $http({
@@ -115,6 +139,52 @@ angular.module('alisthub').controller('loginController', function($http,$locatio
     
     }).controller('forgotcontroller',function($http,$scope,$rootScope,$location, $state,communicationService){
         $scope.forgotPassword=function(){
-                console.log($scope.user);
+            console.log($scope.user);
+            $scope.message = false;
+            var serviceUrl = webservices.forgetPassword;
+            $scope.user.hosturl  = servicebaseUrl;
+            var jsonData = $scope.user;
+            $http({
+            url: serviceUrl,
+            method: 'POST',
+            data: jsonData,
+            headers: {
+            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+            "Accept": "application/json",
+            }
+            }).success(function(data, status, headers, config) {
+                 if (data == 200) {
+                 $scope.message = global_message.ForgetPassword;
+                 }
+                 else{
+                 $scope.message = global_message.ForgetEmailError;
+                 }
+            });
+        }
+        if ($state.params.id)
+        {
+            $scope.message = false;
+            var serviceUrl = webservices.resetPassword;
+            //$scope.user.hosturl  = servicebaseUrl;
+            $scope.user.token  = $state.params.id;
+            
+            var jsonData = $scope.user;
+            
+            $http({
+            url: serviceUrl,
+            method: 'POST',
+            data: jsonData,
+            headers: {
+            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+            "Accept": "application/json",
+            }
+            }).success(function(data, status, headers, config) {
+                 if (data == 200) {
+                 $scope.message = global_message.SignupSuccess;
+                 }
+                 else{
+                 $scope.message = global_message.ForgetEmailError;
+                 }
+           
         }
 });

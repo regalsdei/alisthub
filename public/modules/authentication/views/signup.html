@@ -8,6 +8,7 @@
     	<h1>Signup Now!</h1>
 	<form name="userSignupForm" ng-submit="submitRegistrationform()" novalidate>
         <p class="tagline">We do the right things to prove our integrity and reliability to earn your trust. </p>
+	<p ng-show="message">{{ message }}</p>
         <section class="signup form-widget">
         	<div class="form-group row">
                   <div class="col-sm-6 section-col" ng-class="{ 'has-error' : userSignupForm.organization.$invalid && !userSignupForm.organization.$pristine }">
@@ -39,7 +40,7 @@
               <div class="form-group row">
                   <div class="col-sm-6 section-col" ng-class="{ 'has-error' : userSignupForm.email.$invalid && !userSignupForm.email.$pristine }">
                     <label>Email</label>
-                    <input type="email" placeholder="email-address"  ng-model="user.email" class="form-control" name="email" ng-blur="checkUnique();"> <div ng-show="unique">{{unique}}</div>
+                    <input type="email" placeholder="email-address"  ng-model="user.email" class="form-control" name="email" ng-blur="checkUnique();"> <div ng-show="unique" class="help-block">{{unique}}</div>
 			<p ng-show="userSignupForm.email.$invalid && !userSignupForm.email.$pristine" class="help-block">Enter a valid email.</p>
                   </div>
                   <div class="col-sm-6 section-col"  ng-class="{ 'has-error' : userSignupForm.password.$invalid && !userSignupForm.password.$pristine }">
@@ -50,7 +51,7 @@
                   </div>
               </div>
         </section>
-        <p><button  type="submit" class="btn-l m-fw"  ng-disabled="userSignupForm.$invalid">Sign up</button>{{ message }}</p>
+        <p><button  type="submit" class="btn-l m-fw"  ng-disabled="userSignupForm.$invalid">Sign up</button></p>
         <section class="otherlinks">
             <p><a ui-sref="login" class="signup-link">Already registered! Login here</a></p>
         </section>

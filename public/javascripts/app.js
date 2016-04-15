@@ -47,6 +47,24 @@ var routerApp = angular.module('alisthub', ['ui.router', 'oc.lazyLoad','communic
           }]
         }
         })
+        
+        //Email Confirmation screen=================================
+        .state('confirm_email', {
+            url: '/confirm_email/:id',
+            views: {
+          "lazyLoadView": {
+            controller: 'loginController', // This view will use AppCtrl loaded below in the resolve
+            templateUrl: 'modules/authentication/views/login.html'
+          }
+        },
+        resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+          resources: ['$ocLazyLoad', function($ocLazyLoad) {
+            // you can lazy load files for an existing module
+            return $ocLazyLoad.load('modules/authentication/controller.js');
+          }]
+        }        
+        })
+                
         //Authentication screen=================================
         .state('forgot-password', {
             url: '/forgot-password',
@@ -64,11 +82,25 @@ var routerApp = angular.module('alisthub', ['ui.router', 'oc.lazyLoad','communic
           }]
         }
         })
-        //Email Confirmation screen=================================
-        .state('confirmation', {
-            url: '/confirm_email/:id',
-            templateUrl: 'modules/authentication/views/login.html'
+        // New Password
+        .state('confirm-password', {
+            url: '/confirm-password',
+            
+            views: {
+          "lazyLoadView": {
+            controller: 'forgotcontroller', // This view will use AppCtrl loaded below in the resolve
+            templateUrl: 'modules/authentication/views/newpassword.html'
+          }
+        },
+        resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+          resources: ['$ocLazyLoad', function($ocLazyLoad) {
+            // you can lazy load files for an existing module
+            return $ocLazyLoad.load('modules/authentication/controller.js');
+          }]
+        }
         })
+        
+        
          //Events dashoard screen=================================
         .state('dashboard', {
             url: '/dashboard',
