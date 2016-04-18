@@ -1,33 +1,3 @@
-/*
-routerApp.controller('loginController',function($scope,$rootScope,$location, $state){
-        $rootScope.class_status=1; 
-       // function to submit the form after all validation has occurred
-        if($state.params.id)
-        {
-                var serviceUrl = webservices.confirmToken;
-                $token = $state.params.id;
-                $http({ 
-                url: serviceUrl,
-                method: 'POST',
-                data: jsonData,
-                headers: {
-                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-                "Accept": "application/json",
-                }
-                }).success(function(data, status, headers, config) {
-                
-                    if (data == 101) {
-                     $scope.message = global_message.EmailExist;
-                    }
-                    else {
-                     $scope.message = global_message.SignupSuccess;
-                    }
-                
-                });
-        }
-        
-=======*/
-
 angular.module('alisthub').controller('loginController', function($http,$location,$scope, $ocLazyLoad,$rootScope,$state, $timeout,$localStorage) {
         if ($localStorage.isuserloggedIn) {
                 $rootScope.class_status = 0;
