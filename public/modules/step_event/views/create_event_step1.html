@@ -4,29 +4,9 @@
     <!-- Step Form -->
     
     <div class="stage-container clearfix">
-      <div class="stage current">
-        <div class="stage-icon"><i class="fa fa-calendar"></i> </div>
-        <div class="stage-title">Events Details</div>
-      </div>
-      <!--/ .stage-->
-      
-      <div class="stage">
-        <div class="stage-icon"><i class="fa fa-tags"></i></div>
-        <div class="stage-title">Price &amp; Links</div>
-      </div>
-      <!--/ .stage-->
-      
-      <div class="stage">
-        <div class="stage-icon"><i class="fa fa-eye"></i></div>
-        <div class="stage-title">Look &amp; Feel</div>
-      </div>
-      <!--/ .stage-->
-      
-      <div class="stage">
-        <div class="stage-icon"><i class="fa fa-cog"></i></div>
-        <div class="stage-title">Setting</div>
-      </div>
-      <!--/ .stage--> 
+      <div class="stage" ng-repeat="step in steps" ng-class="{current: isActive2(step)}" ng-click="click_menu(step)"><div class="stage-icon"><i class="{{step.icon}}"></i> </div>
+        <div class="stage-title">{{step.title}}</div> </div>
+    
     </div>
     
     <!-- //Step Form --> 
@@ -36,7 +16,7 @@
     <div class="form-section">
       <form class="event-form">
         <!-- Event Detail Form -->
-   
+       <div ng-hide="eventdetail_div">
           <div class="form-group">
             <label for="eventname">Event Name<span class="req">*</span></label>
             <input type="text" name="eventname" class="form-control" placeholder="Title of your Event">
@@ -48,16 +28,14 @@
               <!-- Nav tabs -->
               <div class="content-tab">
                 <ul class="nav nav-tabs responsive-tabs" id="event-date" role="tablist">
-                 <!-- <li  class="active"><a href="#single-event" >Single Event</a></li>
-                  <li><a href="#multiple-event" >Multiple Event</a></li>-->
-                  <li  class="active"><a href="javascript:void(0)" >Single Event</a></li>
-                  <li><a href="javascript:void(0)"  >Multiple Event</a></li>
+               <li ng-repeat="event in events" ng-click="select(event)" ng-class="{active: isActive(event)}" ><a class="pointer" href="javascript:void(0)" >{{event.name}}</a> </li>
+              
                 </ul>
               </div>
               
               <!-- Tab panes -->
               <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="single-event">
+                <div role="tabpanel" class="active"  id="single-event" ng-hide="single_event_div">
                   <div class="row">
                     <div class="col-sm-4">
                       <div class="form-group">
@@ -93,7 +71,130 @@
                     </div>
                   </div>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="multiple-event">...</div>
+                <div role="tabpanel"  id="multiple-event"  ng-hide="multiple_event_div">
+                    <div class="row">
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label for="StartTime">Start Time<span class="req">*</span></label>
+                      <input type="text" name="StartTime" value="4:00pm" class="form-control" placeholder="Start Time">
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label for="EndTime">End Time</label>
+                      <input type="text" name="EndTime" value="6:00pm" class="form-control" placeholder="End Time">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label for="EndTime">Start Date<span class="req">*</span></label>
+                      <div class="form-group">
+                        <div class='input-group date' id='datetimepicker1'>
+                          <input type='text' class="form-control" />
+                          <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label for="EndTime">End Date<span class="req">*</span></label>
+                      <div class="form-group">
+                        <div class='input-group date' id='datetimepicker1'>
+                          <input type='text' class="form-control" />
+                          <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-4">
+                  	<label for="City">Recurring<span class="req">*</span></label>
+                    <div class="form-group">                      
+                      <select class="form-control">
+                        <option>Weekly</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-8 event">
+                    <div class="form-group custom-check m-t40">
+                      <p class="custom-check">
+                        <input type="checkbox" id="test1">
+                        <label for="test1">Sun</label>
+                      </p>
+                      <p class="custom-check">
+                        <input type="checkbox" id="test2">
+                        <label for="test2">Mon</label>
+                      </p>
+                      <p class="custom-check">
+                        <input type="checkbox" id="test3">
+                        <label for="test3">Tue</label>
+                      </p>
+                      <p class="custom-check">
+                        <input type="checkbox" id="test4">
+                        <label for="test4">Wed</label>
+                      </p>
+                      <p class="custom-check">
+                        <input type="checkbox" id="test5">
+                        <label for="test5">Thu</label>
+                      </p>
+                      <p class="custom-check">
+                        <input type="checkbox" id="test6">
+                        <label for="test6">Fri</label>
+                      </p>
+                      <p class="custom-check">
+                        <input type="checkbox" id="test7">
+                        <label for="test7">Sat</label>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                  	 <div class="form-group">
+                        <button class="pink-btn btn btn-small">Save</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <label>Select/Deslect Events</label>
+                    <div class="clearfix list-event-date form-inline">
+      <div class="col-sm-1 pull-right text-right lss-top"> <a href="#"><i class="fa fa-close"></i></a> </div>
+     
+        <div class="sel-d col-sm-3">
+          <label> Friday, 4 March 2016 </label>
+        </div>
+        <div class="sel-d col-sm-4">
+          <label for="exampleInputName2">Start Time : </label>
+          <input type="text" class="form-control input30" id="exampleInputName2">
+        </div>
+        <div class="sel-d col-sm-4">
+          <label for="exampleInputEmail2">End Time : </label>
+          <input type="email" class="form-control input30" id="exampleInputEmail2">
+        </div>
+   
+    </div>
+                    <div class="clearfix list-event-date form-inline">
+      <div class="col-sm-1 pull-right text-right lss-top"> <a href="#"><i class="fa fa-close"></i></a> </div>
+     
+        <div class="sel-d col-sm-3">
+          <label> Friday, 4 March 2016 </label>
+        </div>
+        <div class="sel-d col-sm-4">
+          <label for="exampleInputName2">Start Time : </label>
+          <input type="text" class="form-control input30" id="exampleInputName2">
+        </div>
+        <div class="sel-d col-sm-4">
+          <label for="exampleInputEmail2">End Time : </label>
+          <input type="email" class="form-control input30" id="exampleInputEmail2">
+        </div>
+   
+    </div>
+                  </div>
+                </div>
+                
+                
+                </div>
               </div>
             </div>
           </div>
@@ -107,14 +208,11 @@
               <div class="row">
                 <div class="col-sm-12 col-md-6">
                   <ul class="nav nav-tabs responsive-tabs">
-                 <!--  <li class="active"> <a href="#venue-event">Add New Venue</a></li>
-                   <li><a href="#location-event">Use Post Location</a></li>-->
-                   <li class="active"> <a href="javascript:void(0)">Add New Venue</a></li>
-                   <li><a href="javascript:void(0)">Use Post Location</a></li>
+                 <li ng-repeat="venue in venues" ng-click="select_venue(venue)" ng-class="{active: isActive1(venue)}" ><a class="pointer" href="javascript:void(0)" >{{venue.name}}</a> </li>
                    </ul>
                
               <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane active" id="venue-event">
+                    <div role="tabpanel"  id="venue-event" ng-hide="venue_event_div">
                       <div class="row">
                         <div class="col-sm-6">
                           <div class="form-group">
@@ -174,7 +272,34 @@
                         </div>
                       </div>
                     </div>
-                    <div role="tabpanel" class="tab-pane" id="location-event">...</div>
+                    <div role="tabpanel"  id="location-event" ng-hide="location_event_div">
+                         <div class="row">
+                        <div class="col-sm-12 loc-list">
+                  		<ul>
+                        	<li>
+                            <i class="fa fa-map-marker"></i>
+                             <a href="#">Palace of Fine Arts(Palace of Fine Arts - Seating Chart)</a>
+                            	<span>3301 Lyn St. San Francisca CA</span>
+                            </li>
+                           <li>
+                           <i class="fa fa-map-marker"></i>
+                             <a href="#">Palace of Fine Arts(Palace of Fine Arts - Seating Chart)</a>
+                            	<span>3301 Lyn St. San Francisca CA</span>
+                            </li>
+                            <li>
+                            <i class="fa fa-map-marker"></i>
+                             <a href="#">Palace of Fine Arts(Palace of Fine Arts - Seating Chart)</a>
+                            	<span>3301 Lyn St. San Francisca CA</span>
+                            </li>
+                            <li>
+                            <i class="fa fa-map-marker"></i>
+                             <a href="#">Palace of Fine Arts(Palace of Fine Arts - Seating Chart)</a>
+                            	<span>3301 Lyn St. San Francisca CA</span>
+                            </li>
+                        </ul>
+                  	  </div>
+                     </div>
+                    </div>
                   </div>
                   
                   <!-- Tab panes -->
@@ -213,6 +338,7 @@
             <button type="button" class="btn btn-previous">Previous</button>
             <button type="button" class="btn btn-next">Next</button>
           </div>
+       
         </fieldset>
         <fieldset>
           <div class="form-top">
@@ -239,7 +365,7 @@
             <button type="submit" class="btn">Sign me up!</button>
           </div>
         </fieldset>
-      </form>
+     
       <div class="editr">
         <label>Event Description<span class="req">*</span></label>
         <img src="images/editor.png" alt="editor" class="img-responsive"/>
@@ -248,6 +374,463 @@
           <button class="pink-btn btn">Next</button>
         </div>
       </div>
+       </div>
+      
+       <div ng-hide="price_and_link_div">
+           <!-- Event Detail Form -->
+   		  
+          <section class="row">
+          	  <section class="col-sm-4">
+                  <div class="form-group">
+                    <label class="form-label">Event Inventory<span class="req">*</span></label>
+                    <input type="text" name="eventname" class="form-control" placeholder="Event Inventory">
+                  </div>
+              </section>
+              <section class="col-sm-4">
+                  <div class="form-group">
+                    <label class="form-label">Type of Event</label>
+                    <section class="radio-sec with-ftext">
+                      		<section class="radio-inline">
+                              <input type="radio" id="radio1" name="radio1">
+                              <label for="radio1"><span></span>Ticketed</label>
+                          </section>
+                            <section class="radio-inline">
+                          <input type="radio" id="radio2" name="radio1">
+                          <label for="radio2"><span></span>Registration</label>
+                          </section>
+                   </section>
+                  </div>
+              </section>
+          </section>
+          <!--Ticket Types Start -->
+          <div class="module">
+             	<section class="prof-hd">
+                   <i class="fa fa-ticket hdicon pos-l16"></i>
+                    <h2>Ticket Types <span class="rt-img"><i class="fa fa-caret-down"></i></span></h2>
+            </section>
+                <section class="gray-frame sub-fields">
+                  <section class="grid-btn-top row">
+                  	  <section class="col-sm-7">
+                      	<section class="radio-sec">
+                      		<section class="radio-inline">
+                              <input type="radio" name="radio" id="radio01">
+                              <label for="radio01"><span></span>Arrange by price</label>
+                          </section>
+                            <section class="radio-inline">
+                          <input type="radio" name="radio" id="radio02">
+                          <label for="radio02"><span></span>Manually Arrange</label>
+                          </section>
+                         </section>
+                      </section>
+                      <section class="col-sm-5 right-btns text-right">
+                          <button class="pink-btn btn btn-small m-fw">ADD PRICE LEVEL</button>
+                      </section>
+                    </section>
+                  <section class="grid-widget">
+      	  <div class="table-responsive">
+          	  
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th width="15%">Name</th>
+                <th width="10%" class="numbers">Sold</th>
+                <th width="14%" class="numbers">Remaining</th>
+                <th width="13%" class="numbers">Price</th>
+                <th width="14%" class="numbers">Box office <span class="l-b">Price</span></th>
+                <th width="12%" class="numbers">Limit</th>
+                <th width="23%">&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Balcony</strong></td>
+                <td class="numbers">12</td>
+                <td class="numbers">900</td>
+                <td class="numbers">$10.00</td>
+                <td class="numbers">$15.00</td>
+                <td class="numbers">850</td>
+                <td class="action"><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-tags"></i></a><a href="#"><i class="fa fa-check-circle"></i></a><a href="#"><i class="fa fa-trash"></i></a></td>
+            </tr>
+            <tr>
+                <td><strong>Dress Circle</strong></td>
+                <td class="numbers">12</td>
+                <td class="numbers">900</td>
+                <td class="numbers">$10.00</td>
+                <td class="numbers">$15.00</td>
+                <td class="numbers">850</td>
+                <td class="action"><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-tags"></i></a><a href="#"><i class="fa fa-check-circle"></i></a><a href="#"><i class="fa fa-trash"></i></a></td>
+            </tr>
+            <tr>
+                <td><strong>Loge</strong></td>
+                <td class="numbers">12</td>
+                <td class="numbers">900</td>
+                <td class="numbers">$10.00</td>
+                <td class="numbers">$15.00</td>
+                <td class="numbers">850</td>
+                <td class="action"><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-tags"></i></a><a href="#"><i class="fa fa-check-circle"></i></a><a href="#"><i class="fa fa-trash"></i></a></td>
+            </tr>
+            <tr>
+                <td><strong>Orchestra</strong></td>
+                <td class="numbers">12</td>
+                <td class="numbers">900</td>
+                <td class="numbers">$10.00</td>
+                <td class="numbers">$15.00</td>
+                <td class="numbers">850</td>
+                <td class="action"><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-tags"></i></a><a href="#"><i class="fa fa-check-circle"></i></a><a href="#"><i class="fa fa-trash"></i></a></td>
+            </tr>
+            <tr>
+                <td><strong>Balcony</strong></td>
+                <td class="numbers">12</td>
+                <td class="numbers">900</td>
+                <td class="numbers">$10.00</td>
+                <td class="numbers">$15.00</td>
+                <td class="numbers">850</td>
+                <td class="action"><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-tags"></i></a><a href="#"><i class="fa fa-check-circle"></i></a><a href="#"><i class="fa fa-trash"></i></a></td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+
+          </div>
+      </section>
+                  
+                  <section class="grid-bottm clearfix">
+                    <section class="gr-right pull-right">
+                    	<ul class="legends">
+                        	<li><i class="fa fa-pencil-square-o"></i> <span>Edit</span></li>
+                            <li><i class="fa fa-tags"></i><span>change price</span></li>
+                            <li><i class="fa fa-check-circle"></i><span>active</span></li>
+                            <li><i class="fa fa-trash"></i><span>delete</span></li>
+                        </ul>
+                    </section>
+                </section>
+                
+                  <div class="row">
+                    	<div class="col-sm-12">
+                          <div class="form-group row">                            
+                            <section class="col-sm-3">
+                                <label> Ages<span class="req">*</span></label>
+                                <select class="form-control">
+                                  <option value="Ticket">All Ages</option>
+                                </select>
+                            </section>
+                            <section class="col-sm-3 f-12">
+                            	<label>&nbsp;</label>
+                                <a href="#" class="u-text with-ftext"><strong>Define a custom age limit</strong></a>
+                            </section>
+                          </div>
+                        </div>
+                </div>
+
+      			</section>
+          </div>
+          <!-- Ticket Types Closed --> 
+          
+          <!-- Bundles Start -->
+          <section class="module">
+             	<section class="prof-hd">
+                   <i class="fa fa-database hdicon pos-l16"></i>
+                    <h2>Bundles <span class="rt-img"><i class="fa fa-caret-down"></i></span></h2>
+                 </section>
+                <section class="gray-frame sub-fields">
+                  <section class="grid-btn-top row">
+                  	  
+                      <section class="col-sm-5 pull-right text-right">
+                          <button class="pink-btn btn btn-small m-fw">ADD a Bundle</button>
+                      </section>
+                    </section>
+                  <section class="grid-widget">
+      	  <div class="table-responsive">
+          	  
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th width="15%">Name</th>
+                <th width="10%" class="numbers">Sold</th>
+                <th width="14%" class="numbers">Remaining</th>
+                <th width="13%" class="numbers">Price</th>
+                <th width="14%" class="numbers">Box office <span class="l-b">Price</span></th>
+                <th width="12%" class="numbers">Limit</th>
+                <th width="23%">&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Balcony</strong></td>
+                <td class="numbers">12</td>
+                <td class="numbers">900</td>
+                <td class="numbers">$10.00</td>
+                <td class="numbers">$15.00</td>
+                <td class="numbers">850</td>
+                <td class="action"><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-tags"></i></a><a href="#"><i class="fa fa-check-circle"></i></a><a href="#"><i class="fa fa-trash"></i></a></td>
+            </tr>
+            <tr>
+                <td><strong>Dress Circle</strong></td>
+                <td class="numbers">12</td>
+                <td class="numbers">900</td>
+                <td class="numbers">$10.00</td>
+                <td class="numbers">$15.00</td>
+                <td class="numbers">850</td>
+                <td class="action"><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-tags"></i></a><a href="#"><i class="fa fa-check-circle"></i></a><a href="#"><i class="fa fa-trash"></i></a></td>
+            </tr>
+            <tr>
+                <td><strong>Loge</strong></td>
+                <td class="numbers">12</td>
+                <td class="numbers">900</td>
+                <td class="numbers">$10.00</td>
+                <td class="numbers">$15.00</td>
+                <td class="numbers">850</td>
+                <td class="action"><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-tags"></i></a><a href="#"><i class="fa fa-check-circle"></i></a><a href="#"><i class="fa fa-trash"></i></a></td>
+            </tr>
+            <tr>
+                <td><strong>Orchestra</strong></td>
+                <td class="numbers">12</td>
+                <td class="numbers">900</td>
+                <td class="numbers">$10.00</td>
+                <td class="numbers">$15.00</td>
+                <td class="numbers">850</td>
+                <td class="action"><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-tags"></i></a><a href="#"><i class="fa fa-check-circle"></i></a><a href="#"><i class="fa fa-trash"></i></a></td>
+            </tr>
+            <tr>
+                <td><strong>Balcony</strong></td>
+                <td class="numbers">12</td>
+                <td class="numbers">900</td>
+                <td class="numbers">$10.00</td>
+                <td class="numbers">$15.00</td>
+                <td class="numbers">850</td>
+                <td class="action"><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-tags"></i></a><a href="#"><i class="fa fa-check-circle"></i></a><a href="#"><i class="fa fa-trash"></i></a></td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+
+          </div>
+      </section>
+                  
+                  <section class="grid-bottm clearfix">
+                    <section class="gr-right pull-right">
+                    	<ul class="legends">
+                        	<li><i class="fa fa-pencil-square-o"></i> <span>Edit</span></li>
+                            <li><i class="fa fa-tags"></i><span>change price</span></li>
+                            <li><i class="fa fa-check-circle"></i><span>active</span></li>
+                            <li><i class="fa fa-trash"></i><span>delete</span></li>
+                        </ul>
+                    </section>
+                </section>
+                
+                  
+
+      			</section>
+          </section>
+          <!-- Bundles Closed --> 
+          
+          <!--Product Start -->
+          <div class="module">
+             	<section class="prof-hd">
+                   <i class="fa fa-shopping-cart hdicon pos-l16"></i>
+                    <h2>Product <span class="rt-img"><i class="fa fa-caret-down"></i></span></h2>
+            </section>
+                <section class="gray-frame sub-fields">
+                  <section class="grid-btn-top row">                  	  
+                      <section class="col-sm-5 right-btns text-right">
+                          <button class="pink-btn btn btn-small m-fw">Add Product</button>
+                      </section>
+                    </section>
+                  <section class="grid-widget">
+      	  <div class="table-responsive">
+          	  
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th width="15%">Name</th>
+                <th width="10%" class="numbers">Sold</th>
+                <th width="14%" class="numbers">Remaining</th>
+                <th width="13%" class="numbers">Price</th>
+                <th width="14%" class="numbers">Box office <span class="l-b">Price</span></th>
+                <th width="12%" class="numbers">Limit</th>
+                <th width="23%">&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Balcony</strong></td>
+                <td class="numbers">12</td>
+                <td class="numbers">900</td>
+                <td class="numbers">$10.00</td>
+                <td class="numbers">$15.00</td>
+                <td class="numbers">850</td>
+                <td class="action"><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-tags"></i></a><a href="#"><i class="fa fa-check-circle"></i></a><a href="#"><i class="fa fa-trash"></i></a></td>
+            </tr>
+            <tr>
+                <td><strong>Dress Circle</strong></td>
+                <td class="numbers">12</td>
+                <td class="numbers">900</td>
+                <td class="numbers">$10.00</td>
+                <td class="numbers">$15.00</td>
+                <td class="numbers">850</td>
+                <td class="action"><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-tags"></i></a><a href="#"><i class="fa fa-check-circle"></i></a><a href="#"><i class="fa fa-trash"></i></a></td>
+            </tr>
+            <tr>
+                <td><strong>Loge</strong></td>
+                <td class="numbers">12</td>
+                <td class="numbers">900</td>
+                <td class="numbers">$10.00</td>
+                <td class="numbers">$15.00</td>
+                <td class="numbers">850</td>
+                <td class="action"><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-tags"></i></a><a href="#"><i class="fa fa-check-circle"></i></a><a href="#"><i class="fa fa-trash"></i></a></td>
+            </tr>
+            <tr>
+                <td><strong>Orchestra</strong></td>
+                <td class="numbers">12</td>
+                <td class="numbers">900</td>
+                <td class="numbers">$10.00</td>
+                <td class="numbers">$15.00</td>
+                <td class="numbers">850</td>
+                <td class="action"><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-tags"></i></a><a href="#"><i class="fa fa-check-circle"></i></a><a href="#"><i class="fa fa-trash"></i></a></td>
+            </tr>
+            <tr>
+                <td><strong>Balcony</strong></td>
+                <td class="numbers">12</td>
+                <td class="numbers">900</td>
+                <td class="numbers">$10.00</td>
+                <td class="numbers">$15.00</td>
+                <td class="numbers">850</td>
+                <td class="action"><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-tags"></i></a><a href="#"><i class="fa fa-check-circle"></i></a><a href="#"><i class="fa fa-trash"></i></a></td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+
+          </div>
+      </section>
+                  
+                  <section class="grid-bottm clearfix">
+                    <section class="gr-right pull-right">
+                    	<ul class="legends">
+                        	<li><i class="fa fa-pencil-square-o"></i> <span>Edit</span></li>
+                            <li><i class="fa fa-tags"></i><span>change price</span></li>
+                            <li><i class="fa fa-check-circle"></i><span>active</span></li>
+                            <li><i class="fa fa-trash"></i><span>delete</span></li>
+                        </ul>
+                    </section>
+                </section>
+                
+                  <div class="row">
+                    	<div class="col-sm-12">
+                          <div class="form-group row">                           
+                            
+                            <section class="col-sm-5 f-12">
+                                <a href="#" class="u-text"><strong>Please set your Fulfillment Settings</strong></a>
+                            </section>
+                          </div>
+                        </div>
+                </div>
+
+      			</section>
+          </div>
+          <!-- Product Closed --> 
+         
+      	  <!--Links Start -->
+          <div class="module">
+  <section class="prof-hd"> <i class="fa fa-link hdicon pos-l16"></i>
+    <h2>Links <span class="rt-img"><i class="fa fa-caret-down"></i></span></h2>
+  </section>
+  <section class="gray-frame">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="EventName"> Video</label>
+          <input type="text" class="form-control" placeholder="Video Url"/>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="EventName"> Facebook</label>
+          <input type="text" class="form-control" placeholder="Facebook Url"/>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="EventName"> Twitter</label>
+          <input type="text" class="form-control" placeholder="Twitter Url"/>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="EventName"> Event Website</label>
+          <input type="text" class="form-control" placeholder="Event Website"/>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+          <!--Links Closed -->
+           
+            <!-- Search options Start -->
+           <div class="form-group clearfix">
+             	<section class="prof-hd">
+                   <i class="fa fa-search hdicon pos-l16"></i>
+                    <h2>Search options <span class="rt-img"><i class="fa fa-caret-down"></i></span></h2>
+            </section>
+                <section class="gray-frame">
+                	<div class="row">
+                	    <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="EventName"> Additional Keywords/Tags</label>
+                            <input type="text" class="form-control" placeholder="Additional Keywords/Tags"/>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                	<div class="col-sm-4">
+                          <div class="form-group">
+                            <label for="EventName"> Categories<span class="req">*</span></label>
+                            <select class="form-control">
+                              <option value="Ticket">Dance</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 text-drop">
+                          <div class="form-group">
+                            <select class="form-control">
+                              <option value="Ticket">Comedy</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 text-drop">
+                          <div class="form-group">
+                            <select class="form-control">
+                              <option value="Ticket">Singing</option>
+                            </select>
+                          </div>
+                        </div></div>
+
+      			</section>
+          </div>
+           <!-- Search options Closed -->
+          
+          <div class="editor-btn">
+          <button class="gray-btn btn">Back</button>
+           <button class="pink-btn btn">Save</button>
+          <button class="pink-btn btn">Next</button>
+        </div>   
+       </div>
+      
+       <div ng-hide="look_and_feel_div">Look and Feel Div.</div>
+       <div ng-hide="setting_div">Settting Div.</div>
+      </form>
+    
     </div>
     
     <!-- //Form COntainer --> 

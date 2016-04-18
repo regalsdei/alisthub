@@ -7,7 +7,7 @@ Montive: It defined routes to call different files.It will provide you direction
 'use strict';
 angular.module("communicationModule", []);
 // Declare app level module which depends on filters, and services
-var routerApp = angular.module('alisthub', ['ui.router', 'oc.lazyLoad','communicationModule'])
+var routerApp = angular.module('alisthub', ['ui.router', ,'ngStorage','oc.lazyLoad','communicationModule'])
   .config(function($stateProvider, $locationProvider, $urlRouterProvider, $ocLazyLoadProvider) {
      $urlRouterProvider.otherwise('/login');
     
@@ -159,26 +159,39 @@ var routerApp = angular.module('alisthub', ['ui.router', 'oc.lazyLoad','communic
             
             views: {
                 "lazyLoadView": {
-                  controller: 'eventhomeController', // This view will use AppCtrl loaded below in the resolve
+                  controller: 'stepeventController', // This view will use AppCtrl loaded below in the resolve
                   templateUrl: 'modules/step_event/views/create_event_step1.html'
                 }
             },
             resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
               resources: ['$ocLazyLoad', function($ocLazyLoad) {
                 // you can lazy load files for an existing module
-                return $ocLazyLoad.load('modules/events/controller.js');
+                return $ocLazyLoad.load('modules/step_event/controller.js');
               }]
             }
         })
     
-  }).run(['$rootScope', '$location','$state', function($rootScope,$location, $state) {
+  }).run(['$rootScope', '$location','$state', '$localStorage',function($rootScope,$location, $state,$localStorage) {
     //To add class
+    if($localStorage.isuserloggedIn){
+        $rootScope.menu=$rootScope.after_login_footer_div=false;
+        $rootScope.footer_login_div=true;
+        $rootScope.email=$localStorage.email;
+        $rootScope.name=$localStorage.name;
+        $rootScope.access_token=$localStorage.access_token;
+        $rootScope.phone_no=$localStorage.phone_no;
+        $rootScope.userId=$localStorage.userId;
+        $rootScope.address=$localStorage.address;
+        $state.go('dashboard');
+    }else{
+       $rootScope.menu=$rootScope.after_login_footer_div=true;
+       $rootScope.footer_login_div=false; 
+    }
     
-    $rootScope.menu=$rootScope.after_login_footer_div=true;
-    $rootScope.footer_login_div=false;
     $rootScope.logout=function(){
-        $rootScope.isuserloggedIn=$rootScope.footer_login_div=false;
-        $rootScope.menu=$rootScope.after_login_footer_div=true;
+        $localStorage.isuserloggedIn=$rootScope.isuserloggedIn=$rootScope.footer_login_div=false;
+        $localStorage.menu=$localStorage.after_login_footer_div=$rootScope.menu=$rootScope.after_login_footer_div=true;
+       localStorage.clear();
         $state.go('login');
     }
     }]);;

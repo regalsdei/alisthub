@@ -8,6 +8,7 @@
 	<p ng-show="activation_message">{{activation_message}}</p>
 	<form name="userForm" ng-submit="submitForm()" novalidate>
         <p class="tagline">We do the right things to prove our integrity and reliability to earn your trust. </p>
+	<span ng-hide="error_message"><p class="error-fld" >{{error}}</p></span>
         <ul class="form-widget login-form">
             <li>
             	<section class="form-group">

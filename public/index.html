@@ -24,7 +24,7 @@
 <!-- Header -->
   <header ng-hide="menu">
       <section class="container">        	
-                <div class="welcometxt mob-clear"><a href="javascript:void(0)" class="noti-link"><i class="fa fa-bell-o"></i><span class="badge">5</span></a><a href="javascript:void(0)"><span class="user-pic"><img src="images/user.jpg" width="36" height="36" alt=""/></span> Patrick <i class="fa fa-angle-down"></i></a> <a href="javascript:void(0)">Help</a> <a ng-click="logout()">logout</a></div>
+                <div class="welcometxt mob-clear"><a href="javascript:void(0)" class="noti-link"><i class="fa fa-bell-o"></i><span class="badge">5</span></a><a href="javascript:void(0)"><span class="user-pic"><img src="images/user.jpg" width="36" height="36" alt=""/></span> {{name}} <i class="fa fa-angle-down"></i></a> <a href="javascript:void(0)">Help</a> <a ng-click="logout()">logout</a></div>
                 <a  ng-click="toggleMenu()" class="navbar-toggle">
                    <span class="icon-bar"></span>
                    <span class="icon-bar"></span>
@@ -107,9 +107,9 @@
       <div class="col-sm-4 col-md-3">
         <h2>Contact us</h2>
         <ul>
-          <li>1355 Market Street, Suite 900 <span>San Francisco, CA 94103</span></li>
-          <li>E: admin@alistixs.com</li>
-          <li>P: 844-77-ALIST</li>
+          <li>{{address}}</li>
+          <li>E: {{email}}</li>
+          <li>P: {{phone_no}}</li>
         </ul>
         <a href="javascript:void(0)"><i class="fa fa-twitter"></i></a> <a href="javascript:void(0)"><i class="fa fa-facebook"></i></a> <a href="javascript:void(0)"><i class="fa fa-linkedin"></i></a> </div>
       <div class="col-sm-12 col-md-3  nwsltr">
