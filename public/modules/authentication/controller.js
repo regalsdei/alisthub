@@ -1,6 +1,7 @@
 
 angular.module('alisthub').controller('loginController', function($http,$location,$scope, $ocLazyLoad,$rootScope,$state, $timeout,$localStorage) {
         if ($localStorage.isuserloggedIn) {
+                $rootScope.class_status = 0;
                 $state.go('dashboard');
         }
         $rootScope.class_status=1;
