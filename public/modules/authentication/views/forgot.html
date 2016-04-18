@@ -5,8 +5,10 @@
   <section class="container">
   	<section class="login-frame animated bounceInLeft">
     	<h1>Forgot Password</h1>
+	
 	<form name="userForm" ng-submit="forgotPassword()"  novalidate>
         <p class="tagline">We do the right things to prove our integrity and reliability to earn your trust. </p>
+	 <p class="success" ng-show="message">{{ message }}</p>
         <ul class="form-widget login-form">
         	<li>
             	<section class="form-group">

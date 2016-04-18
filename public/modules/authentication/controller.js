@@ -1,11 +1,68 @@
+/*
+routerApp.controller('loginController',function($scope,$rootScope,$location, $state){
+        $rootScope.class_status=1; 
+       // function to submit the form after all validation has occurred
+        if($state.params.id)
+        {
+                var serviceUrl = webservices.confirmToken;
+                $token = $state.params.id;
+                $http({ 
+                url: serviceUrl,
+                method: 'POST',
+                data: jsonData,
+                headers: {
+                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                "Accept": "application/json",
+                }
+                }).success(function(data, status, headers, config) {
+                
+                    if (data == 101) {
+                     $scope.message = global_message.EmailExist;
+                    }
+                    else {
+                     $scope.message = global_message.SignupSuccess;
+                    }
+                
+                });
+        }
+        
+=======*/
 
 angular.module('alisthub').controller('loginController', function($http,$location,$scope, $ocLazyLoad,$rootScope,$state, $timeout,$localStorage) {
         if ($localStorage.isuserloggedIn) {
                 $state.go('dashboard');
         }
         $rootScope.class_status=1;
+
+        $scope.activation_message = false;
+        $scope.user = {};
+        if ($state.params.id) {
+              //  confirmationEmail
+                var serviceUrl = webservices.confirmationEmail;
+                $scope.user.token = $state.params.id;
+                var jsonData=$scope.user;
+                $http({
+                 url: serviceUrl,
+                 method: 'POST',
+                 data: jsonData,
+                 headers: {
+                  "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                  "Accept": "application/json",
+                 }
+                }).success(function(data, status, headers, config) {
+                
+                  if (data == 200) {
+                   $scope.activation_message = global_message.ActivatedMessage;
+                  }else{
+                   $scope.activation_message = global_message.ErrorInActivation;
+                  }
+                });
+        }
+
+
        $scope.error_message=true;
        // function to submit the form after all validation has occurred            
+
         $scope.submitForm = function() {
 
             // check to make sure the form is completely valid
@@ -13,7 +70,7 @@ angular.module('alisthub').controller('loginController', function($http,$locatio
                 
                 
                 var serviceUrl = webservices.getUserlogin;
-                 var jsonData=$scope.user;
+                var jsonData=$scope.user;
                 $http({
                  url: serviceUrl,
                  method: 'POST',
@@ -50,12 +107,20 @@ angular.module('alisthub').controller('loginController', function($http,$locatio
 
         };
 }).controller('signupcontroller',function($http,$scope,$rootScope,$location, $state,communicationService){
+
+        // function to submit the form after all validation has occurred            
+        $scope.unique  = false;
+        $scope.message = "";
+
         // function to submit the form after all validation has occurred
         $rootScope.class_status = 1;
+
         $scope.submitRegistrationform = function() {
         var serviceUrl = webservices.getUserregister;
+        $scope.user.hosturl  = servicebaseUrl;
         var jsonData=$scope.user;
-         $http({
+        
+        $http({
             url: serviceUrl,
             method: 'POST',
             data: jsonData,
@@ -65,15 +130,88 @@ angular.module('alisthub').controller('loginController', function($http,$locatio
             }
             }).success(function(data, status, headers, config) {
             
-            console.log(data);
+                if (data == 101) {
+                 $scope.message = global_message.EmailExist;
+                }
+                else if (data == "err") {
+                 $scope.message = global_message.SavingError;
+                }
+                else {
+                 $scope.message = global_message.SignupSuccess;
+                }
+            
             });
- 
-
         };
-    
+        
+        $scope.checkUnique = function() {
+        var serviceUrl = webservices.checkUnique;
+        var jsonData = $scope.user;
+          $http({
+            url: serviceUrl,
+            method: 'POST',
+            data: jsonData,
+            headers: {
+            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+            "Accept": "application/json",
+            }
+            }).success(function(data, status, headers, config) {
+                 if (data == 300) {
+                 $scope.unique = global_message.EmailAvailable;
+                 }
+                 else{
+                 $scope.unique = global_message.EmailExist;
+                 }
+            });
+        };
     
     }).controller('forgotcontroller',function($http,$scope,$rootScope,$location, $state,communicationService){
         $scope.forgotPassword=function(){
-                console.log($scope.user);
+            console.log($scope.user);
+            $scope.message = false;
+            var serviceUrl = webservices.forgetPassword;
+            $scope.user.hosturl  = servicebaseUrl;
+            var jsonData = $scope.user;
+            $http({
+            url: serviceUrl,
+            method: 'POST',
+            data: jsonData,
+            headers: {
+            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+            "Accept": "application/json",
+            }
+            }).success(function(data, status, headers, config) {
+                 if (data == 200) {
+                 $scope.message = global_message.ForgetPassword;
+                 }
+                 else{
+                 $scope.message = global_message.ForgetEmailError;
+                 }
+            });
+        }
+        if ($state.params.id)
+        {
+            $scope.message = false;
+            var serviceUrl = webservices.resetPassword;
+            //$scope.user.hosturl  = servicebaseUrl;
+            $scope.user.token  = $state.params.id;
+            
+            var jsonData = $scope.user;
+            
+            $http({
+            url: serviceUrl,
+            method: 'POST',
+            data: jsonData,
+            headers: {
+            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+            "Accept": "application/json",
+            }
+            }).success(function(data, status, headers, config) {
+                 if (data == 200) {
+                 $scope.message = global_message.SignupSuccess;
+                 }
+                 else{
+                 $scope.message = global_message.ForgetEmailError;
+                 }
+            })
         }
 });
