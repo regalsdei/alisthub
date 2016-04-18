@@ -185,6 +185,6 @@ angular.module('alisthub').controller('loginController', function($http,$locatio
                  else{
                  $scope.message = global_message.ForgetEmailError;
                  }
-           
+            })
         }
 });
