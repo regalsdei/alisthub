@@ -78,7 +78,7 @@ angular.module('alisthub', ['google.places', 'angucomplete']).controller('venueC
 
   }
  ////////////////////////////////////////////////////////////////////////////
-  $scope.createBizAddr = function() {
+  $scope.addVenue = function() {
     
     // Getting location from lat long
     /*var promise = AddressService.getLatLongByLocation(place);
