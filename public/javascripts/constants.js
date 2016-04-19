@@ -1,6 +1,6 @@
 var baseUrl = "http://192.155.246.146:7048";
 var servicebaseUrl = "localhost:3500";
-
+var localhostUrl="http://localhost:5500";
 var webservices = {	
 
 	"getUserregister" : baseUrl + "/webservices/register",
@@ -8,7 +8,8 @@ var webservices = {
         "getUserlogin" : baseUrl + "/webservices/login",
         "forgetPassword" : baseUrl + "/webservices/forgetPassword",
         "resetPassword" : baseUrl + "/webservices/resetPassword",
-        "confirmationEmail" : baseUrl + "/webservices/confirmationEmail"
+        "confirmationEmail" : baseUrl + "/webservices/confirmationEmail",
+        "getVenues":localhostUrl + "/venues/getVenue",
 
 	
 }

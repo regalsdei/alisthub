@@ -1,6 +1,14 @@
-angular.module('alisthub').controller('stepeventController', function($scope,$localStorage) {
+angular.module('alisthub').controller('stepeventController', function($scope,$localStorage,$injector) {
+    var $serviceTest = $injector.get("venues");
+         // <-- CHANGED HERE
+    if ($localStorage.userId!=undefined) {
+        
+        $serviceTest.getVenues({'userId':$localStorage.userId},function(response){
+            $scope.total_venue=response;
+        });
+    }
 var locations = [
-    [
+  /*  [
         "New Mermaid",
         36.9079,
         -76.199,
@@ -9,53 +17,13 @@ var locations = [
         "",
         "Norfolk Botanical Gardens, 6700 Azalea Garden Rd.",
         "coming soon"
-    ],
-    [
-        "1950 Fish Dish",
-        36.87224,
-        -76.29518,
-        2,
-        "Terry Cox-Joseph",
-        "Rowena's",
-        "758 W. 22nd Street in front of Rowena's",
-        "found"
-    ],
-    [
-        "A Rising Community",
-        36.95298,
-        -76.25158,
-        3,
-        "Steven F. Morris",
-        "Judy Boone Realty",
-        "Norfolk City Library - Pretlow Branch, 9640 Granby St.",
-        "found"
-    ],
-    [
-        "A School Of Fish",
-        36.88909,
-        -76.26055,
-        4,
-        "Steven F. Morris",
-        "Sandfiddler Pawn Shop",
-        "5429 Tidewater Dr.",
-        "found"
-    ],
-    [
-        "Aubrica the Mermaid (nee: Aubry Alexis)",
-        36.8618,
-        -76.203,
-        5,
-        "Myke Irving/ Georgia Mason",
-        "USAVE Auto Rental",
-        "Virginia Auto Rental on Virginia Beach Blvd",
-        "found"
-    ]
+    ]*/
 ]
 
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 12,
       // center: new google.maps.LatLng(-33.92, 151.25),
-      center: new google.maps.LatLng(36.8857, -76.2599),
+      center: new google.maps.LatLng(33.43023, -112.34765970000001),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
@@ -82,6 +50,41 @@ if (now.getMonth() == 11) {
 } else {
     var current = new Date(now.getFullYear(), now.getMonth() + 1, 1);
 }
+$scope.inlineOptions = {
+    customClass: getDayClass,
+    minDate: new Date(),
+    showWeeks: true
+  };
+
+  $scope.dateOptions = {
+    dateDisabled: disabled,
+    formatYear: 'yy',
+    
+    minDate: new Date(),
+    startingDay: 1
+  };
+
+  // Disable weekend selection
+  function disabled(data) {
+    var date = data.date,
+      mode = data.mode;
+    return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
+  }
+
+
+
+  $scope.open1 = function() {
+    $scope.popup1.opened = true;
+  };
+  $scope.open2 = function() {
+    $scope.popup2.opened = true;
+  };
+ $scope.popup1 = {
+    opened: false
+  };
+   $scope.popup2 = {
+    opened: false
+  };
 $scope.option_ckeditor = {
     language: 'en',
     allowedContent: true,
@@ -136,6 +139,20 @@ var tomorrow = new Date();
 
     return '';
   }
+  
+  $scope.mytime = new Date();
+
+  $scope.hstep = 1;
+  $scope.mstep = 1;
+
+
+
+  $scope.ismeridian = true;
+  $scope.toggleMode = function() {
+    $scope.ismeridian = ! $scope.ismeridian;
+  };
+  
+  
     $scope.multiple_event_div=$scope.location_event_div=$scope.price_and_link_div=$scope.look_and_feel_div=$scope.setting_div=true;
      $scope.events = [
     { "name": "Single Event",'id':1},
@@ -144,7 +161,7 @@ var tomorrow = new Date();
 ]
      $scope.venues = [
     { "name": "Add New Venue",'id':3},
-    {"name": "Use Post Location",'id':4}
+    {"name": "Use Past Location",'id':4}
     
 ]
      $scope.steps=[

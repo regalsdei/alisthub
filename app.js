@@ -5,8 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var db = require('./db.js');
-var routes = require('./routes/index');
-var users = require('./routes/users');
+
 
 var app = express();
 
@@ -22,8 +21,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
+var routes = require('./routes/index');
+var users = require('./routes/users');
+var venues = require('./routes/venues')(app, express);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -56,9 +56,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.listen(3500, function(req, res){
-  console.log('Server listening at port 3500');  
- 
-})
+
 
 module.exports = app;
