@@ -1,8 +1,9 @@
 angular.module('alisthub').controller('stepeventController', function($scope,$localStorage,$injector) {
     var $serviceTest = $injector.get("venues");
          // <-- CHANGED HERE
+     
     if ($localStorage.userId!=undefined) {
-        
+       
         $serviceTest.getVenues({'userId':$localStorage.userId},function(response){
             $scope.total_venue=response;
         });

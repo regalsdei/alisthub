@@ -1,6 +1,6 @@
 var baseUrl = "http://192.155.246.146:7048";
-var servicebaseUrl = "localhost:3500";
-var localhostUrl="http://localhost:5500";
+var servicebaseUrl = "http://192.155.246.146:5500";
+var localhostUrl="http://192.155.246.146:5500";
 var webservices = {	
 
 	"getUserregister" : baseUrl + "/webservices/register",
