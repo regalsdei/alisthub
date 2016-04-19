@@ -82,6 +82,7 @@ angular.module('alisthub').controller('loginController', function($http,$locatio
         // function to submit the form after all validation has occurred            
         $scope.unique  = false;
         $scope.message = "";
+        $scope.unique_type  = 0; 
 
         // function to submit the form after all validation has occurred
         $rootScope.class_status = 1;
@@ -128,14 +129,17 @@ angular.module('alisthub').controller('loginController', function($http,$locatio
             }).success(function(data, status, headers, config) {
                  if (data == 300) {
                  $scope.unique = global_message.EmailAvailable;
+                 $scope.unique_type  = 1;
                  }
                  else{
                  $scope.unique = global_message.EmailExist;
+                 $scope.unique_type  = 2;
                  }
             });
         };
     
     }).controller('forgotcontroller',function($http,$scope,$rootScope,$location, $state,communicationService){
+        
         $scope.forgotPassword=function(){
             console.log($scope.user);
             $scope.message = false;
@@ -160,29 +164,44 @@ angular.module('alisthub').controller('loginController', function($http,$locatio
             });
         }
         if ($state.params.id)
-        {
+        {   $scope.user = {};
             $scope.message = false;
-            var serviceUrl = webservices.resetPassword;
-            //$scope.user.hosturl  = servicebaseUrl;
-            $scope.user.token  = $state.params.id;
-            
-            var jsonData = $scope.user;
-            
-            $http({
-            url: serviceUrl,
-            method: 'POST',
-            data: jsonData,
-            headers: {
-            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-            "Accept": "application/json",
-            }
-            }).success(function(data, status, headers, config) {
-                 if (data == 200) {
-                 $scope.message = global_message.SignupSuccess;
-                 }
-                 else{
-                 $scope.message = global_message.ForgetEmailError;
-                 }
-            })
+            $scope.setPassword=function()
+            {
+                
+                if($scope.user.password == $scope.user.repassword)
+                {
+                   var serviceUrl = webservices.resetPassword;
+                   $scope.user.token  = $state.params.id;
+                   $scope.user.password  = $scope.user.password;
+                   var jsonData = $scope.user;
+                   $http({
+                        url: serviceUrl,
+                        method: 'POST',
+                        data: jsonData,
+                        headers: {
+                        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                        "Accept": "application/json",
+                        }
+                        }).success(function(data, status, headers, config) {
+                             if (data == 200)
+                             {
+                             $scope.message = "Passowrd has been changed successfully.";
+                             $scope.errormessage = '';
+                             }
+                             else
+                             {
+                             $scope.message = "There some problem in server side to set new password , try after some time .";
+                             $scope.errormessage = '';
+                             }
+                        })
+                   
+                }
+                else{
+                     $scope.errormessage = "Please retype same password.";   
+                }
+              
+                
+           }
         }
 });

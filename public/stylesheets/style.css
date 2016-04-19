@@ -449,7 +449,7 @@ select.select30{height:30px; padding:0 8px; font-size:14px;}
 .u-text:hover{text-decoration:none;}
 .ng-binding.error-fld { background: rgba(200, 0, 0, 0.2) none repeat scroll 0 0;color: #fff;margin: 0 0 15px;
     padding: 10px;}
-  .pointer{ cursor: pointer !important;}
+
   .datepicker{
     display: table;
   }
@@ -478,3 +478,7 @@ select.select30{height:30px; padding:0 8px; font-size:14px;}
      }
      .uib-timepicker .form-control{ padding: 5px 6px;}
      .uib-timepicker .btn {margin-left: 5px;padding: 9px 10px;}
+.ng-binding.success-fld { background: rgb(34,139,34) none repeat scroll 0 0;color: #fff;margin: 0 0 15px;
+    padding: 10px;}
+
+

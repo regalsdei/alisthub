@@ -9,7 +9,11 @@ var webservices = {
         "forgetPassword" : baseUrl + "/webservices/forgetPassword",
         "resetPassword" : baseUrl + "/webservices/resetPassword",
         "confirmationEmail" : baseUrl + "/webservices/confirmationEmail",
+
         "getVenues":localhostUrl + "/venues/getVenue",
+        "ADDVENUE" : baseUrl + "/webservices/addVenue",
+        "VENUEOVERVIEW" : baseUrl + "/webservices/overviewVenue"
+
 
 	
 }
