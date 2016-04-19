@@ -8,7 +8,9 @@ var webservices = {
         "getUserlogin" : baseUrl + "/webservices/login",
         "forgetPassword" : baseUrl + "/webservices/forgetPassword",
         "resetPassword" : baseUrl + "/webservices/resetPassword",
-        "confirmationEmail" : baseUrl + "/webservices/confirmationEmail"
+        "confirmationEmail" : baseUrl + "/webservices/confirmationEmail",
+        "ADDVENUE" : baseUrl + "/webservices/addVenue",
+        "VENUEOVERVIEW" : baseUrl + "/webservices/overviewVenue"
 
 	
 }

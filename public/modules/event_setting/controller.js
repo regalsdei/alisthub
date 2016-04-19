@@ -78,10 +78,10 @@ angular.module('alisthub', ['google.places', 'angucomplete']).controller('venueC
 
   }
  ////////////////////////////////////////////////////////////////////////////
-  $scope.createBizAddr = function(place, city, state, country, biz_zipcode, biz_name) {
+  $scope.createBizAddr = function() {
     
     // Getting location from lat long
-    var promise = AddressService.getLatLongByLocation(place);
+    /*var promise = AddressService.getLatLongByLocation(place);
     promise.then(function(payload) {
         var address = {};
         var userLocationData  = payload.data;
@@ -92,21 +92,35 @@ angular.module('alisthub', ['google.places', 'angucomplete']).controller('venueC
         }else{
           address.biz_lat   = $scope.latitude;
           address.biz_long  = $scope.longitude;
-        }
-        address.biz_address = place.formatted_address;
-        address.biz_city    = city;
-        address.biz_state   = state;
-        address.biz_country = country;
-        address.biz_zipcode = biz_zipcode;        
-        address.biz_owner   = $scope.userData.session_id;    
-        address.biz_name    = biz_name;    
+        }*/
         
+         
+        var serviceUrl = webservices.ADDVENUE;
+        console.log($scope.data);
+        var jsonData=$scope.data;
+            $http({
+                 url: serviceUrl,
+                 method: 'POST',
+                 data: jsonData,
+                 headers: {
+                  "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                  "Accept": "application/json",
+                 }
+                }).success(function(data, status, headers, config) {
+                
+                  if (data == 200) {
+                   $scope.activation_message = global_message.ActivatedMessage;
+                  }else{
+                   $scope.activation_message = global_message.ErrorInActivation;
+                  }
+                });
         /*
         formatted_address   = userLocationData.results[0].formatted_address;
         var addressArray    = formatted_address.split(",");
         address.biz_country = addressArray[addressArray.length-1].trim();
         */
-    });
+    //});
+      
   };
  ///////////////////////////////////////////////////////////////////////////
 })

@@ -135,6 +135,19 @@ select.form-control{padding:6px 12px; font-style:normal; font-style:italic; colo
 .editr label{margin-bottom:30px;}
 
 .btn{border-radius:0px; padding:8px 20px; border-radius:0px; color:#fff; font-size:14px; min-width:125px; vertical-align:middle;}
+
+.uib-datepicker td,.uib-datepicker th{
+  vertical-align: middle !important;
+}
+.uib-datepicker small{ font-weight: bold;}
+.uib-datepicker .btn {
+    color: #444;
+    font-size: 14px;
+    min-width: auto;
+    padding: 5px 10px;
+    vertical-align: bottom;
+} 
+.uib-datepicker .btn:hover{opacity:0.8; color:#444; outline:none;}
 .btn.focus, .btn:focus, .btn:hover{opacity:0.8; color:#fff; outline:none;}
 .editor-btn{text-align:center;  margin:24px 0 0;}
 .editor-btn .btn{margin:6px;}
@@ -198,6 +211,7 @@ footer i{color:#fff;margin:15px 10px 0px 0px;}
 /*===========Table===========*/
 
 /*-----------Radio--------*/
+
 input[type="radio"] { display: none; }
 input[type="radio"] + label { color: #292321; font-family: Arial, sans-serif; font-size: 14px; }
 input[type="radio"] + label span { display: inline-block; width: 20px; height: 20px; margin: -2px 9px 0 0; vertical-align: middle; cursor: pointer; -moz-border-radius: 50%; border-radius: 50%; }
