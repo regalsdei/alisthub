@@ -1,3 +1,4 @@
+  <span ng-hide="success_message"><p class="success-fld" ng-show="activation_message">{{activation_message}}</p></span>
   <!-- Header -->
   <section class="header animated bounce"><a href="#"><img src="images/logo-l.png" alt=""/></a></section>
   <!-- //Header --> 
@@ -5,7 +6,6 @@
   <section class="container">
   	<section class="login-frame animated bounceInLeft">
     	<h1>Login Now!</h1>
-	<p ng-show="activation_message">{{activation_message}}</p>
 	<form name="userForm" ng-submit="submitForm()" novalidate>
         <p class="tagline">We do the right things to prove our integrity and reliability to earn your trust. </p>
 	<span ng-hide="error_message"><p class="error-fld" >{{error}}</p></span>

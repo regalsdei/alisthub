@@ -1,0 +1,102 @@
+<div class="container">
+     <h1>Add Venue</h1>
+    
+    <!-- Form COntainer -->
+    
+    <div class="form-section">
+      <form class="venue-form" name="venue-form" ng-submit="addVenue()" novalidate>
+        <!-- Event Detail Form -->
+       <div>
+          <!-- Location Group -->
+          <div class="form-group field-group">
+               <!-- Date Event Group -->
+            <div class="event-date fieldSection">
+              <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="tab-content">
+                    <div role="tabpanel"  id="venue-event" ng-hide="venue_event_div">
+                      <div class="row">
+                        <div class="col-sm-6" ng-class="{ 'has-error' : venue-form.venue_type.$invalid && !venue-form.venue_type.$pristine }">
+                          <div class="form-group">
+                            <label for="EventName">Venue Type<span class="req">*</span></label>
+                            <select class="form-control" name="venue_type" ng-model="data.venue_type" required>
+                              <option>Ticket</option>
+                            </select>
+                          </div>
+			  <p ng-show="venue-form.venue_type.$invalid && !venue-form.venue_type.$pristine" class="help-block">Select Venue type.</p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-12" ng-class="{ 'has-error' : venue-form.venue_name.$invalid && !venue-form.venue_name.$pristine }">
+                          <div class="form-group">
+                            <label for="Venue">Venue<span class="req">*</span></label>
+                            <input type="text" class="form-control" name="venue_name" ng-model="data.venue_name" required>
+                          </div>
+			  <p ng-show="venue-form.venue_name.$invalid && !venue-form.venue_name.$pristine" class="help-block">Enter Venue name.</p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <div class="form-group">
+                            <label for="Address">Address<span class="req">*</span></label>
+                            <input type="text" class="form-control" name="place" ng-model="place" ng-change="update(place)" g-places-autocomplete required><b>details (formatted address)</b>: {{details.formatted_address}}
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="City">City<span class="req">*</span></label>
+                            <input type="text" class="form-control" name="city" ng-model="data.city">
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="Zipcode">Zipcode<span class="req">*</span></label>
+                            <input type="text" class="form-control" name="zipcode" ng-model="data.zipcode">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="City">State<span class="req">*</span></label>
+                            <select class="form-control" name="state" ng-model="data.state">
+                              <option>Select State</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="Zipcode">Country<span class="req">*</span></label>
+                            <select class="form-control" name="country" ng-model="data.country">
+                              <option>USA</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                   
+                  </div>
+                  
+                  <!-- Tab panes -->
+                  
+                </div>
+                <div class="col-sm-12 col-md-6"> <img src="images/map.jpg" class="img-responsive" alt="" /> </div>
+              </div>
+            </div>
+          </div>
+          <!-- //Location Group -->
+      
+        <!-- //Event Detail Form -->
+         </div>
+         <div class="editor-btn">
+          
+           <button class="pink-btn btn">Save</button>
+          
+         </div>
+     </form>
+     </div>
+    
+    <!-- //Form COntainer --> 
+  </div>

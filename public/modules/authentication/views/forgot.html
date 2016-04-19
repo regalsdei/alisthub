@@ -8,7 +8,9 @@
 	
 	<form name="userForm" ng-submit="forgotPassword()"  novalidate>
         <p class="tagline">We do the right things to prove our integrity and reliability to earn your trust. </p>
-	 <p class="success" ng-show="message">{{ message }}</p>
+	 
+	 <span ng-hide="success_message"><p class="success-fld" ng-show="message">{{ message }}</p></span>
+	<span ng-hide="error_message"><p class="error-fld" ng-show="errormessage">{{ errormessage }}</p></span>
         <ul class="form-widget login-form">
         	<li>
             	<section class="form-group">
