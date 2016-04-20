@@ -11,6 +11,7 @@
         <section class="d-panel">
         	<section class="d-panel-heading">
             	<section class="row">
+		    
                     <section class="col-sm-7 activity">Activity for 30 days <a href="#" class="pink-btn btn sml-btn m-fw"><i class="fa fa-refresh"></i> Refresh</a> what are these numbers?</section>
                     <section class="col-sm-5 days-sort"><a href="#">30 days</a><a href="#">7 days</a><a href="#">24 hours</a></section>
                 </section>
@@ -80,7 +81,7 @@
                 </section>
                 
                 <section class="grid-widget">
-                  <div class="table-responsive">
+		  <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -88,47 +89,28 @@
                                 <th width="24%">Event</th>
                                 <th width="20%">Date &amp; Time</th>
                                 <th width="12%" class="numbers">Sold</th>
-                                <th width="12%" class="numbers">Enventory</th>                        
+                                <th width="12%" class="numbers">Inventory</th>                        
                                 <th width="22%">&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
-                          
-                            <tr>
-                                <td><a href="#"><strong>4110591</strong></a></td>
-                                <td><p><a href="#"><strong>The Lion King</strong></a></p>
-        <p>Minskoff theatre (New York, NY)</p></td>
-                                <td>Sat Mar 12 2016 at 12:00pm</td>
-                                <td class="numbers">10</td>
-                                <td class="numbers">900</td>
+                           <tr pagination-id="paginate1" dir-paginate="upcoming in upcoming_event_data | itemsPerPage: 2">
+                                <td><a href="#"><strong>{{upcoming.id}}</strong></a></td>
+                                <td><p><a href="#"><strong>{{upcoming.event}}</strong></a></p>
+        <p>{{upcoming.desc}}</p></td>
+                                <td>{{upcoming.date}}</td>
+                                <td class="numbers">{{upcoming.sold}}</td>
+                                <td class="numbers">{{upcoming.inventory}}</td>
                                 
                                 <td class="action"><a href="#"><i class="fa fa-pie-chart"></i></a><a href="#"><i class="fa fa-calendar-o"></i></a><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-eye"></i></a></td>
                             </tr>
-                            <tr>
-                                <td><a href="#"><strong>4110591</strong></a></td>
-                                <td><p><a href="#"><strong>The Lion King</strong></a></p>
-        <p>Minskoff theatre (New York, NY)</p></td>
-                                <td>Sat Mar 12 2016 at 12:00pm</td>
-                                <td class="numbers">10</td>
-                                <td class="numbers">900</td>
-                                
-                                <td class="action"><a href="#"><i class="fa fa-pie-chart"></i></a><a href="#"><i class="fa fa-list-ul"></i></a><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-eye"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="#"><strong>4110591</strong></a></td>
-                                <td><p><a href="#"><strong>The Lion King</strong></a></p>
-        <p>Minskoff theatre (New York, NY)</p></td>
-                                <td>Sat Mar 12 2016 at 12:00pm</td>
-                                <td class="numbers">10</td>
-                                <td class="numbers">900</td>
-                                
-                                <td class="action"><a href="#"><i class="fa fa-pie-chart"></i></a><a href="#"><i class="fa fa-calendar-o"></i></a><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-eye"></i></a></td>
-                            </tr>
+                           
                 
                         </tbody>
                 
                     </table>
-                  </div>
+		 </div>
+		  <dir-pagination-controls pagination-id="paginate1" ></dir-pagination-controls>
                   <section class="grid-bottm clearfix">
                     <section class="gr-right pull-right">
                     	<ul class="legends">
@@ -168,33 +150,13 @@
                         </thead>
                         <tbody>
                           
-                            <tr>
-                                <td><a href="#"><strong>4110591</strong></a></td>
-                                <td><p><a href="#"><strong>The Lion King</strong></a></p>
-        <p>Minskoff theatre (New York, NY)</p></td>
-                                <td>Sat Mar 12 2016 at 12:00pm</td>
-                                <td class="numbers">10</td>
-                                <td class="numbers">900</td>
-                                
-                                <td class="action"><a href="#"><i class="fa fa-pie-chart"></i></a><a href="#"><i class="fa fa-calendar-o"></i></a><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-eye"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="#"><strong>4110591</strong></a></td>
-                                <td><p><a href="#"><strong>The Lion King</strong></a></p>
-        <p>Minskoff theatre (New York, NY)</p></td>
-                                <td>Sat Mar 12 2016 at 12:00pm</td>
-                                <td class="numbers">10</td>
-                                <td class="numbers">900</td>
-                                
-                                <td class="action"><a href="#"><i class="fa fa-pie-chart"></i></a><a href="#"><i class="fa fa-list-ul"></i></a><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-eye"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="#"><strong>4110591</strong></a></td>
-                                <td><p><a href="#"><strong>The Lion King</strong></a></p>
-        <p>Minskoff theatre (New York, NY)</p></td>
-                                <td>Sat Mar 12 2016 at 12:00pm</td>
-                                <td class="numbers">10</td>
-                                <td class="numbers">900</td>
+			    <tr  pagination-id="paginate2" dir-paginate="past in past_event_data | itemsPerPage: 2">
+                                <td><a href="#"><strong>{{past.id}}</strong></a></td>
+                                <td><p><a href="#"><strong>{{past.event}}</strong></a></p>
+        <p>{{past.desc}}</p></td>
+                                <td>{{past.date}}</td>
+                                <td class="numbers">{{past.sold}}</td>
+                                <td class="numbers">{{past.inventory}}</td>
                                 
                                 <td class="action"><a href="#"><i class="fa fa-pie-chart"></i></a><a href="#"><i class="fa fa-calendar-o"></i></a><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-eye"></i></a></td>
                             </tr>
@@ -203,7 +165,8 @@
                 
                     </table>
                   </div>
-                  <section class="grid-bottm clearfix">
+                  <dir-pagination-controls pagination-id="paginate2" ></dir-pagination-controls>
+		  <section class="grid-bottm clearfix">
                     <section class="gr-right pull-right">
                     	<ul class="legends">
                         	<li><i class="fa fa-calendar-o"></i> <span>Schedules</span></li>
@@ -244,41 +207,23 @@
                         </thead>
                         <tbody>
                           
-                            <tr>
-                                <td><a href="#"><strong>4110591</strong></a></td>
-                                <td><p><a href="#"><strong>The Lion King</strong></a></p>
-        <p>Minskoff theatre (New York, NY)</p></td>
-                                <td>Sat Mar 12 2016 at 12:00pm</td>
-                                <td class="numbers">10</td>
-                                <td class="numbers">900</td>
+                           <tr  pagination-id="paginate3" dir-paginate="event_package in event_package_data | itemsPerPage: 2">
+                                <td><a href="#"><strong>{{event_package.id}}</strong></a></td>
+                                <td><p><a href="#"><strong>{{event_package.event}}</strong></a></p>
+        <p>{{event_package.desc}}</p></td>
+                                <td>{{event_package.date}}</td>
+                                <td class="numbers">{{event_package.sold}}</td>
+                                <td class="numbers">{{event_package.inventory}}</td>
                                 
                                 <td class="action"><a href="#"><i class="fa fa-pie-chart"></i></a><a href="#"><i class="fa fa-calendar-o"></i></a><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-eye"></i></a></td>
                             </tr>
-                            <tr>
-                                <td><a href="#"><strong>4110591</strong></a></td>
-                                <td><p><a href="#"><strong>The Lion King</strong></a></p>
-        <p>Minskoff theatre (New York, NY)</p></td>
-                                <td>Sat Mar 12 2016 at 12:00pm</td>
-                                <td class="numbers">10</td>
-                                <td class="numbers">900</td>
-                                
-                                <td class="action"><a href="#"><i class="fa fa-pie-chart"></i></a><a href="#"><i class="fa fa-list-ul"></i></a><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-eye"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="#"><strong>4110591</strong></a></td>
-                                <td><p><a href="#"><strong>The Lion King</strong></a></p>
-        <p>Minskoff theatre (New York, NY)</p></td>
-                                <td>Sat Mar 12 2016 at 12:00pm</td>
-                                <td class="numbers">10</td>
-                                <td class="numbers">900</td>
-                                
-                                <td class="action"><a href="#"><i class="fa fa-pie-chart"></i></a><a href="#"><i class="fa fa-calendar-o"></i></a><a href="#"><i class="fa fa-edit"></i></a><a href="#"><i class="fa fa-eye"></i></a></td>
-                            </tr>
+                            
                 
                         </tbody>
                 
                     </table>
                   </div>
+		  <dir-pagination-controls pagination-id="paginate3" ></dir-pagination-controls>
                   <section class="grid-bottm clearfix">
                     <section class="gr-right pull-right">
                     	<ul class="legends">

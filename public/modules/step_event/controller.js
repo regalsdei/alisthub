@@ -1,4 +1,6 @@
-angular.module('alisthub').controller('stepeventController', function($scope,$localStorage,$injector) {
+
+angular.module('alisthub', ['google.places']).controller('stepeventController', function($scope,$localStorage,$injector) {
+     $scope.place = null;
     var $serviceTest = $injector.get("venues");
          // <-- CHANGED HERE
      
@@ -8,6 +10,10 @@ angular.module('alisthub').controller('stepeventController', function($scope,$lo
             $scope.total_venue=response;
         });
     }
+    
+    $scope.data = {};
+ 
+    
 var locations = [
   /*  [
         "New Mermaid",

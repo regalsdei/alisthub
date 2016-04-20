@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var venues = require('./routes/venues')(app, express);
+var venues = require('./routes/event_setting')(app, express);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
