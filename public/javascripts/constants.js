@@ -1,6 +1,10 @@
+
+var localbaseUrl   = "http://localhost:5500";
+
 var baseUrl = "//192.155.246.146:7048";
 var servicebaseUrl = "//localhost:5500";
 var localhostUrl="//localhost:5500";
+
 var webservices = {	
 
 	"getUserregister" : baseUrl + "/webservices/register",
@@ -9,13 +13,9 @@ var webservices = {
         "forgetPassword" : baseUrl + "/webservices/forgetPassword",
         "resetPassword" : baseUrl + "/webservices/resetPassword",
         "confirmationEmail" : baseUrl + "/webservices/confirmationEmail",
-
-        "getVenues":localhostUrl + "/venues/getVenue",
-        "ADDVENUE" : baseUrl + "/webservices/addVenue",
-        "VENUEOVERVIEW" : baseUrl + "/webservices/overviewVenue"
-
-
-	
+        "getVenues":localhostUrl + "/event_setting/getVenue",
+        "ADDVENUE" : localbaseUrl + "/event_setting/addVenue",
+        "VENUEOVERVIEW" : localbaseUrl + "/event_setting/overviewVenue"
 }
 
 var global_message = {
