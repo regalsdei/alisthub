@@ -1,7 +1,9 @@
+
 var localbaseUrl   = "http://localhost:5500";
-var baseUrl        = "http://192.155.246.146:7048";
-var servicebaseUrl = "http://192.155.246.146:5500";
-var localhostUrl   = "http://192.155.246.146:5500";
+
+var baseUrl = "//192.155.246.146:7048";
+var servicebaseUrl = "//localhost:5500";
+var localhostUrl="//localhost:5500";
 
 var webservices = {	
 

@@ -8,7 +8,7 @@ Montive: It defined routes to call different files.It will provide you direction
 angular.module("communicationModule", []);
 // Declare app level module which depends on filters, and services
 
-var routerApp = angular.module('alisthub', ['ui.router', ,'ngStorage','oc.lazyLoad','communicationModule', 'ui.bootstrap','ckeditor','google.places', 'angucomplete'])
+var routerApp = angular.module('alisthub', ['ui.router', ,'ngStorage','oc.lazyLoad','communicationModule', 'ui.bootstrap','ckeditor','google.places', 'angucomplete','angularUtils.directives.dirPagination'])
 
   .config(function($stateProvider, $locationProvider, $urlRouterProvider, $ocLazyLoadProvider) {
      $urlRouterProvider.otherwise('/login');
@@ -167,10 +167,10 @@ var routerApp = angular.module('alisthub', ['ui.router', ,'ngStorage','oc.lazyLo
             resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
               resources: ['$ocLazyLoad', '$injector',function($ocLazyLoad, $injector) {
                 // you can lazy load files for an existing module
-                return $ocLazyLoad.load('modules/step_event/service.js').then(function(){
+                return $ocLazyLoad.load('modules/step_event/service.js')/*.then(function(){
                     //var $serviceTest = $injector.get("CustomerFirstLoad");
                            // return $serviceTest.testLoad(); // <-- CHANGED HERE
-                    }).then(function(){
+                    })*/.then(function(){
                     return $ocLazyLoad.load(['modules/step_event/controller.js']);
                     })
                

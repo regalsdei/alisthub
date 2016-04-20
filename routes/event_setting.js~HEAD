@@ -1,8 +1,15 @@
+function supportCrossOriginScript(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    res.header("Access-Control-Allow-Credentials", true);
+    next();
+}
+
 module.exports = function(app, express) {
 
 	var router = express.Router();
        
-
 	Event_setting  = require('./../app/event_setting/controllers/venue.js');
                
         /* Web services for Event Setting Module
@@ -21,4 +28,6 @@ module.exports = function(app, express) {
          
          
 	 app.use('/event_setting', router);
-    }
+         
+         
+}
