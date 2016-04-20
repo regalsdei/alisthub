@@ -1,6 +1,7 @@
-var baseUrl        = "http://192.155.246.146:7048";
 var localbaseUrl   = "http://localhost:5500";
-var servicebaseUrl = "localhost:5500";
+var baseUrl        = "http://192.155.246.146:7048";
+var servicebaseUrl = "http://192.155.246.146:5500";
+var localhostUrl   = "http://192.155.246.146:5500";
 
 var webservices = {	
 
@@ -10,10 +11,9 @@ var webservices = {
         "forgetPassword" : baseUrl + "/webservices/forgetPassword",
         "resetPassword" : baseUrl + "/webservices/resetPassword",
         "confirmationEmail" : baseUrl + "/webservices/confirmationEmail",
-        "ADDVENUE" : localbaseUrl + "/webservices/addVenue",
-        "VENUEOVERVIEW" : localbaseUrl + "/webservices/overviewVenue"
-
-	
+        "getVenues":localhostUrl + "/event_setting/getVenue",
+        "ADDVENUE" : localbaseUrl + "/event_setting/addVenue",
+        "VENUEOVERVIEW" : localbaseUrl + "/event_setting/overviewVenue"
 }
 
 var global_message = {

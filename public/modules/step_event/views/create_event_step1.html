@@ -40,7 +40,7 @@
                     <div class="col-sm-4">
                       <div class="form-group">
                         <label for="StartTime">Start Time</label>
-                        <input type="text" name="StartTime" value="4:00pm" class="form-control" placeholder="Start Time">
+                       <uib-timepicker ng-model="starttime"  hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
                       </div>
                       <div class="form-group">
                         <label>From</label>
@@ -52,7 +52,7 @@
                     <div class="col-sm-4">
                       <div class="form-group">
                         <label for="EndTime">End Time</label>
-                        <input type="text" name="EndTime" value="6:00pm" class="form-control" placeholder="End Time">
+                         <uib-timepicker ng-model="endtime"  hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
                       </div>
                       <div class="form-group">
                         <label>To</label>
@@ -66,8 +66,8 @@
                       <div class="clearfix list-event-date">
                       <div class="col-sm-3 pull-right text-right lss-top"> <a  href="javascript:void(0)" ><i class="fa fa-close"></i></a> </div>
                         <div class="col-sm-3"> Friday, 4 March 2016 </div>
-                        <div class="col-sm-3"> Start Time : 4:00pm </div>
-                        <div class="col-sm-3"> End Time : 6:00pm </div>
+                        <div class="col-sm-3"> Start Time : {{starttime| date:'shortTime'}} </div>
+                        <div class="col-sm-3"> End Time : {{endtime| date:'shortTime'}} </div>
                         
                       </div>
                     </div>
@@ -78,13 +78,13 @@
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label for="StartTime">Start Time<span class="req">*</span></label>
-                      <input type="text" name="StartTime" value="4:00pm" class="form-control" placeholder="Start Time">
+                      <uib-timepicker ng-model="multiple_starttime"  hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label for="EndTime">End Time</label>
-                      <input type="text" name="EndTime" value="6:00pm" class="form-control" placeholder="End Time">
+                     <uib-timepicker ng-model="multiple_endtime"  hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
                     </div>
                   </div>
                 </div>
@@ -92,20 +92,21 @@
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label for="EndTime">Start Date<span class="req">*</span></label>
-                      <div class="form-group">
-                        <div class='input-group date' id='datetimepicker1'>
-                          <input type='text' class="form-control" />
-                          <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> </div>
-                      </div>
+                      <div class="form-group datepicker">
+                         <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt2" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                         <span class="input-group-btn">
+                           <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button></span>
+                     </div>
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label for="EndTime">End Date<span class="req">*</span></label>
-                      <div class="form-group">
-                        <div class='input-group date' id='datetimepicker1'>
-                          <input type='text' class="form-control" />
-                          <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> </div>
+                      <div class="form-group datepicker">
+                        <input type="text" class="form-control" uib-datepicker-popup ng-model="dt3" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
                       </div>
                     </div>
                   </div>
@@ -116,6 +117,7 @@
                     <div class="form-group">                      
                       <select class="form-control">
                         <option>Weekly</option>
+                        <option>Monthly</option>
                       </select>
                     </div>
                   </div>
@@ -277,27 +279,14 @@
                     <div role="tabpanel"  id="location-event" ng-hide="location_event_div">
                          <div class="row">
                         <div class="col-sm-12 loc-list">
-                  		<ul>
-                        	<li>
-                            <i class="fa fa-map-marker"></i>
-                             <a href="#">Palace of Fine Arts(Palace of Fine Arts - Seating Chart)</a>
-                            	<span>3301 Lyn St. San Francisca CA</span>
+                         
+                  	 <ul>
+                            <li ng-repeat="venue in total_venue track by $index">
+                                   <i class="fa fa-map-marker"></i>
+                                    <a href="#">{{venue.venue_name}}</a>
+                                       <span>{{venue.address}}, {{venue.city}}&nbsp;,&nbsp;{{venue.state}}&nbsp;,&nbsp;{{venue.zipcode}}</span>
                             </li>
-                           <li>
-                           <i class="fa fa-map-marker"></i>
-                             <a href="#">Palace of Fine Arts(Palace of Fine Arts - Seating Chart)</a>
-                            	<span>3301 Lyn St. San Francisca CA</span>
-                            </li>
-                            <li>
-                            <i class="fa fa-map-marker"></i>
-                             <a href="#">Palace of Fine Arts(Palace of Fine Arts - Seating Chart)</a>
-                            	<span>3301 Lyn St. San Francisca CA</span>
-                            </li>
-                            <li>
-                            <i class="fa fa-map-marker"></i>
-                             <a href="#">Palace of Fine Arts(Palace of Fine Arts - Seating Chart)</a>
-                            	<span>3301 Lyn St. San Francisca CA</span>
-                            </li>
+                          
                         </ul>
                   	  </div>
                      </div>

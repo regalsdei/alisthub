@@ -63,6 +63,7 @@
                             <label for="City">State<span class="req">*</span></label>
                             <select class="form-control" name="state" ng-model="data.state">
                               <option>Select State</option>
+			      <option value="Punjab">Punjab</option>
                             </select>
                           </div>
                         </div>
@@ -70,11 +71,87 @@
                           <div class="form-group">
                             <label for="Zipcode">Country<span class="req">*</span></label>
                             <select class="form-control" name="country" ng-model="data.country">
-                              <option>USA</option>
+                              <option value="USA">USA</option>
+			      <option value="India">India</option>
                             </select>
                           </div>
                         </div>
                       </div>
+		       <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="City">Timezone<span class="req"></span></label>
+                            <select class="form-control" name="timezone" ng-model="data.timezone">
+                              <option>Select Timezone</option>
+			      <option>Pacific Time</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="Zipcode">Capacity<span class="req"></span></label>
+                            <input type="text" class="form-control" name="capacity" ng-model="data.capacity">
+                          </div>
+                        </div>
+                      </div>
+		      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="City">Contact Name<span class="req"></span></label>
+                            <input type="text" class="form-control" name="contact_name" ng-model="data.contact_name">
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="Zipcode">Phone<span class="req"></span></label>
+                            <input type="text" class="form-control" name="phone" ng-model="data.phone">
+                          </div>
+                        </div>
+                      </div>
+		      
+		      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="City">Fax<span class="req"></span></label>
+                            <input type="text" class="form-control" name="fax" ng-model="data.fax">
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="Zipcode">Email<span class="req"></span></label>
+                            <input type="text" class="form-control" name="email" ng-model="data.email">
+                          </div>
+                        </div>
+                      </div>
+		      
+		      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="form-group">
+                            <label for="City">URL<span class="req"></span></label>
+                            <input type="text" class="form-control" name="url" ng-model="data.url">
+                          </div>
+                        </div>
+                      </div>
+		      
+		      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="City">Image<span class="req"></span></label>
+                            <!--<input type="file" class="form-control" name="image" ng-model="data.image">-->
+			    <input  id="inputFileToLoad" type="file" onchange="angular.element(this).scope().encodeImageFileAsURL(this)" file-model="file.myFiles">
+                            <div id="imgTest" ng-model="picDatatest"></div>   
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="Zipcode">Seating Chart<span class="req"></span></label>
+                            <input  id="inputFileToLoad5" type="file" onchange="angular.element(this).scope().encodeChartFileAsURL(this)" file-model="file.seating_chart">
+			      <div id="imgTest5" ng-model="picDatatest5"></div>  
+			    <!--<input type="file" class="form-control" name="seating_chart" ng-model="data.seating_chart">-->
+                          </div>
+                        </div>
+                      </div>
+		      
                     </div>
                    
                   </div>
@@ -83,6 +160,7 @@
                   
                 </div>
                 <div class="col-sm-12 col-md-6"> <img src="images/map.jpg" class="img-responsive" alt="" /> </div>
+		
               </div>
             </div>
           </div>

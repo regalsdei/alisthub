@@ -1,6 +1,9 @@
 angular.module("google.places",[]);
-angular.module('alisthub', ['google.places', 'angucomplete']).controller('venueController', function($scope,$localStorage) {
+angular.module('alisthub', ['google.places', 'angucomplete'])
+.controller('venueController', function($scope,$localStorage,$injector,$http) {
    
+    var $serviceTest = $injector.get("venues");
+    
     if(window.innerWidth>767){ 
     $scope.navCollapsed = false;	  
     }else{
@@ -14,8 +17,12 @@ angular.module('alisthub', ['google.places', 'angucomplete']).controller('venueC
  $scope.data = {};
  $scope.update = function(place){
     console.log(place);
-    $scope.data.latitude  = place.geometry.location.lat();
-    $scope.data.longitude = place.geometry.location.lng();
+    if (place.geometry) {
+        $scope.data.latitude  = place.geometry.location.lat();
+        $scope.data.longitude = place.geometry.location.lng();
+    }
+    
+    $scope.data.address = place.formatted_address;
     
     $scope.data.zipcode = '';
     $scope.data.country = '';
@@ -24,7 +31,7 @@ angular.module('alisthub', ['google.places', 'angucomplete']).controller('venueC
 
     // FINDING ZIP
     if (place.address_components[place.address_components.length-1].types[0] == 'postal_code') {
-      $scope.zipcode = Number(place.address_components[place.address_components.length-1].long_name);
+      $scope.data.zipcode = Number(place.address_components[place.address_components.length-1].long_name);
     };
 
     // FINDING COUNTRY
@@ -75,52 +82,67 @@ angular.module('alisthub', ['google.places', 'angucomplete']).controller('venueC
         $scope.data.city = place.address_components[place.address_components.length-4].long_name;  
       }    
     };
-
+    console.log($scope.data);
   }
  ////////////////////////////////////////////////////////////////////////////
+    $scope.encodeImageFileAsURL = function(){
+                  var filesSelected = document.getElementById("inputFileToLoad").files;
+                  if (filesSelected.length > 0)
+                  {   console.log(filesSelected.length);
+                      var fileToLoad = filesSelected[0];
+              
+                      var fileReader = new FileReader();
+              
+                      fileReader.onload = function(fileLoadedEvent) {
+                          var srcData = fileLoadedEvent.target.result; // <--- data: base64
+              
+                          var newImage = document.createElement('img');
+                          newImage.src = srcData;
+                          $scope.image =  srcData;                         
+                          document.getElementById("imgTest").innerHTML = newImage.outerHTML;
+                                       
+                      }
+                      fileReader.readAsDataURL(fileToLoad);
+                  }
+    }
+    
+     $scope.encodeChartFileAsURL = function(){
+                  var filesSelected = document.getElementById("inputFileToLoad5").files;
+                  if (filesSelected.length > 0)
+                  {   console.log(filesSelected.length);
+                      var fileToLoad = filesSelected[0];
+              
+                      var fileReader = new FileReader();
+              
+                      fileReader.onload = function(fileLoadedEvent) {
+                          var srcData = fileLoadedEvent.target.result; // <--- data: base64
+              
+                          var newImage = document.createElement('img');
+                          newImage.src = srcData;
+                          $scope.venue_chart =  srcData;                         
+                          document.getElementById("imgTest5").innerHTML = newImage.outerHTML;
+                                       
+                      }
+                      fileReader.readAsDataURL(fileToLoad);
+                  }
+    }
+  
   $scope.addVenue = function() {
     
-    // Getting location from lat long
-    /*var promise = AddressService.getLatLongByLocation(place);
-    promise.then(function(payload) {
-        var address = {};
-        var userLocationData  = payload.data;
-        
-        if (payload.data.results.length > 0) {
-          address.biz_lat   = userLocationData.results[0].geometry.location.lat;
-          address.biz_long  = userLocationData.results[0].geometry.location.lng;
-        }else{
-          address.biz_lat   = $scope.latitude;
-          address.biz_long  = $scope.longitude;
-        }*/
-        
-         
-        var serviceUrl = webservices.ADDVENUE;
-        console.log($scope.data);
-        var jsonData=$scope.data;
-            $http({
-                 url: serviceUrl,
-                 method: 'POST',
-                 data: jsonData,
-                 headers: {
-                  "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-                  "Accept": "application/json",
-                 }
-                }).success(function(data, status, headers, config) {
-                
-                  if (data == 200) {
+        if ($localStorage.userId!=undefined) {
+        $scope.data.seller_id   = $localStorage.userId;
+        $scope.data.imagedata   = $scope.image;
+        $scope.data.venue_chart = $scope.venue_chart;
+        $serviceTest.addVenue($scope.data,function(response){
+            console.log(response);
+            if (response == 200) {
                    $scope.activation_message = global_message.ActivatedMessage;
                   }else{
                    $scope.activation_message = global_message.ErrorInActivation;
-                  }
-                });
-        /*
-        formatted_address   = userLocationData.results[0].formatted_address;
-        var addressArray    = formatted_address.split(",");
-        address.biz_country = addressArray[addressArray.length-1].trim();
-        */
-    //});
-      
+            }
+            
+        });
+        }
   };
  ///////////////////////////////////////////////////////////////////////////
 })

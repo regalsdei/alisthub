@@ -140,14 +140,14 @@ select.form-control{padding:6px 12px; font-style:normal; font-style:italic; colo
   vertical-align: middle !important;
 }
 .uib-datepicker small{ font-weight: bold;}
-.uib-datepicker .btn {
+.uib-datepicker .btn,.datepicker .btn,.uib-timepicker .btn{
     color: #444;
     font-size: 14px;
     min-width: auto;
     padding: 5px 10px;
     vertical-align: bottom;
 } 
-.uib-datepicker .btn:hover{opacity:0.8; color:#444; outline:none;}
+.uib-datepicker .btn:hover,.datepicker .btn:hover,.uib-timepicker .btn:hover{opacity:0.8; color:#444; outline:none;}
 .btn.focus, .btn:focus, .btn:hover{opacity:0.8; color:#fff; outline:none;}
 .editor-btn{text-align:center;  margin:24px 0 0;}
 .editor-btn .btn{margin:6px;}
@@ -449,6 +449,36 @@ select.select30{height:30px; padding:0 8px; font-size:14px;}
 .u-text:hover{text-decoration:none;}
 .ng-binding.error-fld { background: rgba(200, 0, 0, 0.2) none repeat scroll 0 0;color: #fff;margin: 0 0 15px;
     padding: 10px;}
+
+  .datepicker{
+    display: table;
+  }
+  .datepicker input, .datepicker .input-group-btn{
+    display: table-cell;
+  }
+ .datepicker .input-group-btn {
+ background-color: #eee;
+    color: #555;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 1%;
+    border: 1px solid #c2c2c2;
+     border-left: none;
+      border-radius: 0 4px 4px 0;
+    }
+     .datepicker .input-group-btn .btn{
+      background: none;
+      border: none;
+      padding: 0px;
+     }
+     .uib-timepicker .form-control{ padding: 5px 6px;}
+     .uib-timepicker .btn {margin-left: 5px;padding: 9px 10px;}
 .ng-binding.success-fld { background: rgb(34,139,34) none repeat scroll 0 0;color: #fff;margin: 0 0 15px;
     padding: 10px;}
-  .pointer{ cursor: pointer !important;}
+
+
