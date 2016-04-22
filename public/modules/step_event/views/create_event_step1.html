@@ -40,32 +40,32 @@
                     <div class="col-sm-4">
                       <div class="form-group">
                         <label for="StartTime">Start Time</label>
-                       <uib-timepicker ng-model="starttime"  hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+                       <uib-timepicker ng-model="starttime"  hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" ng-change="changedstarttime()"></uib-timepicker>
                       </div>
                       <div class="form-group">
                         <label>From</label>
                         
-                       <uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="options"></uib-datepicker>
+                       <uib-datepicker ng-model="start_date" class="well well-sm" datepicker-options="options" ng-change="single_eventstart()"></uib-datepicker>
  
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="form-group">
                         <label for="EndTime">End Time</label>
-                         <uib-timepicker ng-model="endtime"  hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+                         <uib-timepicker ng-model="endtime"  hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"  ng-change="changedendtime()"></uib-timepicker>
                       </div>
                       <div class="form-group">
                         <label>To</label>
-                        <uib-datepicker ng-model="dt1" class="well well-sm" datepicker-options="options1"></uib-datepicker>
+                        <uib-datepicker ng-model="end_date" class="well well-sm" datepicker-options="options1" ng-change="single_eventend()"></uib-datepicker>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-xs-12">
-                      <label>Select/Deslect Events</label>
+                      <label>Select/Deselect Events</label>
                       <div class="clearfix list-event-date">
-                      <div class="col-sm-3 pull-right text-right lss-top"> <a  href="javascript:void(0)" ><i class="fa fa-close"></i></a> </div>
-                        <div class="col-sm-3"> Friday, 4 March 2016 </div>
+                      <div class="col-sm-3 pull-right text-right lss-top"> <a  href="javascript:void(0)" ng-click="remove_event()"><i class="fa fa-close"></i></a> </div>
+                        <div class="col-sm-3"> {{selectevent_date }} </div>
                         <div class="col-sm-3"> Start Time : {{starttime| date:'shortTime'}} </div>
                         <div class="col-sm-3"> End Time : {{endtime| date:'shortTime'}} </div>
                         
@@ -239,7 +239,7 @@
                         <div class="col-xs-12">
                           <div class="form-group">
                             <label for="Address">Address<span class="req">*</span></label>
-                             <input type="text" class="form-control" name="place" ng-model="place" ><b>details (formatted address)</b>: {{details.formatted_address}}
+                             <input type="text" class="form-control" name="place" ng-model="place"  g-places-autocomplete required>
                           </div>
                         </div>
                       </div>
@@ -416,7 +416,7 @@
                          </section>
                       </section>
                       <section class="col-sm-5 right-btns text-right">
-                          <button class="pink-btn btn btn-small m-fw">ADD PRICE LEVEL</button>
+                          <button class="pink-btn btn btn-small m-fw"  ng-click="open('lg')">ADD PRICE LEVEL</button>
                       </section>
                     </section>
                   <section class="grid-widget">
@@ -532,7 +532,7 @@
                   <section class="grid-btn-top row">
                   	  
                       <section class="col-sm-5 pull-right text-right">
-                          <button class="pink-btn btn btn-small m-fw">ADD a Bundle</button>
+                          <button class="pink-btn btn btn-small m-fw"  ng-click="open()">ADD a Bundle</button>
                       </section>
                     </section>
                   <section class="grid-widget">
@@ -632,12 +632,12 @@
                 <section class="gray-frame sub-fields">
                   <section class="grid-btn-top row">                  	  
                       <section class="col-sm-5 right-btns text-right">
-                          <button class="pink-btn btn btn-small m-fw">Add Product</button>
+                          <button class="pink-btn btn btn-small m-fw"  ng-click="open()">Add Product</button>
                       </section>
                     </section>
                   <section class="grid-widget">
       	  <div class="table-responsive">
-          	  
+          	   
 
     <table class="table table-striped">
         <thead>
@@ -828,3 +828,15 @@
     
     <!-- //Form COntainer --> 
   </div>
+<script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Remove Previous Event</h3>
+        </div>
+        <div class="modal-body">
+            Are you sure to remove this previous created Event?
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="remove()">Remove</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>

@@ -1,9 +1,10 @@
-
-angular.module('alisthub', ['google.places']).controller('stepeventController', function($scope,$localStorage,$injector) {
-     $scope.place = null;
+angular.module("google.places",[]);
+angular.module('alisthub', ['google.places', 'angucomplete']).controller('stepeventController', function($scope,$localStorage,$injector, $uibModal,$rootScope) {
+   //For Step 1
     var $serviceTest = $injector.get("venues");
          // <-- CHANGED HERE
-     
+     $rootScope.starttime='';
+     $rootScope.endtime='';
     if ($localStorage.userId!=undefined) {
        
         $serviceTest.getVenues({'userId':$localStorage.userId},function(response){
@@ -241,5 +242,125 @@ var tomorrow = new Date();
         return $scope.selected2 === step2;
  };
  
+//For Step 2
+$scope.items = ['item1'];
 
+  $scope.animationsEnabled = true;
+
+  $scope.open = function (size) {
+
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'myModalContent.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+  };
+  var m_names = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+   var weekday = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+
+  
+   $scope.single_eventstart=function()
+   {
+    if($rootScope.selectevent_date==undefined)
+    {
+        var d=new Date($scope.start_date);
+        var curr_date = d.getDate();
+        var curr_month = d.getMonth();
+        var day=d.getDay();
+        var curr_year = d.getFullYear();
+        $rootScope.selectevent_date=weekday[day]+" "+m_names[curr_month]+" "+curr_date + "," + curr_year;  
+    }else{
+      var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'myModalContent.html',
+      controller: 'ModalInstanceCtrl',
+      size: '',
+      resolve: {
+        items: function () {
+            
+            
+          return $scope.items;
+        }
+      }
+    });
+    }
+   }
+   
+   $scope.single_eventend=function()
+   {
+    if($rootScope.selectevent_date==undefined)
+    {
+        var d=new Date($scope.end_date);
+        var curr_date = d.getDate();
+        var curr_month = d.getMonth();
+        var day=d.getDay();
+        var curr_year = d.getFullYear();
+        $rootScope.selectevent_date=weekday[day]+" "+m_names[curr_month]+" "+curr_date + "," + curr_year; 
+    }else{
+     var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'myModalContent.html',
+      controller: 'ModalInstanceCtrl',
+      size: '',
+      resolve: {
+        items: function () {
+          
+          return $scope.items;
+        }
+      }
+    });
+    }
+    
+   }
+   
+   $scope.remove_event=function()
+   {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'myModalContent.html',
+      controller: 'ModalInstanceCtrl',
+      size: '',
+      resolve: {
+        items: function () {
+          
+          return $scope.items;
+        }
+      }
+    });
+   }
+   
+   $scope.changedstarttime=function(){
+    $rootScope.starttime=$scope.starttime;
+   }
+   
+   $scope.changedendtime=function(){
+    $rootScope.endtime=$scope.endtime;
+   }
+
+});
+angular.module('alisthub').controller('ModalInstanceCtrl', function($scope, $uibModalInstance, items,$rootScope) {
+     $scope.items = items;
+  $scope.selected = {
+    item: $scope.items[0]
+  };
+
+
+  $scope.remove=function(){
+  
+    delete $rootScope.selectevent_date;
+    delete $rootScope.starttime;
+    delete $rootScope.endtime;
+    $uibModalInstance.close($scope.selected.item);
+  }
+
+  $scope.cancel = function () {
+    $uibModalInstance.dismiss('cancel');
+  };
 });

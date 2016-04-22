@@ -461,5 +461,8 @@ select.select30{height:30px; padding:0 8px; font-size:14px;}
 .ng-binding.success-fld { background: rgb(34,139,34) none repeat scroll 0 0;color: #fff;margin: 0 0 15px;
     padding: 10px;}
     .dropdown .btn-primary,.dropdown .btn-primary:hover{background-color: #0275d0;border-color: #0275d0;}
-
+.uib-datepicker .btn-info{background:none;border: none;}
+.ng-scope.ng-isolate-scope .pac-container {
+    position: absolute !important;
+}
 
