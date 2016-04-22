@@ -1,12 +1,12 @@
 <div class="container">
-     <h1>Add Venue</h1>
+     <h1>{{page_title}} Venue</h1>
     
     <!-- Form COntainer -->
     
     <div class="form-section">
-      <form class="venue-form" name="venue-form" ng-submit="addVenue()" novalidate>
+      <form class="venue-form" name="venue-form" ng-submit="saveVenue()" novalidate>
         <!-- Event Detail Form -->
-       <div>
+       <div> 
           <!-- Location Group -->
           <div class="form-group field-group">
                <!-- Date Event Group -->
@@ -139,14 +139,16 @@
                             <label for="City">Image<span class="req"></span></label>
                             <!--<input type="file" class="form-control" name="image" ng-model="data.image">-->
 			    <input  id="inputFileToLoad" type="file" onchange="angular.element(this).scope().encodeImageFileAsURL(this)" file-model="file.myFiles">
-                            <div id="imgTest" ng-model="picDatatest"></div>   
+                            <div id="imgTest" ng-model="picDatatest"></div>
+			    <div id="data.image"><img ng-src="/images/venues/{{ data.image }}"></div> 
                           </div>
                         </div>
                         <div class="col-sm-6">
                           <div class="form-group">
                             <label for="Zipcode">Seating Chart<span class="req"></span></label>
                             <input  id="inputFileToLoad5" type="file" onchange="angular.element(this).scope().encodeChartFileAsURL(this)" file-model="file.seating_chart">
-			      <div id="imgTest5" ng-model="picDatatest5"></div>  
+			      <div id="imgTest5" ng-model="picDatatest5"></div>
+			      <div id="data.seating_chart"><img ng-src="/images/venues/{{ data.seating_chart }}"></div> 
 			    <!--<input type="file" class="form-control" name="seating_chart" ng-model="data.seating_chart">-->
                           </div>
                         </div>

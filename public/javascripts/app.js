@@ -203,6 +203,54 @@ var routerApp = angular.module('alisthub', ['ui.router', ,'ngStorage','oc.lazyLo
             }
         })
         
+        .state('view_venues', {
+            url: '/view_venues/:list',
+            
+            views: {
+                "lazyLoadView": {
+                  controller: 'venueController', // This view will use AppCtrl loaded below in the resolve
+                  templateUrl: 'modules/event_setting/views/view_venues.html'
+                }
+            },
+            resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+              resources: ['$ocLazyLoad', '$injector',function($ocLazyLoad, $injector) {
+                // you can lazy load files for an existing module
+                return $ocLazyLoad.load('modules/event_setting/service.js').then(function(){
+                    //var $serviceTest = $injector.get("CustomerFirstLoad");
+                           // return $serviceTest.testLoad(); // <-- CHANGED HERE
+                    }).then(function(){
+                    return $ocLazyLoad.load(['modules/event_setting/controller.js']);
+                    })
+               
+              }]
+                        
+            }
+        })
+        
+        .state('edit_venue', {
+            url: '/edit_venue/:id',
+            
+            views: {
+                "lazyLoadView": {
+                  controller: 'venueController', // This view will use AppCtrl loaded below in the resolve
+                  templateUrl: 'modules/event_setting/views/add_venue.html'
+                }
+            },
+            resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+              resources: ['$ocLazyLoad', '$injector',function($ocLazyLoad, $injector) {
+                // you can lazy load files for an existing module
+                return $ocLazyLoad.load('modules/event_setting/service.js').then(function(){
+                    //var $serviceTest = $injector.get("CustomerFirstLoad");
+                           // return $serviceTest.testLoad(); // <-- CHANGED HERE
+                    }).then(function(){
+                    return $ocLazyLoad.load(['modules/event_setting/controller.js']);
+                    })
+               
+              }]
+                        
+            }
+        })
+        
     
   }).run(['$rootScope', '$location','$state', '$localStorage',function($rootScope,$location, $state,$localStorage) {
     //To add class

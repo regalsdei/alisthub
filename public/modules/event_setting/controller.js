@@ -1,6 +1,6 @@
 angular.module("google.places",[]);
 angular.module('alisthub', ['google.places', 'angucomplete'])
-.controller('venueController', function($scope,$localStorage,$injector,$http) {
+.controller('venueController', function($scope,$localStorage,$injector,$http,$state,$location) {
    
     var $serviceTest = $injector.get("venues");
     
@@ -127,6 +127,8 @@ angular.module('alisthub', ['google.places', 'angucomplete'])
                   }
     }
   
+  
+  
   $scope.addVenue = function() {
     
         if ($localStorage.userId!=undefined) {
@@ -135,14 +137,102 @@ angular.module('alisthub', ['google.places', 'angucomplete'])
         $scope.data.venue_chart = $scope.venue_chart;
         $serviceTest.addVenue($scope.data,function(response){
             console.log(response);
-            if (response == 200) {
-                   $scope.activation_message = global_message.ActivatedMessage;
+            console.log("5555555555");
+            if (response.code == 200) {
+                    $location.path("#/view_venues/list");
+                  }else{
+                    $scope.activation_message = global_message.ErrorInActivation;
+            }
+            
+        });
+        }
+  };
+  
+  $scope.getVenue = function() {
+    
+        if ($localStorage.userId!=undefined) {
+        $scope.data.userId      = $localStorage.userId;
+        $scope.loader = true;
+        $serviceTest.getVenues($scope.data,function(response){
+            console.log(response);
+            $scope.loader = false;
+            if (response.code == 200) {
+                   $scope.venuedata = response.result;
+                  }else{
+                   $scope.error_message = response.error;
+            }
+            
+        });
+        
+        }
+  };
+  
+  /// View listing venues 
+  if ($state.params.list) {
+    $scope.getVenue();
+  }
+  
+  $scope.page_title = 'ADD';
+  $scope.callfunction = 0;
+  $scope.saveVenue = function()
+  {
+    if ($scope.callfunction == 0) {
+        $scope.addVenue();
+    }
+    if ($scope.callfunction == 1) {
+        $scope.editVenue();
+    }
+  }
+  
+  // Edit Venue 
+  if ($state.params.id)
+  {
+    $scope.callfunction = 1;
+    
+    $scope.page_title = 'EDIT';
+    $scope.getVenueDetail = function() {
+    
+        if ($localStorage.userId!=undefined) {
+        $scope.data.id      = $state.params.id;
+        $scope.loader = true;
+        console.log($state.params.id);
+        $serviceTest.venueOverview($scope.data,function(response){
+            console.log(response);
+            $scope.loader = false;
+            if (response.code == 200) {
+                   $scope.data  = {};
+                   $scope.data = response.result[0];
+                   $scope.place = response.result[0].address;
+                  }else{
+                   $scope.error_message = response.error;
+            }
+            
+        });
+        
+        }
+    };
+    $scope.getVenueDetail();
+    ////////////////////////////////////////
+    $scope.editVenue = function() {
+        if ($localStorage.userId!=undefined) {
+        $scope.data.seller_id   = $localStorage.userId;
+        $scope.data.id          = $state.params.id;
+        $scope.data.imagedata   = $scope.image;
+        $scope.data.venue_chart = $scope.venue_chart;
+        $serviceTest.addVenue($scope.data,function(response){
+            console.log("9999999999");
+            if (response.code == 200) {
+                    $location.path("/view_venues/list");
                   }else{
                    $scope.activation_message = global_message.ErrorInActivation;
             }
             
         });
         }
-  };
+    };
+    
+    ///////////////////////////////////////
+  }
+  
  ///////////////////////////////////////////////////////////////////////////
 })

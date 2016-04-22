@@ -11,11 +11,20 @@ angular.module('alisthub').factory('venues', ['$q', '$timeout','communicationSer
   };
 
   url.addVenue = function(jsondata,callback){
-       communicationService.resultViaPost(webservices.ADDVENUE,appConstants.authorizationKey,headerConstants.json,jsondata, function(res,req){
+       communicationService.resultViaPost(webservices.addVenue,appConstants.authorizationKey,headerConstants.json,jsondata, function(res,req){
 			callback(res.data);
 		});
       
   };
+  
+  url.venueOverview = function(jsondata,callback){
+       communicationService.resultViaPost(webservices.venueOverview,appConstants.authorizationKey,headerConstants.json,jsondata, function(res,req){
+			callback(res.data);
+		});
+      
+  };
+  
+  
   
 return url;
 }]);
