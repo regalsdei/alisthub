@@ -5,7 +5,7 @@ CREATED BY: Deepak khokhar
 Montive: It defined routes to call different files.It will provide you directions where to go.
 ********************/
 'use strict';
-angular.module("communicationModule", []);
+angular.module("communicationModule", []); 
 // Declare app level module which depends on filters, and services
 
 var routerApp = angular.module('alisthub', ['ui.router', ,'ngStorage','oc.lazyLoad','communicationModule', 'ui.bootstrap','ckeditor','google.places', 'angucomplete','angularUtils.directives.dirPagination','ngAnimate'])
