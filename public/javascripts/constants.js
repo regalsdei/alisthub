@@ -13,9 +13,9 @@ var webservices = {
         "forgetPassword" : baseUrl + "/webservices/forgetPassword",
         "resetPassword" : baseUrl + "/webservices/resetPassword",
         "confirmationEmail" : baseUrl + "/webservices/confirmationEmail",
-        "getVenues":localhostUrl + "/event_setting/getVenue",
-        "ADDVENUE" : localbaseUrl + "/event_setting/addVenue",
-        "VENUEOVERVIEW" : localbaseUrl + "/event_setting/overviewVenue"
+        "getVenues":localhostUrl + "/event_setting/venueListing",
+        "addVenue" : localbaseUrl + "/event_setting/addVenue",
+        "venueOverview" : localbaseUrl + "/event_setting/venueOverview"
 }
 
 var global_message = {

@@ -17,8 +17,12 @@ module.exports = function(app, express) {
        
         /* Service : Venue Overview to Seller
         * */
-        router.get('/venueOverview', Event_setting.venueOverview);
+        router.post('/venueOverview', Event_setting.venueOverview);
+        
+        /* Service : Seller Venues Listing
+        * */
+        router.post('/venueListing', Event_setting.getVenue);
          
          
-	 app.use('/event_setting', router);
+	app.use('/event_setting', router);
     }
